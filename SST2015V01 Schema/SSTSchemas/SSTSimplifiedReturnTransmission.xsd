@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by Terry Garber (SC DEPT OF REVENUE & TAXATION) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:include schemaLocation="SSTefileMessage.xsd"/>
+	<xs:include schemaLocation="SimplifiedReturnDocument.xsd"/>
+	<xs:element name="SSTSimplifiedReturnTransmission" type="SSTSimplifiedReturnTransmissionType">
+		<xs:annotation>
+			<xs:documentation>SST transmission schema for all Simplified Electronic Returns.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SSTSimplifiedReturnTransmissionType">
+		<xs:sequence>
+			<xs:element ref="TransmissionHeader"/>
+			<xs:element ref="SimplifiedReturnDocument" maxOccurs="unbounded"/>
+			<xs:element ref="FinancialTransaction" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="transmissionVersion" type="xs:string" use="required" fixed="SST2015V01">
+			<xs:annotation>
+				<xs:documentation>Transmission Version</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

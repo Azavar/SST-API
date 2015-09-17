@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Oklahoma Tax Commission (Oklahoma Tax Commission) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Streamlined Sales Tax Schema - Schema for a Bulk Streamlined Registration Document</Description>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:include schemaLocation="BulkRegistrationHeader.xsd"/>
+	<xs:include schemaLocation="BulkRegistrationNew.xsd"/>
+	<xs:include schemaLocation="BulkRegistrationCOU.xsd"/>
+	<xs:element name="BulkRegistrationDocument" type="BulkRegistrationDocumentType">
+		<xs:annotation>
+			<xs:documentation>Bulk Registration Document</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BulkRegistrationDocumentType">
+		<xs:annotation>
+			<xs:documentation>Content model for BulkRegistrationDocument</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DocumentId" type="DocumentIdType"/>
+			<xs:element name="DocumentType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="BulkRegistrationNew"/>
+						<xs:enumeration value="BulkRegistrationCOU"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="BulkRegistrationHeader"/>
+			<xs:choice>
+				<xs:element ref="BulkRegistrationNew">
+					<xs:annotation>
+						<xs:documentation>New Seller Registration</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="BulkRegistrationCOU">
+					<xs:annotation>
+						<xs:documentation>Changed or Unvolunteered Seller</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

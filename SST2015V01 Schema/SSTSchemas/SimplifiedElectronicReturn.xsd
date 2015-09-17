@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by Terry Garber (SC DEPT OF REVENUE & TAXATION) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:element name="SimplifiedElectronicReturn" type="SERType">
+		<xs:annotation>
+			<xs:documentation>This is the Streamlined Sales Tax report
+			</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SERType">
+		<xs:sequence>
+			<xs:element name="ReturnType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="O">
+							<xs:annotation>
+								<xs:documentation> Original Return</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="A">
+							<xs:annotation>
+								<xs:documentation>Amended Return</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TotalSales" type="AmountType"/>
+			<xs:element name="ExemptionsDeductions" type="AmountType"/>
+			<xs:element name="ExemptionDeductionBreakout" type="ExemptDeductBreakoutType" minOccurs="0" maxOccurs="6"/>
+			<xs:element name="TaxableSales" type="AmountType"/>
+			<xs:element name="StateTaxDueSalesInState" type="AmountType"/>
+			<xs:element name="StateTaxDueSalesOrigOutOfState" type="AmountType"/>
+			<xs:element name="StateTaxDueOwnPurchWithdraw" type="AmountType"/>
+			<xs:element name="StateTaxDueFoodDrug" type="AmountType"/>
+			<xs:element name="JurisdictionDetail" type="JurisdictionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="TotalTaxDue" type="AmountType"/>
+			<xs:element name="InterestDue" type="AmountType" minOccurs="0"/>
+			<xs:element name="PenaltyDue" type="AmountType" minOccurs="0"/>
+			<xs:element name="Discounts" type="AmountType" minOccurs="0"/>
+			<xs:element name="SSTPAllowance" type="AmountType" minOccurs="0"/>
+			<xs:element name="Priorpayments" type="AmountType" minOccurs="0"/>
+			<xs:element name="NewPrepayments" type="AmountType" minOccurs="0"/>
+			<xs:element name="AmountDueOrRefund" type="AmountType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExemptDeductBreakoutType">
+		<xs:sequence>
+			<xs:element name="ExemptionType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Agriculture"/>
+						<xs:enumeration value="DirectPay"/>
+						<xs:enumeration value="GovernmentExemptOrg"/>
+						<xs:enumeration value="Manufacturing"/>
+						<xs:enumeration value="Resale"/>
+						<xs:enumeration value="Other"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="ExemptionAmount" type="AmountType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JurisdictionType">
+		<xs:sequence>
+			<xs:element name="JurisdictionCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="3"/>
+						<xs:maxLength value="5"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="JurisTaxDueSalesInState" type="AmountType"/>
+			<xs:element name="JurisTaxDueSalesOrigOutOfState" type="AmountType"/>
+			<xs:element name="JurisTaxDueOwnPurchWithdraw" type="AmountType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

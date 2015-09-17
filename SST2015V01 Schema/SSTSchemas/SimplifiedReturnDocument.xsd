@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Oklahoma Tax Commission (Oklahoma Tax Commission) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Streamlined Sales Tax Schema - Schema for a State Streamlined Filing Document</Description>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:include schemaLocation="SSTFilingHeader.xsd"/>
+	<xs:include schemaLocation="SimplifiedElectronicReturn.xsd"/>
+	<xs:include schemaLocation="SSTFinancialTransaction.xsd"/>
+	<xs:element name="SimplifiedReturnDocument" type="SimplifiedReturnDocumentType">
+		<xs:annotation>
+			<xs:documentation>Simplified Electronic Return document</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SimplifiedReturnDocumentType">
+		<xs:annotation>
+			<xs:documentation>Content model for SimplifiedReturnDocument</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DocumentId" type="DocumentIdType"/>
+			<xs:element name="DocumentType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SEROnly"/>
+						<xs:enumeration value="SERWithPayment"/>
+						<xs:enumeration value="PaymentOnly"/>
+						<xs:enumeration value="PrePayment"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="SSTFilingHeader"/>
+			<xs:choice>
+				<xs:sequence>
+					<xs:element ref="SimplifiedElectronicReturn">
+						<xs:annotation>
+							<xs:documentation>Monthly simplified return</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="FinancialTransaction" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Optional Payment with SER</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+				<xs:element ref="FinancialTransaction">
+					<xs:annotation>
+						<xs:documentation>Stand-alone Payment without SER</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

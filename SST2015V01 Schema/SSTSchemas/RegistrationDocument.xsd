@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Oklahoma Tax Commission (Oklahoma Tax Commission) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Streamlined Sales Tax Schema - Schema for a State Streamlined Registration</Description>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:include schemaLocation="SSTRegistrationHeader.xsd"/>
+	<xs:include schemaLocation="StreamlinedRegistrationNew.xsd"/>
+	<xs:include schemaLocation="StreamlinedRegistrationCOU.xsd"/>
+	<xs:element name="RegistrationDocument" type="RegistrationDocumentType">
+		<xs:annotation>
+			<xs:documentation>New or updated SST registration document</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RegistrationDocumentType">
+		<xs:annotation>
+			<xs:documentation>Content model for RegistrationDocument</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DocumentId" type="DocumentIdType"/>
+			<xs:element name="DocumentType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SSTRegistrationNew"/>
+						<xs:enumeration value="SSTRegistrationCOU"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="SSTRegistrationHeader"/>
+			<xs:element name="RegistrationInformation">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element ref="StreamlinedRegistrationNew">
+							<xs:annotation>
+								<xs:documentation>New Streamlined Registration</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="StreamlinedRegistrationCOU">
+							<xs:annotation>
+								<xs:documentation>Streamlined Registration Change, Out of Business, or Unvolunteer</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

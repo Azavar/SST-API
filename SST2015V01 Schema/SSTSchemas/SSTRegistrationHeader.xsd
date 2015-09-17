@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by SCDOR (SC DEPT OF REVENUE & TAXATION) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Streamlined Sales Tax Schema - Header schema for a state Streamlined Registration </Description>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:element name="SSTRegistrationHeader" type="SSTRegistrationHeaderType">
+		<xs:annotation>
+			<xs:documentation>Document header for SST new or updated Registration</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SSTRegistrationHeaderType">
+		<xs:annotation>
+			<xs:documentation>Content model for SSTRegistrationHeader</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ElectronicPostmark" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The party whose date determines whether the return is timely filed.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="DateType">
+							<xs:attribute name="DateSupplier">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Preparer"/>
+										<xs:enumeration value="Transmitter"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DateReceived" type="DateType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For State Use Only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FilingType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="RegNew"/>
+						<xs:enumeration value="RegCOU"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="SSTPID" type="SSTPIDType"/>
+			<xs:element name="TIN" type="TINType"/>
+			<xs:element name="FIPSCode">
+				<xs:annotation>
+					<xs:documentation>FIPS code of state for filing</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

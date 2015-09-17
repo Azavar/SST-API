@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Terry Garber (The State of South Carolina) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Data for tax payments or refund deposits</Description>
+			<ReleaseDate>December 8, 2014</ReleaseDate>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<!-- Root Element -->
+	<xs:element name="FinancialTransaction" type="FinancialTransactionType">
+		<xs:annotation>
+			<xs:documentation>Root element for Financial Transaction</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!--Structure for Full Financial Transaction Schema-->
+	<xs:complexType name="FinancialTransactionType">
+		<xs:sequence>
+			<xs:choice minOccurs="0">
+				<!-- Payment(s) -->
+				<xs:element name="StatePayment" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="ACHEntityDetailType">
+								<xs:choice>
+									<xs:element name="NotIATTransaction" type="CheckboxType"/>
+									<xs:element name="IsIATTransaction">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="CheckboxType">
+													<xs:attribute name="receivingDFIName" type="String50Type"/>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="FullIAT" type="FullIATType"/>
+								</xs:choice>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<!-- Refund(s) -->
+				<xs:element name="RefundDirectDeposit" maxOccurs="3">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="StateDirectDepositType">
+								<xs:choice>
+									<xs:element name="NotIATTransaction" type="CheckboxType"/>
+									<xs:element name="IsIATTransaction">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="CheckboxType">
+													<xs:attribute name="receivingDFIName" type="String50Type"/>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="FullIAT" type="FullIATType"/>
+								</xs:choice>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<!-- ACH Credit -->
+				<xs:element name="ACHCreditInfo">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="ACHCreditDetailType">
+								<xs:choice>
+									<xs:element name="NotIATTransaction" type="CheckboxType"/>
+									<xs:element name="IsIATTransaction">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="CheckboxType">
+													<xs:attribute name="originatingDFIName" type="String50Type"/>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<!-- Deposit into 529 Tuition Trust Account(s) -->
+			<xs:element name="DepositTo529Account" type="StateDirectDeposit529Type" minOccurs="0" maxOccurs="3"/>
+			<!-- Estimated Payment(s) -->
+			<xs:element name="EstimatedPayments" minOccurs="0" maxOccurs="4">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="ACHEntityDetailType">
+							<xs:choice>
+								<xs:element name="NotIATTransaction" type="CheckboxType"/>
+								<xs:element name="IsIATTransaction">
+									<xs:complexType>
+										<xs:simpleContent>
+											<xs:extension base="CheckboxType">
+												<xs:attribute name="receivingDFIName" type="String50Type"/>
+											</xs:extension>
+										</xs:simpleContent>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="FullIAT" type="FullIATType"/>
+							</xs:choice>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

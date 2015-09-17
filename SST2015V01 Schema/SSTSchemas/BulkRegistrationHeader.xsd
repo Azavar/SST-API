@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by Terry Garber (SC Dept of Rev. & Tax) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Streamlined Sales Tax Schema - Header schema for a Bulk Streamlined Registration </Description>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:element name="BulkRegistrationHeader" type="BulkRegistrationHeaderType">
+		<xs:annotation>
+			<xs:documentation>Document header for SST new or updated Registration</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BulkRegistrationHeaderType">
+		<xs:annotation>
+			<xs:documentation>Content model for RegistrationHeader</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ElectronicPostmark" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The date that the CSP sends the registrations to the SST Registration system</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="DateType">
+							<xs:attribute name="CSPID">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:length value="9"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DateReceived" type="DateType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For SST Registration System use only</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FilingType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="BulkRegNew"/>
+						<xs:enumeration value="BulkRegCOU"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TIN" type="TINType"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

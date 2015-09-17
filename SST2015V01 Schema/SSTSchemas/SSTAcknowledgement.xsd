@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:include schemaLocation="SSTefileMessage.xsd"/>
+	<xs:element name="SSTPAcknowledgement" type="SSTPAcknowledgementType">
+		<xs:annotation>
+			<xs:documentation>Template for all SSTP acknowledgements</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SSTPAcknowledgementType">
+		<xs:sequence>
+			<xs:element ref="AcknowledgementHeader"/>
+			<xs:element ref="TransmissionAcknowledgement"/>
+			<xs:element ref="DocumentAcknowledgement" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="acknowledgementVersion" type="xs:string" use="required" fixed="SST2015V01">
+			<xs:annotation>
+				<xs:documentation>Acknowledgement Version</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

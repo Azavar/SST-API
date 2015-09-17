@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2007 rel. 3 sp1 (http://www.altova.com) by Terry Garber (SC Department of Revenue & Tax) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:include schemaLocation="SSTefileMessage.xsd"/>
+	<xs:include schemaLocation="BulkRegistrationDocument.xsd"/>
+	<xs:element name="BulkRegistrationTransmission" type="BulkRegistrationTransmissionType">
+		<xs:annotation>
+			<xs:documentation>SST transmission schema for bulk new or updated registrations from a CSP</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BulkRegistrationTransmissionType">
+		<xs:sequence>
+			<xs:element ref="TransmissionHeader"/>
+			<xs:element ref="BulkRegistrationDocument" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="transmissionVersion" type="xs:string" use="required" fixed="SST2015V01">
+			<xs:annotation>
+				<xs:documentation>Transmission Version</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

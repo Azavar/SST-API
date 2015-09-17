@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:element name="SSTReceipt" type="SSTReceiptType">
+		<xs:annotation>
+			<xs:documentation>Receipt for all SST data transmissions</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SSTReceiptType">
+		<xs:sequence>
+			<xs:element name="ReceiptHeader">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ReceiptTimestamp" type="xs:dateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="TransmissionReceipt">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TransmissionID" type="IdType"/>
+						<xs:element name="TransmissionTimestamp" type="xs:dateTime"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="receiptVersion" type="xs:string" use="required" fixed="SST2015V01">
+			<xs:annotation>
+				<xs:documentation>Transmission Version</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
