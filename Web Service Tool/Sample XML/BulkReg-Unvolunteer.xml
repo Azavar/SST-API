@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BulkRegistrationTransmissionType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BulkRegistrationDocument>
+    <BulkRegistrationDocumentType>
+      <BulkRegistrationHeader>
+        <DateReceivedSpecified>false</DateReceivedSpecified>
+        <ElectronicPostmark>
+          <Value>0001-01-01T00:00:00</Value>
+        </ElectronicPostmark>
+        <FilingType>BulkRegCOU</FilingType>
+        <TIN>
+          <TypeTIN>SSN</TypeTIN>
+        </TIN>
+      </BulkRegistrationHeader>
+      <DocumentId>CSP00001716100100100</DocumentId>
+      <DocumentType>BulkRegistrationCOU</DocumentType>
+      <Item xsi:type="BulkRegistrationCOUType">
+        <ActionCode>U</ActionCode>
+        <EffectiveDate>2015-08-01T00:00:00</EffectiveDate>
+        <SSTPID>S00046251</SSTPID>
+      </Item>
+    </BulkRegistrationDocumentType>
+  </BulkRegistrationDocument>
+  <TransmissionHeader>
+    <DocumentCount>1</DocumentCount>
+    <ProcessType>T</ProcessType>
+    <Timestamp>2015-08-03T10:43:35.0049177-05:00</Timestamp>
+    <TransmissionId>CSP00001716100100200</TransmissionId>
+    <Transmitter />
+  </TransmissionHeader>
+  <transmissionVersion>SST2015V01</transmissionVersion>
+</BulkRegistrationTransmissionType>

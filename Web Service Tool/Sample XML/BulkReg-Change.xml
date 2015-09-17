@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BulkRegistrationTransmissionType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BulkRegistrationDocument>
+    <BulkRegistrationDocumentType>
+      <BulkRegistrationHeader>
+        <DateReceivedSpecified>false</DateReceivedSpecified>
+        <ElectronicPostmark>
+          <Value>0001-01-01T00:00:00</Value>
+        </ElectronicPostmark>
+        <FilingType>BulkRegCOU</FilingType>
+        <TIN>
+          <TypeTIN>SSN</TypeTIN>
+        </TIN>
+      </BulkRegistrationHeader>
+      <DocumentId>CSP00001720200000000</DocumentId>
+      <DocumentType>BulkRegistrationCOU</DocumentType>
+      <Item xsi:type="BulkRegistrationCOUType">
+        <ActionCode>C</ActionCode>
+        <EffectiveDate>0001-01-01T00:00:00</EffectiveDate>
+        <Items>
+          <anyType xsi:type="BulkRegistrationCOUTypeBusinessInfo">
+            <DBAName>dba</DBAName>
+            <MailingAddress>
+              <Item xsi:type="AddressTypeUSAddress">
+                <AddressLine1Txt>US Address line 1</AddressLine1Txt>
+                <AddressLine2Txt>US Address line 2</AddressLine2Txt>
+                <CityNm>Chicago</CityNm>
+                <StateAbbreviationCd>IL</StateAbbreviationCd>
+                <ZIPCd>60604</ZIPCd>
+              </Item>
+            </MailingAddress>
+            <NAICSCode>456987</NAICSCode>
+            <PhysicalAddress>
+              <Item xsi:type="AddressTypeForeignAddress">
+                <AddressLine1Txt>Address line 1</AddressLine1Txt>
+                <AddressLine2Txt>Address line 2</AddressLine2Txt>
+                <CityNm>London</CityNm>
+                <CountryCd>UK</CountryCd>
+                <ForeignPostalCd>47856</ForeignPostalCd>
+                <ProvinceOrStateNm>London</ProvinceOrStateNm>
+              </Item>
+            </PhysicalAddress>
+            <SSTPContact>
+              <ContactEmail>email@website.com</ContactEmail>
+              <ContactName>
+                <FirstName>First</FirstName>
+                <LastName>Last</LastName>
+                <MiddleInitial>MI</MiddleInitial>
+                <NameSuffixSpecified>false</NameSuffixSpecified>
+              </ContactName>
+              <ContactPhone>123456785</ContactPhone>
+            </SSTPContact>
+            <SellerPhone>145698776</SellerPhone>
+          </anyType>
+        </Items>
+        <SSTPID>S00054744</SSTPID>
+      </Item>
+    </BulkRegistrationDocumentType>
+  </BulkRegistrationDocument>
+  <TransmissionHeader>
+    <DocumentCount>1</DocumentCount>
+    <ProcessType>T</ProcessType>
+    <Timestamp>2015-07-23T11:00:56.1024952-05:00</Timestamp>
+    <TransmissionId>CSP00001715200000034</TransmissionId>
+    <Transmitter />
+  </TransmissionHeader>
+  <transmissionVersion>SST2015V01</transmissionVersion>
+</BulkRegistrationTransmissionType>
