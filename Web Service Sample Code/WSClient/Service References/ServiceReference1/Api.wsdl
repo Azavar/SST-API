@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://SST" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://SST" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://SST/Imports">
+      <xsd:import schemaLocation="http://54.174.97.188/Api.svc?xsd=xsd0" namespace="http://SST" />
+      <xsd:import schemaLocation="http://54.174.97.188/Api.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://54.174.97.188/Api.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ws" />
+      <xsd:import schemaLocation="http://54.174.97.188/Api.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApiService_BulkRegistration_InputMessage">
+    <wsdl:part name="parameters" element="tns:BulkRegistration" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_BulkRegistration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BulkRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_Registration_InputMessage">
+    <wsdl:part name="parameters" element="tns:Registration" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_Registration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_GetDocuments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocuments" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_GetDocuments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_GetTransmission_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransmission" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_GetTransmission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransmissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_AcknowledgeTransmission_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcknowledgeTransmission" />
+  </wsdl:message>
+  <wsdl:message name="IApiService_AcknowledgeTransmission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcknowledgeTransmissionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApiService">
+    <wsdl:operation name="BulkRegistration">
+      <wsdl:input wsaw:Action="http://SST/IApiService/BulkRegistration" message="tns:IApiService_BulkRegistration_InputMessage" />
+      <wsdl:output wsaw:Action="http://SST/IApiService/BulkRegistrationResponse" message="tns:IApiService_BulkRegistration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Registration">
+      <wsdl:input wsaw:Action="http://SST/IApiService/Registration" message="tns:IApiService_Registration_InputMessage" />
+      <wsdl:output wsaw:Action="http://SST/IApiService/RegistrationResponse" message="tns:IApiService_Registration_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocuments">
+      <wsdl:input wsaw:Action="http://SST/IApiService/GetDocuments" message="tns:IApiService_GetDocuments_InputMessage" />
+      <wsdl:output wsaw:Action="http://SST/IApiService/GetDocumentsResponse" message="tns:IApiService_GetDocuments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransmission">
+      <wsdl:input wsaw:Action="http://SST/IApiService/GetTransmission" message="tns:IApiService_GetTransmission_InputMessage" />
+      <wsdl:output wsaw:Action="http://SST/IApiService/GetTransmissionResponse" message="tns:IApiService_GetTransmission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcknowledgeTransmission">
+      <wsdl:input wsaw:Action="http://SST/IApiService/AcknowledgeTransmission" message="tns:IApiService_AcknowledgeTransmission_InputMessage" />
+      <wsdl:output wsaw:Action="http://SST/IApiService/AcknowledgeTransmissionResponse" message="tns:IApiService_AcknowledgeTransmission_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://SST" elementFormDefault="qualified" targetNamespace="http://SST" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://54.174.97.188/Api.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ws" />
+  <xs:element name="BulkRegistration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="bulkRegistrationTransmission" nillable="true" type="q1:BulkRegistrationTransmissionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BulkRegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="BulkRegistrationResult" nillable="true" type="q2:BulkRegistrationAcknowledgementType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Registration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="registrationTransmission" nillable="true" type="q3:BulkRegistrationTransmissionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RegistrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="RegistrationResult" nillable="true" type="q4:BulkRegistrationAcknowledgementType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocuments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AcknowledgementStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="RegistrationType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ActiveStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDocumentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="GetDocumentsResult" nillable="true" type="q5:SSTRegistrationTransmissionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TransmissionId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="GetTransmissionResult" nillable="true" type="q6:SSTRegistrationTransmissionType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcknowledgeTransmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="acknowledgement" nillable="true" type="q7:SSTPAcknowledgementType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcknowledgeTransmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ws" minOccurs="0" name="AcknowledgeTransmissionResult" nillable="true" type="q8:SSTReceiptType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
