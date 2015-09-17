@@ -1,4 +1,4 @@
-# SST-SDK
+# SST-API
 Streamlined Sales Tax developer API
 ---
 
