@@ -29,32 +29,35 @@ namespace WSClient
                     Console.WriteLine("Calling API GetDocuments(..)");
 
                     //Make web service call to request unacknowledged registrations.
-                    var transmission = client.GetDocuments("U", "", "");
-
+                    var transmission = client.GetDocuments("A", "", "");
 
                     var registrations = new List<InternalRegistration>();
-                    foreach (var doc in transmission.RegistrationDocument)
+                    if (int.Parse(transmission.TransmissionHeader.DocumentCount) > 0)
                     {
-                        //Transform the schema to another structure for validation
-                        var myRegistration = new InternalRegistration();
-                        myRegistration.SSTID = doc.SSTRegistrationHeader.SSTPID;
-                        myRegistration.TIN = doc.SSTRegistrationHeader.TIN.FedTIN;
-                        myRegistration.TINType = doc.SSTRegistrationHeader.TIN.TypeTIN == TINTypeTypeTIN.SSN ? "SSN" : doc.SSTRegistrationHeader.TIN.TypeTIN == TINTypeTypeTIN.FEIN ? "FEIN" : "FOREIGN";
-                        myRegistration.DocumentId = doc.DocumentId;
+                        foreach (var doc in transmission.RegistrationDocument)
+                        {
+                            //Transform the schema to another structure for validation
+                            var myRegistration = new InternalRegistration();
+                            myRegistration.SSTID = doc.SSTRegistrationHeader.SSTPID;
+                            myRegistration.TIN = doc.SSTRegistrationHeader.TIN.FedTIN;
+                            myRegistration.TINType = doc.SSTRegistrationHeader.TIN.TypeTIN == TINTypeTypeTIN.SSN ? "SSN" : doc.SSTRegistrationHeader.TIN.TypeTIN == TINTypeTypeTIN.FEIN ? "FEIN" : "FOREIGN";
+                            myRegistration.DocumentId = doc.DocumentId;
 
-                        ReadRegistrationType(doc.RegistrationInformation.Item, myRegistration);
-                        registrations.Add(myRegistration);
-                        
+                            ReadRegistrationType(doc.RegistrationInformation.Item, myRegistration);
+                            registrations.Add(myRegistration);
 
-                        //Do something with your internal representation e.g. we will perform some validation and then acknowledge it.
-                        Console.WriteLine("Recieved {0} registration for [{1}] {2} in document {3}", 
-                            doc.DocumentType==RegistrationDocumentTypeDocumentType.SSTRegistrationNew?"new":"changed",
-                            myRegistration.SSTID,
-                            myRegistration.BusinessNameLine1,
-                            myRegistration.DocumentId
-                            );
 
+                            //Do something with your internal representation e.g. we will perform some validation and then acknowledge it.
+                            Console.WriteLine("Recieved {0} registration for [{1}] {2} in document {3}",
+                                doc.DocumentType == RegistrationDocumentTypeDocumentType.SSTRegistrationNew ? "new" : "changed",
+                                myRegistration.SSTID,
+                                myRegistration.BusinessNameLine1,
+                                myRegistration.DocumentId
+                                );
+
+                        }
                     }
+                    
 
 
                     //Acknowledge receipt of one ore more documents
@@ -95,7 +98,8 @@ namespace WSClient
                     }
 
                     //Submit the acknowledgement
-                    client.AcknowledgeTransmission(ackMessage);
+                    var receipt = client.AcknowledgeTransmission(ackMessage);
+                    Console.WriteLine("Confirmed Receipt {0} at {1}", receipt.TransmissionReceipt.TransmissionID, receipt.ReceiptHeader.ReceiptTimestamp);
 
 
                 } catch (MessageSecurityException ex)

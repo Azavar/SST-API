@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="1wnzwXqYGjGmNIrmfr8tJH7sFTI=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="rfSOCzc8Y6+D4Qlq05DcsbRTMU0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="wsHttpBinding" name="WSHttpBinding_IApiService">
       <properties>
@@ -127,10 +127,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="WSHttpBinding_IApiService" contract="ServiceReference1.IApiService" bindingType="wsHttpBinding" address="http://54.174.97.188/Api.svc" bindingConfiguration="WSHttpBinding_IApiService">
+    <endpoint name="WSHttpBinding_IApiService" contract="ServiceReference1.IApiService" bindingType="wsHttpBinding" address="http://localhost:57320/Api.svc" bindingConfiguration="WSHttpBinding_IApiService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://54.174.97.188/Api.svc</serializedValue>
+          <serializedValue>http://localhost:57320/Api.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -181,7 +181,7 @@
           <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
         </property>
         <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>AwAAAAEAAAAUAAAAllcYoyvur4Y5t22EAoln3c0ieUkgAAAAAQAAAPUCAAAwggLxMIIB2aADAgECAhBgCeqnWEJDv0YwaCmrMTEZMA0GCSqGSIb3DQEBBQUAMCAxHjAcBgNVBAMTFVdNU3ZjLVdJTi0yNEVKTTQ2QlYxSDAeFw0xNTAyMDUxOTUwMzhaFw0yNTAyMDIxOTUwMzhaMCAxHjAcBgNVBAMTFVdNU3ZjLVdJTi0yNEVKTTQ2QlYxSDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKOlpoQ+BqHzdhEWFCeAleM6GQdONzpsVZkyhirrakxiS2BPov1VM9BxFWOuPegSfzPom0IxHLxo1rG5AjDU+Z+nmRswPs6FR066FJEdvmONdKCVlJymGiZbgr+Zis/EDECagGDGr7sFVfmFcNS4jfhe1njVtHZPAnGoJSKMzdp+lN7CNRNfIeWTWXQEoXVsCR6JZoqpJlUXmXvk7CEIZNyEMRBtLK2K8q2cMYrRTwACzlUuanEqhTJVFWSEMPI8g0/iQFSPgJGg/a2gIYiUkqzjI71SWkKg94w5FluMM4BzT9zwA272UCUh0IDp5MTV/vj1kaN1rGDV07TdKGRyACcCAwEAAaMnMCUwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDgYDVR0PBAcDBQCwAAAAMA0GCSqGSIb3DQEBBQUAA4IBAQAt8qLLWbYm2Ehooby3NtDWVuJ4RpiKXUqmE/z2RD5VUv1brf5UANKgg6+Mf03udyzhtewr/9o+XrfjmmYV/dKDgA0yuYlBzThCaNqzA5ODaif2pQ1pm26x2/U55WF6XfNJPi1cW/FFFJkPyiR76bt47btpz/I1qODLUv9jpy+FUqNYz3fF+dypljp7bin/r5sJsmLkGAYhkqykMrqIenOne62cEdb28AEu5eO0pnfso4mdRFI/JOafa8+xk4MGdbjxudaP+mmNwNPuw3fbxFXIE+Hg0Ooctag7eb42pyK7lEh3AXsgyWtDDadG9PzIQ48QTwmJADDEtU3056LRvPi/</serializedValue>
+          <serializedValue>AwAAAAEAAAAUAAAAhcpwhTmglivZPIpus++cMWRzA+8gAAAAAQAAAAMDAAAwggL/MIIB66ADAgECAhCDjE7VlBghlko0RHWYE2UzMAkGBSsOAwIdBQAwHDEaMBgGA1UEAxMRTXkgUm9vdCBBdXRob3JpdHkwHhcNMTUwNjAxMjEyMDM5WhcNMzkxMjMxMjM1OTU5WjAQMQ4wDAYDVQQDEwVTU1RHQjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALyQySMl9sXGFVpKgx9/Bd8aWVdFp0eorMuhZCTROeYmlMQoCbnD1py6GpZ6DvC3n9qXJAFXj6MWRrxYCeDea96PjfbXZA1xhBnZrfLT9HtIMKm/bpj/3jENJbhljRnbe9IddyRvQPJxLPiWjfAZvnVE5VugED+HnzwdddPq3hSPX4v6jC/VrJyn0rfYeqjh40YE3KCxpzQV1VjDX2SO/fprwwFzkGXQCj6SYVllokB4yPo/2/uh/4tIYO703gvlGFWQ/I/NINJq0DaqfxRyfL+IqqRontj/Fqq/MiSdF6GC/QrjQ6dOzmSNcrGbBkxey5lEeXJL719d9nQ0CyKCQVUCAwEAAaNRME8wTQYDVR0BBEYwRIAQYCLsDtKPNPhLcYHTfl+sUqEeMBwxGjAYBgNVBAMTEU15IFJvb3QgQXV0aG9yaXR5ghBJe2UP8Jdyjk9au+JDdPbSMAkGBSsOAwIdBQADggEBABhesku0dqfF8trdvyCAS/5/w3eNKNsCG243/88RGnI6Z5v4EDd5gJM+/TLWqaz3zP7JG1snYHvG2T7hFKaUDO2SMJ+iPKeMi4Ipwg2ZhrREkJQvCrQLQWt/iPeeBwiBDBKPhE1/WwNQM0MyWR7siDzzUs29wsrWrGgh8L0LmXKbLef64uDt2pWkb0rJus04MzBwO+m11YyHi9kCkfjxn8dAbHyM/cp0liLaVh2MY7F+GPtYCiN/QBKt9lwXFwLwseNk3koIpAEbbkJUNbGul84DuJvSzldScV+CezGeJ/BNZRv2aLMIEbVI+pEfJ2Q2jXVoXoO+kOHpXfKWlexXdBs=</serializedValue>
         </property>
         <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>

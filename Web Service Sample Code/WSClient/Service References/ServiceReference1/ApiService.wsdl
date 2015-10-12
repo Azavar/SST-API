@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://SST" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://SST" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsp:Policy wsu:Id="WSHttpBinding_IApiService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -300,7 +300,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsdl:import namespace="http://SST" location="http://54.174.97.188/Api.svc?wsdl=wsdl0" />
+  <wsdl:import namespace="http://SST" location="http://localhost:57320/Api.svc?wsdl=wsdl0" />
   <wsdl:types />
   <wsdl:binding name="WSHttpBinding_IApiService" type="i0:IApiService">
     <wsp:PolicyReference URI="#WSHttpBinding_IApiService_policy" />
@@ -363,13 +363,13 @@
   </wsdl:binding>
   <wsdl:service name="ApiService">
     <wsdl:port name="WSHttpBinding_IApiService" binding="tns:WSHttpBinding_IApiService">
-      <soap12:address location="http://54.174.97.188/Api.svc" />
+      <soap12:address location="http://localhost:57320/Api.svc" />
       <wsa10:EndpointReference>
-        <wsa10:Address>http://54.174.97.188/Api.svc</wsa10:Address>
+        <wsa10:Address>http://localhost:57320/Api.svc</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
           <KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
             <X509Data>
-              <X509Certificate>MIIC8TCCAdmgAwIBAgIQYAnqp1hCQ79GMGgpqzExGTANBgkqhkiG9w0BAQUFADAgMR4wHAYDVQQDExVXTVN2Yy1XSU4tMjRFSk00NkJWMUgwHhcNMTUwMjA1MTk1MDM4WhcNMjUwMjAyMTk1MDM4WjAgMR4wHAYDVQQDExVXTVN2Yy1XSU4tMjRFSk00NkJWMUgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCjpaaEPgah83YRFhQngJXjOhkHTjc6bFWZMoYq62pMYktgT6L9VTPQcRVjrj3oEn8z6JtCMRy8aNaxuQIw1Pmfp5kbMD7OhUdOuhSRHb5jjXSglZScphomW4K/mYrPxAxAmoBgxq+7BVX5hXDUuI34XtZ41bR2TwJxqCUijM3afpTewjUTXyHlk1l0BKF1bAkeiWaKqSZVF5l75OwhCGTchDEQbSytivKtnDGK0U8AAs5VLmpxKoUyVRVkhDDyPINP4kBUj4CRoP2toCGIlJKs4yO9UlpCoPeMORZbjDOAc0/c8ANu9lAlIdCA6eTE1f749ZGjdaxg1dO03ShkcgAnAgMBAAGjJzAlMBMGA1UdJQQMMAoGCCsGAQUFBwMBMA4GA1UdDwQHAwUAsAAAADANBgkqhkiG9w0BAQUFAAOCAQEALfKiy1m2JthIaKG8tzbQ1lbieEaYil1KphP89kQ+VVL9W63+VADSoIOvjH9N7ncs4bXsK//aPl6345pmFf3Sg4ANMrmJQc04QmjaswOTg2on9qUNaZtusdv1OeVhel3zST4tXFvxRRSZD8oke+m7eO27ac/yNajgy1L/Y6cvhVKjWM93xfncqZY6e24p/6+bCbJi5BgGIZKspDK6iHpzp3utnBHW9vABLuXjtKZ37KOJnURSPyTmn2vPsZODBnW48bnWj/ppjcDT7sN328RVyBPh4NDqHLWoO3m+Nqciu5RIdwF7IMlrQw2nRvT8yEOPEE8JiQAwxLVN9Oei0bz4vw==</X509Certificate>
+              <X509Certificate>MIIC/zCCAeugAwIBAgIQg4xO1ZQYIZZKNER1mBNlMzAJBgUrDgMCHQUAMBwxGjAYBgNVBAMTEU15IFJvb3QgQXV0aG9yaXR5MB4XDTE1MDYwMTIxMjAzOVoXDTM5MTIzMTIzNTk1OVowEDEOMAwGA1UEAxMFU1NUR0IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC8kMkjJfbFxhVaSoMffwXfGllXRadHqKzLoWQk0TnmJpTEKAm5w9acuhqWeg7wt5/alyQBV4+jFka8WAng3mvej43212QNcYQZ2a3y0/R7SDCpv26Y/94xDSW4ZY0Z23vSHXckb0DycSz4lo3wGb51ROVboBA/h588HXXT6t4Uj1+L+owv1aycp9K32Hqo4eNGBNygsac0FdVYw19kjv36a8MBc5Bl0Ao+kmFZZaJAeMj6P9v7of+LSGDu9N4L5RhVkPyPzSDSatA2qn8Ucny/iKqkaJ7Y/xaqvzIknRehgv0K40OnTs5kjXKxmwZMXsuZRHlyS+9fXfZ0NAsigkFVAgMBAAGjUTBPME0GA1UdAQRGMESAEGAi7A7SjzT4S3GB035frFKhHjAcMRowGAYDVQQDExFNeSBSb290IEF1dGhvcml0eYIQSXtlD/CXco5PWrviQ3T20jAJBgUrDgMCHQUAA4IBAQAYXrJLtHanxfLa3b8ggEv+f8N3jSjbAhtuN//PERpyOmeb+BA3eYCTPv0y1qms98z+yRtbJ2B7xtk+4RSmlAztkjCfojynjIuCKcINmYa0RJCULwq0C0Frf4j3ngcIgQwSj4RNf1sDUDNDMlke7Ig881LNvcLK1qxoIfC9C5lymy3n+uLg7dqVpG9KybrNODMwcDvptdWMh4vZApH48Z/HQGx8jP3KdJYi2lYdjGOxfhj7WAojf0ASrfZcFxcC8LHjZN5KCKQBG25CVDWxrpfOA7ib0s5XUnFfgnsxnifwTWUb9mizCBG1SPqRHydkNo11aF6DvpDh6V3ylpXsV3Qb</X509Certificate>
             </X509Data>
           </KeyInfo>
         </Identity>

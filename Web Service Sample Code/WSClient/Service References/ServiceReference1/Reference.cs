@@ -9,7025 +9,5915 @@
 //------------------------------------------------------------------------------
 
 namespace WSClient.ServiceReference1 {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationTransmissionType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationTransmissionType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationDocumentType[] BulkRegistrationDocumentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TransmissionHeaderType TransmissionHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string transmissionVersionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationDocumentType[] BulkRegistrationDocument {
-            get {
-                return this.BulkRegistrationDocumentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BulkRegistrationDocumentField, value) != true)) {
-                    this.BulkRegistrationDocumentField = value;
-                    this.RaisePropertyChanged("BulkRegistrationDocument");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TransmissionHeaderType TransmissionHeader {
-            get {
-                return this.TransmissionHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionHeaderField, value) != true)) {
-                    this.TransmissionHeaderField = value;
-                    this.RaisePropertyChanged("TransmissionHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string transmissionVersion {
-            get {
-                return this.transmissionVersionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.transmissionVersionField, value) != true)) {
-                    this.transmissionVersionField = value;
-                    this.RaisePropertyChanged("transmissionVersion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransmissionHeaderType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class TransmissionHeaderType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DocumentCountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TransmissionHeaderTypeProcessType ProcessTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TimestampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransmissionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AmountType TransmissionPaymentHashField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter TransmitterField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DocumentCount {
-            get {
-                return this.DocumentCountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentCountField, value) != true)) {
-                    this.DocumentCountField = value;
-                    this.RaisePropertyChanged("DocumentCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TransmissionHeaderTypeProcessType ProcessType {
-            get {
-                return this.ProcessTypeField;
-            }
-            set {
-                if ((this.ProcessTypeField.Equals(value) != true)) {
-                    this.ProcessTypeField = value;
-                    this.RaisePropertyChanged("ProcessType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Timestamp {
-            get {
-                return this.TimestampField;
-            }
-            set {
-                if ((this.TimestampField.Equals(value) != true)) {
-                    this.TimestampField = value;
-                    this.RaisePropertyChanged("Timestamp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransmissionId {
-            get {
-                return this.TransmissionIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionIdField, value) != true)) {
-                    this.TransmissionIdField = value;
-                    this.RaisePropertyChanged("TransmissionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AmountType TransmissionPaymentHash {
-            get {
-                return this.TransmissionPaymentHashField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionPaymentHashField, value) != true)) {
-                    this.TransmissionPaymentHashField = value;
-                    this.RaisePropertyChanged("TransmissionPaymentHash");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter Transmitter {
-            get {
-                return this.TransmitterField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmitterField, value) != true)) {
-                    this.TransmitterField = value;
-                    this.RaisePropertyChanged("Transmitter");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationDocumentType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class BulkRegistrationDocumentType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationHeaderType BulkRegistrationHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DocumentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType DocumentTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationHeaderType BulkRegistrationHeader {
-            get {
-                return this.BulkRegistrationHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BulkRegistrationHeaderField, value) != true)) {
-                    this.BulkRegistrationHeaderField = value;
-                    this.RaisePropertyChanged("BulkRegistrationHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DocumentId {
-            get {
-                return this.DocumentIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentIdField, value) != true)) {
-                    this.DocumentIdField = value;
-                    this.RaisePropertyChanged("DocumentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType DocumentType {
-            get {
-                return this.DocumentTypeField;
-            }
-            set {
-                if ((this.DocumentTypeField.Equals(value) != true)) {
-                    this.DocumentTypeField = value;
-                    this.RaisePropertyChanged("DocumentType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationHeaderType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationHeaderType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateReceivedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool DateReceivedSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark ElectronicPostmarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType FilingTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TINType TINField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateReceived {
-            get {
-                return this.DateReceivedField;
-            }
-            set {
-                if ((this.DateReceivedField.Equals(value) != true)) {
-                    this.DateReceivedField = value;
-                    this.RaisePropertyChanged("DateReceived");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DateReceivedSpecified {
-            get {
-                return this.DateReceivedSpecifiedField;
-            }
-            set {
-                if ((this.DateReceivedSpecifiedField.Equals(value) != true)) {
-                    this.DateReceivedSpecifiedField = value;
-                    this.RaisePropertyChanged("DateReceivedSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark ElectronicPostmark {
-            get {
-                return this.ElectronicPostmarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectronicPostmarkField, value) != true)) {
-                    this.ElectronicPostmarkField = value;
-                    this.RaisePropertyChanged("ElectronicPostmark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType FilingType {
-            get {
-                return this.FilingTypeField;
-            }
-            set {
-                if ((this.FilingTypeField.Equals(value) != true)) {
-                    this.FilingTypeField = value;
-                    this.RaisePropertyChanged("FilingType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TINType TIN {
-            get {
-                return this.TINField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TINField, value) != true)) {
-                    this.TINField = value;
-                    this.RaisePropertyChanged("TIN");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationHeaderTypeElectronicPostmark", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationHeaderTypeElectronicPostmark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CSPIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CSPID {
-            get {
-                return this.CSPIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CSPIDField, value) != true)) {
-                    this.CSPIDField = value;
-                    this.RaisePropertyChanged("CSPID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationHeaderTypeFilingType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationHeaderTypeFilingType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BulkRegNew = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BulkRegCOU = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TINType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class TINType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FedTINField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TINTypeTypeTIN TypeTINField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FedTIN {
-            get {
-                return this.FedTINField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FedTINField, value) != true)) {
-                    this.FedTINField = value;
-                    this.RaisePropertyChanged("FedTIN");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TINTypeTypeTIN TypeTIN {
-            get {
-                return this.TypeTINField;
-            }
-            set {
-                if ((this.TypeTINField.Equals(value) != true)) {
-                    this.TypeTINField = value;
-                    this.RaisePropertyChanged("TypeTIN");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TINTypeTypeTIN", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum TINTypeTypeTIN : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SSN = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FEIN = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Foreign = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationDocumentTypeDocumentType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationDocumentTypeDocumentType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BulkRegistrationNew = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BulkRegistrationCOU = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class BulkRegistrationCOUType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode ActionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EffectiveDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object[] ItemsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SSTPIDField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode ActionCode {
-            get {
-                return this.ActionCodeField;
-            }
-            set {
-                if ((this.ActionCodeField.Equals(value) != true)) {
-                    this.ActionCodeField = value;
-                    this.RaisePropertyChanged("ActionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EffectiveDate {
-            get {
-                return this.EffectiveDateField;
-            }
-            set {
-                if ((this.EffectiveDateField.Equals(value) != true)) {
-                    this.EffectiveDateField = value;
-                    this.RaisePropertyChanged("EffectiveDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object[] Items {
-            get {
-                return this.ItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemsField, value) != true)) {
-                    this.ItemsField = value;
-                    this.RaisePropertyChanged("Items");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SSTPID {
-            get {
-                return this.SSTPIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPIDField, value) != true)) {
-                    this.SSTPIDField = value;
-                    this.RaisePropertyChanged("SSTPID");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeActionCode", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationCOUTypeActionCode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        C = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        O = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TechModelType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class TechModelType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ItemChoiceType5 ItemElementNameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ItemChoiceType5 ItemElementName {
-            get {
-                return this.ItemElementNameField;
-            }
-            set {
-                if ((this.ItemElementNameField.Equals(value) != true)) {
-                    this.ItemElementNameField = value;
-                    this.RaisePropertyChanged("ItemElementName");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ItemChoiceType5", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum ItemChoiceType5 : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ModelOne = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ModelThree = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ModelTwo = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        None = 3,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ModelOneType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class ModelOneType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CSPCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CSPCode {
-            get {
-                return this.CSPCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CSPCodeField, value) != true)) {
-                    this.CSPCodeField = value;
-                    this.RaisePropertyChanged("CSPCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ModelTwoType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class ModelTwoType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CASCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CASCode {
-            get {
-                return this.CASCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CASCodeField, value) != true)) {
-                    this.CASCodeField = value;
-                    this.RaisePropertyChanged("CASCode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeStateIndicators", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationCOUTypeStateIndicators : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime AcctCloseDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AcctCloseDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CSPEndDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool CSPEndDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CSPLastFilingPdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FirstFilingPeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool FirstFilingPeriodSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FirstSaleDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool FirstSaleDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastSaleDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool LastSaleDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator RegistrationIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RegistrationIndicatorSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RemoteEffDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteEffDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RemoteEndDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteEndDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID RemoteSellerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteSellerIDSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator SSTPAllowanceIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SSTPAllowanceIndicatorSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd StateAcctIndField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool StateAcctIndSpecifiedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime AcctCloseDate {
-            get {
-                return this.AcctCloseDateField;
-            }
-            set {
-                if ((this.AcctCloseDateField.Equals(value) != true)) {
-                    this.AcctCloseDateField = value;
-                    this.RaisePropertyChanged("AcctCloseDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool AcctCloseDateSpecified {
-            get {
-                return this.AcctCloseDateSpecifiedField;
-            }
-            set {
-                if ((this.AcctCloseDateSpecifiedField.Equals(value) != true)) {
-                    this.AcctCloseDateSpecifiedField = value;
-                    this.RaisePropertyChanged("AcctCloseDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CSPEndDate {
-            get {
-                return this.CSPEndDateField;
-            }
-            set {
-                if ((this.CSPEndDateField.Equals(value) != true)) {
-                    this.CSPEndDateField = value;
-                    this.RaisePropertyChanged("CSPEndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool CSPEndDateSpecified {
-            get {
-                return this.CSPEndDateSpecifiedField;
-            }
-            set {
-                if ((this.CSPEndDateSpecifiedField.Equals(value) != true)) {
-                    this.CSPEndDateSpecifiedField = value;
-                    this.RaisePropertyChanged("CSPEndDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CSPLastFilingPd {
-            get {
-                return this.CSPLastFilingPdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CSPLastFilingPdField, value) != true)) {
-                    this.CSPLastFilingPdField = value;
-                    this.RaisePropertyChanged("CSPLastFilingPd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FirstFilingPeriod {
-            get {
-                return this.FirstFilingPeriodField;
-            }
-            set {
-                if ((this.FirstFilingPeriodField.Equals(value) != true)) {
-                    this.FirstFilingPeriodField = value;
-                    this.RaisePropertyChanged("FirstFilingPeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool FirstFilingPeriodSpecified {
-            get {
-                return this.FirstFilingPeriodSpecifiedField;
-            }
-            set {
-                if ((this.FirstFilingPeriodSpecifiedField.Equals(value) != true)) {
-                    this.FirstFilingPeriodSpecifiedField = value;
-                    this.RaisePropertyChanged("FirstFilingPeriodSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FirstSaleDate {
-            get {
-                return this.FirstSaleDateField;
-            }
-            set {
-                if ((this.FirstSaleDateField.Equals(value) != true)) {
-                    this.FirstSaleDateField = value;
-                    this.RaisePropertyChanged("FirstSaleDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool FirstSaleDateSpecified {
-            get {
-                return this.FirstSaleDateSpecifiedField;
-            }
-            set {
-                if ((this.FirstSaleDateSpecifiedField.Equals(value) != true)) {
-                    this.FirstSaleDateSpecifiedField = value;
-                    this.RaisePropertyChanged("FirstSaleDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastSaleDate {
-            get {
-                return this.LastSaleDateField;
-            }
-            set {
-                if ((this.LastSaleDateField.Equals(value) != true)) {
-                    this.LastSaleDateField = value;
-                    this.RaisePropertyChanged("LastSaleDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool LastSaleDateSpecified {
-            get {
-                return this.LastSaleDateSpecifiedField;
-            }
-            set {
-                if ((this.LastSaleDateSpecifiedField.Equals(value) != true)) {
-                    this.LastSaleDateSpecifiedField = value;
-                    this.RaisePropertyChanged("LastSaleDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator RegistrationIndicator {
-            get {
-                return this.RegistrationIndicatorField;
-            }
-            set {
-                if ((this.RegistrationIndicatorField.Equals(value) != true)) {
-                    this.RegistrationIndicatorField = value;
-                    this.RaisePropertyChanged("RegistrationIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RegistrationIndicatorSpecified {
-            get {
-                return this.RegistrationIndicatorSpecifiedField;
-            }
-            set {
-                if ((this.RegistrationIndicatorSpecifiedField.Equals(value) != true)) {
-                    this.RegistrationIndicatorSpecifiedField = value;
-                    this.RaisePropertyChanged("RegistrationIndicatorSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RemoteEffDate {
-            get {
-                return this.RemoteEffDateField;
-            }
-            set {
-                if ((this.RemoteEffDateField.Equals(value) != true)) {
-                    this.RemoteEffDateField = value;
-                    this.RaisePropertyChanged("RemoteEffDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteEffDateSpecified {
-            get {
-                return this.RemoteEffDateSpecifiedField;
-            }
-            set {
-                if ((this.RemoteEffDateSpecifiedField.Equals(value) != true)) {
-                    this.RemoteEffDateSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteEffDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RemoteEndDate {
-            get {
-                return this.RemoteEndDateField;
-            }
-            set {
-                if ((this.RemoteEndDateField.Equals(value) != true)) {
-                    this.RemoteEndDateField = value;
-                    this.RaisePropertyChanged("RemoteEndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteEndDateSpecified {
-            get {
-                return this.RemoteEndDateSpecifiedField;
-            }
-            set {
-                if ((this.RemoteEndDateSpecifiedField.Equals(value) != true)) {
-                    this.RemoteEndDateSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteEndDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID RemoteSellerID {
-            get {
-                return this.RemoteSellerIDField;
-            }
-            set {
-                if ((this.RemoteSellerIDField.Equals(value) != true)) {
-                    this.RemoteSellerIDField = value;
-                    this.RaisePropertyChanged("RemoteSellerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteSellerIDSpecified {
-            get {
-                return this.RemoteSellerIDSpecifiedField;
-            }
-            set {
-                if ((this.RemoteSellerIDSpecifiedField.Equals(value) != true)) {
-                    this.RemoteSellerIDSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteSellerIDSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator SSTPAllowanceIndicator {
-            get {
-                return this.SSTPAllowanceIndicatorField;
-            }
-            set {
-                if ((this.SSTPAllowanceIndicatorField.Equals(value) != true)) {
-                    this.SSTPAllowanceIndicatorField = value;
-                    this.RaisePropertyChanged("SSTPAllowanceIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SSTPAllowanceIndicatorSpecified {
-            get {
-                return this.SSTPAllowanceIndicatorSpecifiedField;
-            }
-            set {
-                if ((this.SSTPAllowanceIndicatorSpecifiedField.Equals(value) != true)) {
-                    this.SSTPAllowanceIndicatorSpecifiedField = value;
-                    this.RaisePropertyChanged("SSTPAllowanceIndicatorSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd StateAcctInd {
-            get {
-                return this.StateAcctIndField;
-            }
-            set {
-                if ((this.StateAcctIndField.Equals(value) != true)) {
-                    this.StateAcctIndField = value;
-                    this.RaisePropertyChanged("StateAcctInd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool StateAcctIndSpecified {
-            get {
-                return this.StateAcctIndSpecifiedField;
-            }
-            set {
-                if ((this.StateAcctIndSpecifiedField.Equals(value) != true)) {
-                    this.StateAcctIndSpecifiedField = value;
-                    this.RaisePropertyChanged("StateAcctIndSpecified");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        R = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        A = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeStateIndicatorsStateAcctInd", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationCOUTypeStateIndicatorsStateAcctInd : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationCOUTypeBusinessInfo", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationCOUTypeBusinessInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DBANameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType MailingAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NAICSCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType PhysicalAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ContactType SSTPContactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneExtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateIncorporatedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DBAName {
-            get {
-                return this.DBANameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DBANameField, value) != true)) {
-                    this.DBANameField = value;
-                    this.RaisePropertyChanged("DBAName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType MailingAddress {
-            get {
-                return this.MailingAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MailingAddressField, value) != true)) {
-                    this.MailingAddressField = value;
-                    this.RaisePropertyChanged("MailingAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NAICSCode {
-            get {
-                return this.NAICSCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NAICSCodeField, value) != true)) {
-                    this.NAICSCodeField = value;
-                    this.RaisePropertyChanged("NAICSCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType PhysicalAddress {
-            get {
-                return this.PhysicalAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhysicalAddressField, value) != true)) {
-                    this.PhysicalAddressField = value;
-                    this.RaisePropertyChanged("PhysicalAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ContactType SSTPContact {
-            get {
-                return this.SSTPContactField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPContactField, value) != true)) {
-                    this.SSTPContactField = value;
-                    this.RaisePropertyChanged("SSTPContact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhone {
-            get {
-                return this.SellerPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneField, value) != true)) {
-                    this.SellerPhoneField = value;
-                    this.RaisePropertyChanged("SellerPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhoneExt {
-            get {
-                return this.SellerPhoneExtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneExtField, value) != true)) {
-                    this.SellerPhoneExtField = value;
-                    this.RaisePropertyChanged("SellerPhoneExt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StateIncorporated {
-            get {
-                return this.StateIncorporatedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateIncorporatedField, value) != true)) {
-                    this.StateIncorporatedField = value;
-                    this.RaisePropertyChanged("StateIncorporated");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddressType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class AddressType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddressTypeUSAddress", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class AddressTypeUSAddress : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressLine1TxtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressLine2TxtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CityNmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InCareOfNmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.StateType StateAbbreviationCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ZIPCdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AddressLine1Txt {
-            get {
-                return this.AddressLine1TxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressLine1TxtField, value) != true)) {
-                    this.AddressLine1TxtField = value;
-                    this.RaisePropertyChanged("AddressLine1Txt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AddressLine2Txt {
-            get {
-                return this.AddressLine2TxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressLine2TxtField, value) != true)) {
-                    this.AddressLine2TxtField = value;
-                    this.RaisePropertyChanged("AddressLine2Txt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CityNm {
-            get {
-                return this.CityNmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CityNmField, value) != true)) {
-                    this.CityNmField = value;
-                    this.RaisePropertyChanged("CityNm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InCareOfNm {
-            get {
-                return this.InCareOfNmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InCareOfNmField, value) != true)) {
-                    this.InCareOfNmField = value;
-                    this.RaisePropertyChanged("InCareOfNm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.StateType StateAbbreviationCd {
-            get {
-                return this.StateAbbreviationCdField;
-            }
-            set {
-                if ((this.StateAbbreviationCdField.Equals(value) != true)) {
-                    this.StateAbbreviationCdField = value;
-                    this.RaisePropertyChanged("StateAbbreviationCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ZIPCd {
-            get {
-                return this.ZIPCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZIPCdField, value) != true)) {
-                    this.ZIPCdField = value;
-                    this.RaisePropertyChanged("ZIPCd");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StateType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum StateType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AL = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AK = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AS = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AZ = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AR = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CA = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CO = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MP = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CT = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DE = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DC = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FM = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FL = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GA = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GU = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HI = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ID = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IL = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IN = 18,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IA = 19,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KS = 20,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KY = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LA = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ME = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MH = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MD = 25,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MA = 26,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MI = 27,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MN = 28,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MS = 29,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MO = 30,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MT = 31,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NE = 32,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NV = 33,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NH = 34,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NJ = 35,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NM = 36,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NY = 37,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NC = 38,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ND = 39,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OH = 40,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OK = 41,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OR = 42,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PW = 43,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PA = 44,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PR = 45,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RI = 46,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SC = 47,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SD = 48,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TN = 49,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TX = 50,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VI = 51,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UT = 52,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VT = 53,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VA = 54,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WA = 55,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WV = 56,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WI = 57,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WY = 58,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AA = 59,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AE = 60,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AP = 61,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AddressTypeForeignAddress", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class AddressTypeForeignAddress : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressLine1TxtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressLine2TxtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CityNmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.CountryType CountryCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ForeignPostalCdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string InCareOfNmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProvinceOrStateNmField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AddressLine1Txt {
-            get {
-                return this.AddressLine1TxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressLine1TxtField, value) != true)) {
-                    this.AddressLine1TxtField = value;
-                    this.RaisePropertyChanged("AddressLine1Txt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AddressLine2Txt {
-            get {
-                return this.AddressLine2TxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressLine2TxtField, value) != true)) {
-                    this.AddressLine2TxtField = value;
-                    this.RaisePropertyChanged("AddressLine2Txt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CityNm {
-            get {
-                return this.CityNmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CityNmField, value) != true)) {
-                    this.CityNmField = value;
-                    this.RaisePropertyChanged("CityNm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.CountryType CountryCd {
-            get {
-                return this.CountryCdField;
-            }
-            set {
-                if ((this.CountryCdField.Equals(value) != true)) {
-                    this.CountryCdField = value;
-                    this.RaisePropertyChanged("CountryCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ForeignPostalCd {
-            get {
-                return this.ForeignPostalCdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ForeignPostalCdField, value) != true)) {
-                    this.ForeignPostalCdField = value;
-                    this.RaisePropertyChanged("ForeignPostalCd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InCareOfNm {
-            get {
-                return this.InCareOfNmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InCareOfNmField, value) != true)) {
-                    this.InCareOfNmField = value;
-                    this.RaisePropertyChanged("InCareOfNm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProvinceOrStateNm {
-            get {
-                return this.ProvinceOrStateNmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProvinceOrStateNmField, value) != true)) {
-                    this.ProvinceOrStateNmField = value;
-                    this.RaisePropertyChanged("ProvinceOrStateNm");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CountryType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum CountryType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AF = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AX = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XI = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AL = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AG = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AQ = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AN = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AO = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AV = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AY = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AC = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AR = 11,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AM = 12,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AA = 13,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XA = 14,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AT = 15,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AS = 16,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AU = 17,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AJ = 18,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XZ = 19,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BF = 20,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BA = 21,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FQ = 22,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BG = 23,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BB = 24,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BS = 25,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BO = 26,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BE = 27,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BH = 28,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BN = 29,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BD = 30,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BT = 31,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BL = 32,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BK = 33,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BC = 34,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BV = 35,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BR = 36,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IO = 37,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VI = 38,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BX = 39,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BU = 40,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UV = 41,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BM = 42,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BY = 43,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CB = 44,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CM = 45,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CA = 46,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XY = 47,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CV = 48,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CJ = 49,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CT = 50,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CD = 51,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XC = 52,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CI = 53,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CH = 54,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KT = 55,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IP = 56,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CK = 57,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CO = 58,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CN = 59,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CF = 60,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CG = 61,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CW = 62,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CR = 63,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VP = 64,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CS = 65,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IV = 66,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HR = 67,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CU = 68,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CY = 69,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EZ = 70,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DA = 71,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DX = 72,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DJ = 73,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DO = 74,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DR = 75,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TT = 76,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EC = 77,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EG = 78,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ES = 79,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XE = 80,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EK = 81,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ER = 82,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EN = 83,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ET = 84,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EU = 85,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FK = 86,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FO = 87,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FM = 88,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FJ = 89,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FI = 90,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FR = 91,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FG = 92,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FP = 93,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FS = 94,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GB = 95,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GA = 96,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GZ = 97,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GG = 98,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GM = 99,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GH = 100,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GI = 101,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GO = 102,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GR = 103,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GL = 104,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GJ = 105,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VC = 106,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GP = 107,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GQ = 108,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GT = 109,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GK = 110,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GV = 111,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PU = 112,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GY = 113,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HA = 114,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HM = 115,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HO = 116,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HK = 117,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HQ = 118,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        HU = 119,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IC = 120,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IN = 121,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ID = 122,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IR = 123,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IZ = 124,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        EI = 125,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IS = 126,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IT = 127,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JM = 128,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JN = 129,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JA = 130,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        DQ = 131,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JE = 132,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JQ = 133,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JO = 134,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JU = 135,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KZ = 136,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KE = 137,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KQ = 138,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KR = 139,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KN = 140,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KS = 141,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KU = 142,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        KG = 143,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LA = 144,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LG = 145,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LE = 146,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LT = 147,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LI = 148,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LY = 149,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LS = 150,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LH = 151,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LU = 152,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MC = 153,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MK = 154,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MA = 155,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MI = 156,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MY = 157,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MV = 158,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ML = 159,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MT = 160,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IM = 161,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RM = 162,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MB = 163,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MR = 164,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MP = 165,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MF = 166,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MX = 167,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MQ = 168,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MD = 169,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MN = 170,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MG = 171,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MJ = 172,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MH = 173,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MO = 174,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MZ = 175,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XM = 176,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WA = 177,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NR = 178,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BQ = 179,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NP = 180,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NL = 181,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NT = 182,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NC = 183,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NZ = 184,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NU = 185,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NG = 186,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NI = 187,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NE = 188,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NF = 189,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XN = 190,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CQ = 191,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NO = 192,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        MU = 193,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XX = 194,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PK = 195,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LQ = 196,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PS = 197,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PM = 198,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PP = 199,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PF = 200,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PA = 201,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PE = 202,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RP = 203,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PC = 204,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PL = 205,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PO = 206,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RQ = 207,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        QA = 208,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RE = 209,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RO = 210,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RS = 211,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RW = 212,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WS = 213,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SM = 214,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TP = 215,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SA = 216,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XS = 217,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SG = 218,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RB = 219,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SE = 220,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SL = 221,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SN = 222,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XR = 223,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LO = 224,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SI = 225,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BP = 226,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SO = 227,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SF = 228,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SX = 229,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SP = 230,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PG = 231,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CE = 232,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SH = 233,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SC = 234,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ST = 235,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SB = 236,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VC1 = 237,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SU = 238,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NS = 239,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SV = 240,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WZ = 241,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SW = 242,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SZ = 243,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SY = 244,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TW = 245,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TI = 246,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TZ = 247,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TH = 248,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TO = 249,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TL = 250,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TN = 251,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TD = 252,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XT = 253,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TE = 254,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TS = 255,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TU = 256,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TX = 257,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TK = 258,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TV = 259,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UG = 260,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UP = 261,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        AE = 262,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UK = 263,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UC = 264,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        US = 265,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UY = 266,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        UZ = 267,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        NH = 268,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VT = 269,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VE = 270,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VM = 271,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VQ = 272,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WQ = 273,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XW = 274,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WF = 275,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WE = 276,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WI = 277,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        YM = 278,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        YI = 279,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ZA = 280,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ZI = 281,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ContactType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class ContactType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContactEmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.IndividualNameType ContactNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContactPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContactPhoneExtField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContactEmail {
-            get {
-                return this.ContactEmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContactEmailField, value) != true)) {
-                    this.ContactEmailField = value;
-                    this.RaisePropertyChanged("ContactEmail");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.IndividualNameType ContactName {
-            get {
-                return this.ContactNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContactNameField, value) != true)) {
-                    this.ContactNameField = value;
-                    this.RaisePropertyChanged("ContactName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContactPhone {
-            get {
-                return this.ContactPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContactPhoneField, value) != true)) {
-                    this.ContactPhoneField = value;
-                    this.RaisePropertyChanged("ContactPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ContactPhoneExt {
-            get {
-                return this.ContactPhoneExtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContactPhoneExtField, value) != true)) {
-                    this.ContactPhoneExtField = value;
-                    this.RaisePropertyChanged("ContactPhoneExt");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IndividualNameType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class IndividualNameType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MiddleInitialField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.GenerationalNameSuffixType NameSuffixField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool NameSuffixSpecifiedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MiddleInitial {
-            get {
-                return this.MiddleInitialField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MiddleInitialField, value) != true)) {
-                    this.MiddleInitialField = value;
-                    this.RaisePropertyChanged("MiddleInitial");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.GenerationalNameSuffixType NameSuffix {
-            get {
-                return this.NameSuffixField;
-            }
-            set {
-                if ((this.NameSuffixField.Equals(value) != true)) {
-                    this.NameSuffixField = value;
-                    this.RaisePropertyChanged("NameSuffix");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool NameSuffixSpecified {
-            get {
-                return this.NameSuffixSpecifiedField;
-            }
-            set {
-                if ((this.NameSuffixSpecifiedField.Equals(value) != true)) {
-                    this.NameSuffixSpecifiedField = value;
-                    this.RaisePropertyChanged("NameSuffixSpecified");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GenerationalNameSuffixType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum GenerationalNameSuffixType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JR = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SR = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        I = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        II = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        III = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IV = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        V = 6,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VI = 7,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VII = 8,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        VIII = 9,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        IX = 10,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        X = 11,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationNewType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class BulkRegistrationNewType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode ActionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DBANameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EffectiveDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FirstFilingPeriodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType MailingAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NAICSCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewPassField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType PhysicalAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.EntityType RegistrationEntityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ContactType SSTPContactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneExtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateIncorporatedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[] StateRegistrationIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TechModelType TechnologyModelField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode ActionCode {
-            get {
-                return this.ActionCodeField;
-            }
-            set {
-                if ((this.ActionCodeField.Equals(value) != true)) {
-                    this.ActionCodeField = value;
-                    this.RaisePropertyChanged("ActionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DBAName {
-            get {
-                return this.DBANameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DBANameField, value) != true)) {
-                    this.DBANameField = value;
-                    this.RaisePropertyChanged("DBAName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EffectiveDate {
-            get {
-                return this.EffectiveDateField;
-            }
-            set {
-                if ((this.EffectiveDateField.Equals(value) != true)) {
-                    this.EffectiveDateField = value;
-                    this.RaisePropertyChanged("EffectiveDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FirstFilingPeriod {
-            get {
-                return this.FirstFilingPeriodField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstFilingPeriodField, value) != true)) {
-                    this.FirstFilingPeriodField = value;
-                    this.RaisePropertyChanged("FirstFilingPeriod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType MailingAddress {
-            get {
-                return this.MailingAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MailingAddressField, value) != true)) {
-                    this.MailingAddressField = value;
-                    this.RaisePropertyChanged("MailingAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NAICSCode {
-            get {
-                return this.NAICSCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NAICSCodeField, value) != true)) {
-                    this.NAICSCodeField = value;
-                    this.RaisePropertyChanged("NAICSCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NewPass {
-            get {
-                return this.NewPassField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewPassField, value) != true)) {
-                    this.NewPassField = value;
-                    this.RaisePropertyChanged("NewPass");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType PhysicalAddress {
-            get {
-                return this.PhysicalAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhysicalAddressField, value) != true)) {
-                    this.PhysicalAddressField = value;
-                    this.RaisePropertyChanged("PhysicalAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.EntityType RegistrationEntity {
-            get {
-                return this.RegistrationEntityField;
-            }
-            set {
-                if ((this.RegistrationEntityField.Equals(value) != true)) {
-                    this.RegistrationEntityField = value;
-                    this.RaisePropertyChanged("RegistrationEntity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ContactType SSTPContact {
-            get {
-                return this.SSTPContactField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPContactField, value) != true)) {
-                    this.SSTPContactField = value;
-                    this.RaisePropertyChanged("SSTPContact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhone {
-            get {
-                return this.SellerPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneField, value) != true)) {
-                    this.SellerPhoneField = value;
-                    this.RaisePropertyChanged("SellerPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhoneExt {
-            get {
-                return this.SellerPhoneExtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneExtField, value) != true)) {
-                    this.SellerPhoneExtField = value;
-                    this.RaisePropertyChanged("SellerPhoneExt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StateIncorporated {
-            get {
-                return this.StateIncorporatedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateIncorporatedField, value) != true)) {
-                    this.StateIncorporatedField = value;
-                    this.RaisePropertyChanged("StateIncorporated");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[] StateRegistrationIndicator {
-            get {
-                return this.StateRegistrationIndicatorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateRegistrationIndicatorField, value) != true)) {
-                    this.StateRegistrationIndicatorField = value;
-                    this.RaisePropertyChanged("StateRegistrationIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TechModelType TechnologyModel {
-            get {
-                return this.TechnologyModelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TechnologyModelField, value) != true)) {
-                    this.TechnologyModelField = value;
-                    this.RaisePropertyChanged("TechnologyModel");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationNewTypeActionCode", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationNewTypeActionCode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 0,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum EntityType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SP = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CO = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        TR = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PA = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        LL = 4,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        GO = 5,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        OT = 6,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationNewTypeStateRegistrationIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationNewTypeStateRegistrationIndicator : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FirstSaleDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator RegistrationIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RemoteEffDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteEffDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID RemoteSellerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator SSTPAllowanceIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FirstSaleDate {
-            get {
-                return this.FirstSaleDateField;
-            }
-            set {
-                if ((this.FirstSaleDateField.Equals(value) != true)) {
-                    this.FirstSaleDateField = value;
-                    this.RaisePropertyChanged("FirstSaleDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator RegistrationIndicator {
-            get {
-                return this.RegistrationIndicatorField;
-            }
-            set {
-                if ((this.RegistrationIndicatorField.Equals(value) != true)) {
-                    this.RegistrationIndicatorField = value;
-                    this.RaisePropertyChanged("RegistrationIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RemoteEffDate {
-            get {
-                return this.RemoteEffDateField;
-            }
-            set {
-                if ((this.RemoteEffDateField.Equals(value) != true)) {
-                    this.RemoteEffDateField = value;
-                    this.RaisePropertyChanged("RemoteEffDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteEffDateSpecified {
-            get {
-                return this.RemoteEffDateSpecifiedField;
-            }
-            set {
-                if ((this.RemoteEffDateSpecifiedField.Equals(value) != true)) {
-                    this.RemoteEffDateSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteEffDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID RemoteSellerID {
-            get {
-                return this.RemoteSellerIDField;
-            }
-            set {
-                if ((this.RemoteSellerIDField.Equals(value) != true)) {
-                    this.RemoteSellerIDField = value;
-                    this.RaisePropertyChanged("RemoteSellerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator SSTPAllowanceIndicator {
-            get {
-                return this.SSTPAllowanceIndicatorField;
-            }
-            set {
-                if ((this.SSTPAllowanceIndicatorField.Equals(value) != true)) {
-                    this.SSTPAllowanceIndicatorField = value;
-                    this.RaisePropertyChanged("SSTPAllowanceIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateField, value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        R = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        X = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        A = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Z = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BusinessNameType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BusinessNameType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BusinessNameLine1TxtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BusinessNameLine2TxtField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BusinessNameLine1Txt {
-            get {
-                return this.BusinessNameLine1TxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BusinessNameLine1TxtField, value) != true)) {
-                    this.BusinessNameLine1TxtField = value;
-                    this.RaisePropertyChanged("BusinessNameLine1Txt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string BusinessNameLine2Txt {
-            get {
-                return this.BusinessNameLine2TxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BusinessNameLine2TxtField, value) != true)) {
-                    this.BusinessNameLine2TxtField = value;
-                    this.RaisePropertyChanged("BusinessNameLine2Txt");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransmissionHeaderTypeProcessType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum TransmissionHeaderTypeProcessType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        T = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        P = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AmountType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class AmountType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private decimal ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransmissionHeaderTypeTransmitter", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class TransmissionHeaderTypeTransmitter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ETINField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ETIN {
-            get {
-                return this.ETINField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ETINField, value) != true)) {
-                    this.ETINField = value;
-                    this.RaisePropertyChanged("ETIN");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegistrationAcknowledgementType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegistrationAcknowledgementType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AcknowledgementHeaderType AcknowledgementHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegAcknowledgementType[] BulkRegAcknowledgementField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TransmissionAcknowledgementType TransmissionAcknowledgementField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string acknowledgementVersionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AcknowledgementHeaderType AcknowledgementHeader {
-            get {
-                return this.AcknowledgementHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AcknowledgementHeaderField, value) != true)) {
-                    this.AcknowledgementHeaderField = value;
-                    this.RaisePropertyChanged("AcknowledgementHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegAcknowledgementType[] BulkRegAcknowledgement {
-            get {
-                return this.BulkRegAcknowledgementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BulkRegAcknowledgementField, value) != true)) {
-                    this.BulkRegAcknowledgementField = value;
-                    this.RaisePropertyChanged("BulkRegAcknowledgement");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TransmissionAcknowledgementType TransmissionAcknowledgement {
-            get {
-                return this.TransmissionAcknowledgementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionAcknowledgementField, value) != true)) {
-                    this.TransmissionAcknowledgementField = value;
-                    this.RaisePropertyChanged("TransmissionAcknowledgement");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string acknowledgementVersion {
-            get {
-                return this.acknowledgementVersionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.acknowledgementVersionField, value) != true)) {
-                    this.acknowledgementVersionField = value;
-                    this.RaisePropertyChanged("acknowledgementVersion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AcknowledgementHeaderType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class AcknowledgementHeaderType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AcknowledgementCountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime AcknowledgementTimestampField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AcknowledgementCount {
-            get {
-                return this.AcknowledgementCountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AcknowledgementCountField, value) != true)) {
-                    this.AcknowledgementCountField = value;
-                    this.RaisePropertyChanged("AcknowledgementCount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime AcknowledgementTimestamp {
-            get {
-                return this.AcknowledgementTimestampField;
-            }
-            set {
-                if ((this.AcknowledgementTimestampField.Equals(value) != true)) {
-                    this.AcknowledgementTimestampField = value;
-                    this.RaisePropertyChanged("AcknowledgementTimestamp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegAcknowledgementType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class BulkRegAcknowledgementType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DocumentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.StatusType DocumentStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType DocumentTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.Errors ErrorsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewPassField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SSTPIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string documentVersionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DocumentId {
-            get {
-                return this.DocumentIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentIdField, value) != true)) {
-                    this.DocumentIdField = value;
-                    this.RaisePropertyChanged("DocumentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.StatusType DocumentStatus {
-            get {
-                return this.DocumentStatusField;
-            }
-            set {
-                if ((this.DocumentStatusField.Equals(value) != true)) {
-                    this.DocumentStatusField = value;
-                    this.RaisePropertyChanged("DocumentStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType DocumentType {
-            get {
-                return this.DocumentTypeField;
-            }
-            set {
-                if ((this.DocumentTypeField.Equals(value) != true)) {
-                    this.DocumentTypeField = value;
-                    this.RaisePropertyChanged("DocumentType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.Errors Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NewPass {
-            get {
-                return this.NewPassField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewPassField, value) != true)) {
-                    this.NewPassField = value;
-                    this.RaisePropertyChanged("NewPass");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SSTPID {
-            get {
-                return this.SSTPIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPIDField, value) != true)) {
-                    this.SSTPIDField = value;
-                    this.RaisePropertyChanged("SSTPID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string documentVersion {
-            get {
-                return this.documentVersionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.documentVersionField, value) != true)) {
-                    this.documentVersionField = value;
-                    this.RaisePropertyChanged("documentVersion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatusType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum StatusType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        A = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        R = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BulkRegAcknowledgementTypeDocumentType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum BulkRegAcknowledgementTypeDocumentType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BulkRegNew = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        BulkRegCOU = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Errors", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class Errors : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ErrorsError[] ErrorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string errorCountField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ErrorsError[] Error {
-            get {
-                return this.ErrorField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorField, value) != true)) {
-                    this.ErrorField = value;
-                    this.RaisePropertyChanged("Error");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string errorCount {
-            get {
-                return this.errorCountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.errorCountField, value) != true)) {
-                    this.errorCountField = value;
-                    this.RaisePropertyChanged("errorCount");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ErrorsError", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class ErrorsError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AdditionalErrorMessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DataValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ErrorMessageField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ItemChoiceType ItemElementNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SeverityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string errorIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AdditionalErrorMessage {
-            get {
-                return this.AdditionalErrorMessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AdditionalErrorMessageField, value) != true)) {
-                    this.AdditionalErrorMessageField = value;
-                    this.RaisePropertyChanged("AdditionalErrorMessage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DataValue {
-            get {
-                return this.DataValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DataValueField, value) != true)) {
-                    this.DataValueField = value;
-                    this.RaisePropertyChanged("DataValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ErrorMessage {
-            get {
-                return this.ErrorMessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorMessageField, value) != true)) {
-                    this.ErrorMessageField = value;
-                    this.RaisePropertyChanged("ErrorMessage");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ItemChoiceType ItemElementName {
-            get {
-                return this.ItemElementNameField;
-            }
-            set {
-                if ((this.ItemElementNameField.Equals(value) != true)) {
-                    this.ItemElementNameField = value;
-                    this.RaisePropertyChanged("ItemElementName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Severity {
-            get {
-                return this.SeverityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SeverityField, value) != true)) {
-                    this.SeverityField = value;
-                    this.RaisePropertyChanged("Severity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string errorId {
-            get {
-                return this.errorIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.errorIdField, value) != true)) {
-                    this.errorIdField = value;
-                    this.RaisePropertyChanged("errorId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ItemChoiceType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum ItemChoiceType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FieldIdentifier = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        XPath = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransmissionAcknowledgementType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class TransmissionAcknowledgementType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.Errors ErrorsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TransmissionIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.StatusType TransmissionStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TransmissionTimestampField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool TransmissionTimestampSpecifiedField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.Errors Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TransmissionId {
-            get {
-                return this.TransmissionIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionIdField, value) != true)) {
-                    this.TransmissionIdField = value;
-                    this.RaisePropertyChanged("TransmissionId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.StatusType TransmissionStatus {
-            get {
-                return this.TransmissionStatusField;
-            }
-            set {
-                if ((this.TransmissionStatusField.Equals(value) != true)) {
-                    this.TransmissionStatusField = value;
-                    this.RaisePropertyChanged("TransmissionStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TransmissionTimestamp {
-            get {
-                return this.TransmissionTimestampField;
-            }
-            set {
-                if ((this.TransmissionTimestampField.Equals(value) != true)) {
-                    this.TransmissionTimestampField = value;
-                    this.RaisePropertyChanged("TransmissionTimestamp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool TransmissionTimestampSpecified {
-            get {
-                return this.TransmissionTimestampSpecifiedField;
-            }
-            set {
-                if ((this.TransmissionTimestampSpecifiedField.Equals(value) != true)) {
-                    this.TransmissionTimestampSpecifiedField = value;
-                    this.RaisePropertyChanged("TransmissionTimestampSpecified");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTRegistrationTransmissionType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTRegistrationTransmissionType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationDocumentType[] RegistrationDocumentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TransmissionHeaderType TransmissionHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string transmissionVersionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationDocumentType[] RegistrationDocument {
-            get {
-                return this.RegistrationDocumentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegistrationDocumentField, value) != true)) {
-                    this.RegistrationDocumentField = value;
-                    this.RaisePropertyChanged("RegistrationDocument");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TransmissionHeaderType TransmissionHeader {
-            get {
-                return this.TransmissionHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionHeaderField, value) != true)) {
-                    this.TransmissionHeaderField = value;
-                    this.RaisePropertyChanged("TransmissionHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string transmissionVersion {
-            get {
-                return this.transmissionVersionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.transmissionVersionField, value) != true)) {
-                    this.transmissionVersionField = value;
-                    this.RaisePropertyChanged("transmissionVersion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationDocumentType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class RegistrationDocumentType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DocumentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType DocumentTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation RegistrationInformationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.SSTRegistrationHeaderType SSTRegistrationHeaderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DocumentId {
-            get {
-                return this.DocumentIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentIdField, value) != true)) {
-                    this.DocumentIdField = value;
-                    this.RaisePropertyChanged("DocumentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType DocumentType {
-            get {
-                return this.DocumentTypeField;
-            }
-            set {
-                if ((this.DocumentTypeField.Equals(value) != true)) {
-                    this.DocumentTypeField = value;
-                    this.RaisePropertyChanged("DocumentType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation RegistrationInformation {
-            get {
-                return this.RegistrationInformationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RegistrationInformationField, value) != true)) {
-                    this.RegistrationInformationField = value;
-                    this.RaisePropertyChanged("RegistrationInformation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.SSTRegistrationHeaderType SSTRegistrationHeader {
-            get {
-                return this.SSTRegistrationHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTRegistrationHeaderField, value) != true)) {
-                    this.SSTRegistrationHeaderField = value;
-                    this.RaisePropertyChanged("SSTRegistrationHeader");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationDocumentTypeDocumentType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationDocumentTypeDocumentType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SSTRegistrationNew = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SSTRegistrationCOU = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationDocumentTypeRegistrationInformation", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class RegistrationDocumentTypeRegistrationInformation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationCOUType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class RegistrationCOUType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime AcctCloseDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool AcctCloseDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationCOUTypeActionCode ActionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime CSPEndDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool CSPEndDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string CSPLastFilingPdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DBANameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime EffectiveDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FirstSaleDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool FirstSaleDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime LastSaleDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool LastSaleDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType MailingAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NAICSCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewPassField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType PhysicalAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.EntityType RegistrationEntityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator RegistrationIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RemoteEffDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteEffDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RemoteEndDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteEndDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID RemoteSellerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteSellerIDSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator SSTPAllowanceIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool SSTPAllowanceIndicatorSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ContactType SSTPContactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneExtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd StateAcctIndField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool StateAcctIndSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateIncorporatedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TechModelType TechnologyModelField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime AcctCloseDate {
-            get {
-                return this.AcctCloseDateField;
-            }
-            set {
-                if ((this.AcctCloseDateField.Equals(value) != true)) {
-                    this.AcctCloseDateField = value;
-                    this.RaisePropertyChanged("AcctCloseDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool AcctCloseDateSpecified {
-            get {
-                return this.AcctCloseDateSpecifiedField;
-            }
-            set {
-                if ((this.AcctCloseDateSpecifiedField.Equals(value) != true)) {
-                    this.AcctCloseDateSpecifiedField = value;
-                    this.RaisePropertyChanged("AcctCloseDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationCOUTypeActionCode ActionCode {
-            get {
-                return this.ActionCodeField;
-            }
-            set {
-                if ((this.ActionCodeField.Equals(value) != true)) {
-                    this.ActionCodeField = value;
-                    this.RaisePropertyChanged("ActionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime CSPEndDate {
-            get {
-                return this.CSPEndDateField;
-            }
-            set {
-                if ((this.CSPEndDateField.Equals(value) != true)) {
-                    this.CSPEndDateField = value;
-                    this.RaisePropertyChanged("CSPEndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool CSPEndDateSpecified {
-            get {
-                return this.CSPEndDateSpecifiedField;
-            }
-            set {
-                if ((this.CSPEndDateSpecifiedField.Equals(value) != true)) {
-                    this.CSPEndDateSpecifiedField = value;
-                    this.RaisePropertyChanged("CSPEndDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CSPLastFilingPd {
-            get {
-                return this.CSPLastFilingPdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CSPLastFilingPdField, value) != true)) {
-                    this.CSPLastFilingPdField = value;
-                    this.RaisePropertyChanged("CSPLastFilingPd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DBAName {
-            get {
-                return this.DBANameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DBANameField, value) != true)) {
-                    this.DBANameField = value;
-                    this.RaisePropertyChanged("DBAName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime EffectiveDate {
-            get {
-                return this.EffectiveDateField;
-            }
-            set {
-                if ((this.EffectiveDateField.Equals(value) != true)) {
-                    this.EffectiveDateField = value;
-                    this.RaisePropertyChanged("EffectiveDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FirstSaleDate {
-            get {
-                return this.FirstSaleDateField;
-            }
-            set {
-                if ((this.FirstSaleDateField.Equals(value) != true)) {
-                    this.FirstSaleDateField = value;
-                    this.RaisePropertyChanged("FirstSaleDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool FirstSaleDateSpecified {
-            get {
-                return this.FirstSaleDateSpecifiedField;
-            }
-            set {
-                if ((this.FirstSaleDateSpecifiedField.Equals(value) != true)) {
-                    this.FirstSaleDateSpecifiedField = value;
-                    this.RaisePropertyChanged("FirstSaleDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime LastSaleDate {
-            get {
-                return this.LastSaleDateField;
-            }
-            set {
-                if ((this.LastSaleDateField.Equals(value) != true)) {
-                    this.LastSaleDateField = value;
-                    this.RaisePropertyChanged("LastSaleDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool LastSaleDateSpecified {
-            get {
-                return this.LastSaleDateSpecifiedField;
-            }
-            set {
-                if ((this.LastSaleDateSpecifiedField.Equals(value) != true)) {
-                    this.LastSaleDateSpecifiedField = value;
-                    this.RaisePropertyChanged("LastSaleDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType MailingAddress {
-            get {
-                return this.MailingAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MailingAddressField, value) != true)) {
-                    this.MailingAddressField = value;
-                    this.RaisePropertyChanged("MailingAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NAICSCode {
-            get {
-                return this.NAICSCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NAICSCodeField, value) != true)) {
-                    this.NAICSCodeField = value;
-                    this.RaisePropertyChanged("NAICSCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NewPass {
-            get {
-                return this.NewPassField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewPassField, value) != true)) {
-                    this.NewPassField = value;
-                    this.RaisePropertyChanged("NewPass");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType PhysicalAddress {
-            get {
-                return this.PhysicalAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhysicalAddressField, value) != true)) {
-                    this.PhysicalAddressField = value;
-                    this.RaisePropertyChanged("PhysicalAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.EntityType RegistrationEntity {
-            get {
-                return this.RegistrationEntityField;
-            }
-            set {
-                if ((this.RegistrationEntityField.Equals(value) != true)) {
-                    this.RegistrationEntityField = value;
-                    this.RaisePropertyChanged("RegistrationEntity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator RegistrationIndicator {
-            get {
-                return this.RegistrationIndicatorField;
-            }
-            set {
-                if ((this.RegistrationIndicatorField.Equals(value) != true)) {
-                    this.RegistrationIndicatorField = value;
-                    this.RaisePropertyChanged("RegistrationIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RemoteEffDate {
-            get {
-                return this.RemoteEffDateField;
-            }
-            set {
-                if ((this.RemoteEffDateField.Equals(value) != true)) {
-                    this.RemoteEffDateField = value;
-                    this.RaisePropertyChanged("RemoteEffDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteEffDateSpecified {
-            get {
-                return this.RemoteEffDateSpecifiedField;
-            }
-            set {
-                if ((this.RemoteEffDateSpecifiedField.Equals(value) != true)) {
-                    this.RemoteEffDateSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteEffDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RemoteEndDate {
-            get {
-                return this.RemoteEndDateField;
-            }
-            set {
-                if ((this.RemoteEndDateField.Equals(value) != true)) {
-                    this.RemoteEndDateField = value;
-                    this.RaisePropertyChanged("RemoteEndDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteEndDateSpecified {
-            get {
-                return this.RemoteEndDateSpecifiedField;
-            }
-            set {
-                if ((this.RemoteEndDateSpecifiedField.Equals(value) != true)) {
-                    this.RemoteEndDateSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteEndDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID RemoteSellerID {
-            get {
-                return this.RemoteSellerIDField;
-            }
-            set {
-                if ((this.RemoteSellerIDField.Equals(value) != true)) {
-                    this.RemoteSellerIDField = value;
-                    this.RaisePropertyChanged("RemoteSellerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteSellerIDSpecified {
-            get {
-                return this.RemoteSellerIDSpecifiedField;
-            }
-            set {
-                if ((this.RemoteSellerIDSpecifiedField.Equals(value) != true)) {
-                    this.RemoteSellerIDSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteSellerIDSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator SSTPAllowanceIndicator {
-            get {
-                return this.SSTPAllowanceIndicatorField;
-            }
-            set {
-                if ((this.SSTPAllowanceIndicatorField.Equals(value) != true)) {
-                    this.SSTPAllowanceIndicatorField = value;
-                    this.RaisePropertyChanged("SSTPAllowanceIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool SSTPAllowanceIndicatorSpecified {
-            get {
-                return this.SSTPAllowanceIndicatorSpecifiedField;
-            }
-            set {
-                if ((this.SSTPAllowanceIndicatorSpecifiedField.Equals(value) != true)) {
-                    this.SSTPAllowanceIndicatorSpecifiedField = value;
-                    this.RaisePropertyChanged("SSTPAllowanceIndicatorSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ContactType SSTPContact {
-            get {
-                return this.SSTPContactField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPContactField, value) != true)) {
-                    this.SSTPContactField = value;
-                    this.RaisePropertyChanged("SSTPContact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhone {
-            get {
-                return this.SellerPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneField, value) != true)) {
-                    this.SellerPhoneField = value;
-                    this.RaisePropertyChanged("SellerPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhoneExt {
-            get {
-                return this.SellerPhoneExtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneExtField, value) != true)) {
-                    this.SellerPhoneExtField = value;
-                    this.RaisePropertyChanged("SellerPhoneExt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd StateAcctInd {
-            get {
-                return this.StateAcctIndField;
-            }
-            set {
-                if ((this.StateAcctIndField.Equals(value) != true)) {
-                    this.StateAcctIndField = value;
-                    this.RaisePropertyChanged("StateAcctInd");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool StateAcctIndSpecified {
-            get {
-                return this.StateAcctIndSpecifiedField;
-            }
-            set {
-                if ((this.StateAcctIndSpecifiedField.Equals(value) != true)) {
-                    this.StateAcctIndSpecifiedField = value;
-                    this.RaisePropertyChanged("StateAcctIndSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StateIncorporated {
-            get {
-                return this.StateIncorporatedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateIncorporatedField, value) != true)) {
-                    this.StateIncorporatedField = value;
-                    this.RaisePropertyChanged("StateIncorporated");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TechModelType TechnologyModel {
-            get {
-                return this.TechnologyModelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TechnologyModelField, value) != true)) {
-                    this.TechnologyModelField = value;
-                    this.RaisePropertyChanged("TechnologyModel");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationCOUTypeActionCode", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationCOUTypeActionCode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        C = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        O = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        D = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationCOUTypeRegistrationIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationCOUTypeRegistrationIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        R = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        X = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        A = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Z = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationCOUTypeRemoteSellerID", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationCOUTypeRemoteSellerID : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationCOUTypeSSTPAllowanceIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationCOUTypeSSTPAllowanceIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationCOUTypeStateAcctInd", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationCOUTypeStateAcctInd : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationNewType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(object[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TINTypeTypeTIN))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TechModelType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType5))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelOneType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ModelTwoType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicators))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeStateIndicatorsStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationCOUTypeBusinessInfo))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeUSAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StateType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AddressTypeForeignAddress))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.CountryType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ContactType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.IndividualNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.GenerationalNameSuffixType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.EntityType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BusinessNameType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeProcessType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AmountType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionHeaderTypeTransmitter))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegistrationAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.AcknowledgementHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.StatusType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.BulkRegAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.Errors))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ErrorsError))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.TransmissionAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationTransmissionType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationDocumentTypeRegistrationInformation))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationCOUTypeStateAcctInd))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeActionCode))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTPAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType[]))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.ItemChoiceType1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.PaymentIndicatorType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptType))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt))]
-    public partial class RegistrationNewType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationNewTypeActionCode ActionCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DBANameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime FirstSalesDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private object ItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType MailingAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NAICSCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NewPassField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AddressType PhysicalAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RegistrationDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.EntityType RegistrationEntityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator RegistrationIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime RemoteEffDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool RemoteEffDateSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID RemoteSellerIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator SSTPAllowanceIndicatorField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ContactType SSTPContactField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SellerPhoneExtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StateIncorporatedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TechModelType TechnologyModelField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationNewTypeActionCode ActionCode {
-            get {
-                return this.ActionCodeField;
-            }
-            set {
-                if ((this.ActionCodeField.Equals(value) != true)) {
-                    this.ActionCodeField = value;
-                    this.RaisePropertyChanged("ActionCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DBAName {
-            get {
-                return this.DBANameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DBANameField, value) != true)) {
-                    this.DBANameField = value;
-                    this.RaisePropertyChanged("DBAName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime FirstSalesDate {
-            get {
-                return this.FirstSalesDateField;
-            }
-            set {
-                if ((this.FirstSalesDateField.Equals(value) != true)) {
-                    this.FirstSalesDateField = value;
-                    this.RaisePropertyChanged("FirstSalesDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public object Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType MailingAddress {
-            get {
-                return this.MailingAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MailingAddressField, value) != true)) {
-                    this.MailingAddressField = value;
-                    this.RaisePropertyChanged("MailingAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NAICSCode {
-            get {
-                return this.NAICSCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NAICSCodeField, value) != true)) {
-                    this.NAICSCodeField = value;
-                    this.RaisePropertyChanged("NAICSCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NewPass {
-            get {
-                return this.NewPassField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NewPassField, value) != true)) {
-                    this.NewPassField = value;
-                    this.RaisePropertyChanged("NewPass");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AddressType PhysicalAddress {
-            get {
-                return this.PhysicalAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhysicalAddressField, value) != true)) {
-                    this.PhysicalAddressField = value;
-                    this.RaisePropertyChanged("PhysicalAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RegistrationDate {
-            get {
-                return this.RegistrationDateField;
-            }
-            set {
-                if ((this.RegistrationDateField.Equals(value) != true)) {
-                    this.RegistrationDateField = value;
-                    this.RaisePropertyChanged("RegistrationDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.EntityType RegistrationEntity {
-            get {
-                return this.RegistrationEntityField;
-            }
-            set {
-                if ((this.RegistrationEntityField.Equals(value) != true)) {
-                    this.RegistrationEntityField = value;
-                    this.RaisePropertyChanged("RegistrationEntity");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationNewTypeRegistrationIndicator RegistrationIndicator {
-            get {
-                return this.RegistrationIndicatorField;
-            }
-            set {
-                if ((this.RegistrationIndicatorField.Equals(value) != true)) {
-                    this.RegistrationIndicatorField = value;
-                    this.RaisePropertyChanged("RegistrationIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime RemoteEffDate {
-            get {
-                return this.RemoteEffDateField;
-            }
-            set {
-                if ((this.RemoteEffDateField.Equals(value) != true)) {
-                    this.RemoteEffDateField = value;
-                    this.RaisePropertyChanged("RemoteEffDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool RemoteEffDateSpecified {
-            get {
-                return this.RemoteEffDateSpecifiedField;
-            }
-            set {
-                if ((this.RemoteEffDateSpecifiedField.Equals(value) != true)) {
-                    this.RemoteEffDateSpecifiedField = value;
-                    this.RaisePropertyChanged("RemoteEffDateSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationNewTypeRemoteSellerID RemoteSellerID {
-            get {
-                return this.RemoteSellerIDField;
-            }
-            set {
-                if ((this.RemoteSellerIDField.Equals(value) != true)) {
-                    this.RemoteSellerIDField = value;
-                    this.RaisePropertyChanged("RemoteSellerID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.RegistrationNewTypeSSTPAllowanceIndicator SSTPAllowanceIndicator {
-            get {
-                return this.SSTPAllowanceIndicatorField;
-            }
-            set {
-                if ((this.SSTPAllowanceIndicatorField.Equals(value) != true)) {
-                    this.SSTPAllowanceIndicatorField = value;
-                    this.RaisePropertyChanged("SSTPAllowanceIndicator");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ContactType SSTPContact {
-            get {
-                return this.SSTPContactField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPContactField, value) != true)) {
-                    this.SSTPContactField = value;
-                    this.RaisePropertyChanged("SSTPContact");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhone {
-            get {
-                return this.SellerPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneField, value) != true)) {
-                    this.SellerPhoneField = value;
-                    this.RaisePropertyChanged("SellerPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SellerPhoneExt {
-            get {
-                return this.SellerPhoneExtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SellerPhoneExtField, value) != true)) {
-                    this.SellerPhoneExtField = value;
-                    this.RaisePropertyChanged("SellerPhoneExt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StateIncorporated {
-            get {
-                return this.StateIncorporatedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StateIncorporatedField, value) != true)) {
-                    this.StateIncorporatedField = value;
-                    this.RaisePropertyChanged("StateIncorporated");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TechModelType TechnologyModel {
-            get {
-                return this.TechnologyModelField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TechnologyModelField, value) != true)) {
-                    this.TechnologyModelField = value;
-                    this.RaisePropertyChanged("TechnologyModel");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationNewTypeActionCode", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationNewTypeActionCode : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 0,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationNewTypeRegistrationIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationNewTypeRegistrationIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        R = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        X = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        A = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Z = 3,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationNewTypeRemoteSellerID", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationNewTypeRemoteSellerID : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RegistrationNewTypeSSTPAllowanceIndicator", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum RegistrationNewTypeSSTPAllowanceIndicator : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Y = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        U = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTRegistrationHeaderType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTRegistrationHeaderType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateReceivedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool DateReceivedSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark ElectronicPostmarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FIPSCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType FilingTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SSTPIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TINType TINField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateReceived {
-            get {
-                return this.DateReceivedField;
-            }
-            set {
-                if ((this.DateReceivedField.Equals(value) != true)) {
-                    this.DateReceivedField = value;
-                    this.RaisePropertyChanged("DateReceived");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DateReceivedSpecified {
-            get {
-                return this.DateReceivedSpecifiedField;
-            }
-            set {
-                if ((this.DateReceivedSpecifiedField.Equals(value) != true)) {
-                    this.DateReceivedSpecifiedField = value;
-                    this.RaisePropertyChanged("DateReceivedSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmark ElectronicPostmark {
-            get {
-                return this.ElectronicPostmarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ElectronicPostmarkField, value) != true)) {
-                    this.ElectronicPostmarkField = value;
-                    this.RaisePropertyChanged("ElectronicPostmark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string FIPSCode {
-            get {
-                return this.FIPSCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FIPSCodeField, value) != true)) {
-                    this.FIPSCodeField = value;
-                    this.RaisePropertyChanged("FIPSCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.SSTRegistrationHeaderTypeFilingType FilingType {
-            get {
-                return this.FilingTypeField;
-            }
-            set {
-                if ((this.FilingTypeField.Equals(value) != true)) {
-                    this.FilingTypeField = value;
-                    this.RaisePropertyChanged("FilingType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SSTPID {
-            get {
-                return this.SSTPIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SSTPIDField, value) != true)) {
-                    this.SSTPIDField = value;
-                    this.RaisePropertyChanged("SSTPID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TINType TIN {
-            get {
-                return this.TINField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TINField, value) != true)) {
-                    this.TINField = value;
-                    this.RaisePropertyChanged("TIN");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTRegistrationHeaderTypeElectronicPostmark", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTRegistrationHeaderTypeElectronicPostmark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier DateSupplierField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool DateSupplierSpecifiedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime ValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier DateSupplier {
-            get {
-                return this.DateSupplierField;
-            }
-            set {
-                if ((this.DateSupplierField.Equals(value) != true)) {
-                    this.DateSupplierField = value;
-                    this.RaisePropertyChanged("DateSupplier");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool DateSupplierSpecified {
-            get {
-                return this.DateSupplierSpecifiedField;
-            }
-            set {
-                if ((this.DateSupplierSpecifiedField.Equals(value) != true)) {
-                    this.DateSupplierSpecifiedField = value;
-                    this.RaisePropertyChanged("DateSupplierSpecified");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Value {
-            get {
-                return this.ValueField;
-            }
-            set {
-                if ((this.ValueField.Equals(value) != true)) {
-                    this.ValueField = value;
-                    this.RaisePropertyChanged("Value");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Preparer = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Transmitter = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTRegistrationHeaderTypeFilingType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum SSTRegistrationHeaderTypeFilingType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RegNew = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        RegCOU = 1,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTPAcknowledgementType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTPAcknowledgementType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.AcknowledgementHeaderType AcknowledgementHeaderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.DocumentAcknowledgementType[] DocumentAcknowledgementField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.TransmissionAcknowledgementType TransmissionAcknowledgementField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string acknowledgementVersionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.AcknowledgementHeaderType AcknowledgementHeader {
-            get {
-                return this.AcknowledgementHeaderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AcknowledgementHeaderField, value) != true)) {
-                    this.AcknowledgementHeaderField = value;
-                    this.RaisePropertyChanged("AcknowledgementHeader");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.DocumentAcknowledgementType[] DocumentAcknowledgement {
-            get {
-                return this.DocumentAcknowledgementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentAcknowledgementField, value) != true)) {
-                    this.DocumentAcknowledgementField = value;
-                    this.RaisePropertyChanged("DocumentAcknowledgement");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.TransmissionAcknowledgementType TransmissionAcknowledgement {
-            get {
-                return this.TransmissionAcknowledgementField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TransmissionAcknowledgementField, value) != true)) {
-                    this.TransmissionAcknowledgementField = value;
-                    this.RaisePropertyChanged("TransmissionAcknowledgement");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string acknowledgementVersion {
-            get {
-                return this.acknowledgementVersionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.acknowledgementVersionField, value) != true)) {
-                    this.acknowledgementVersionField = value;
-                    this.RaisePropertyChanged("acknowledgementVersion");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentAcknowledgementType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class DocumentAcknowledgementType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string DocumentIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.StatusType DocumentStatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType DocumentTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.Errors ErrorsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ItemField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.ItemChoiceType1 ItemElementNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private WSClient.ServiceReference1.PaymentIndicatorType PaymentIndicatorField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string DocumentId {
-            get {
-                return this.DocumentIdField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DocumentIdField, value) != true)) {
-                    this.DocumentIdField = value;
-                    this.RaisePropertyChanged("DocumentId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.StatusType DocumentStatus {
-            get {
-                return this.DocumentStatusField;
-            }
-            set {
-                if ((this.DocumentStatusField.Equals(value) != true)) {
-                    this.DocumentStatusField = value;
-                    this.RaisePropertyChanged("DocumentStatus");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.DocumentAcknowledgementTypeDocumentType DocumentType {
-            get {
-                return this.DocumentTypeField;
-            }
-            set {
-                if ((this.DocumentTypeField.Equals(value) != true)) {
-                    this.DocumentTypeField = value;
-                    this.RaisePropertyChanged("DocumentType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.Errors Errors {
-            get {
-                return this.ErrorsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ErrorsField, value) != true)) {
-                    this.ErrorsField = value;
-                    this.RaisePropertyChanged("Errors");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Item {
-            get {
-                return this.ItemField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ItemField, value) != true)) {
-                    this.ItemField = value;
-                    this.RaisePropertyChanged("Item");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.ItemChoiceType1 ItemElementName {
-            get {
-                return this.ItemElementNameField;
-            }
-            set {
-                if ((this.ItemElementNameField.Equals(value) != true)) {
-                    this.ItemElementNameField = value;
-                    this.RaisePropertyChanged("ItemElementName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public WSClient.ServiceReference1.PaymentIndicatorType PaymentIndicator {
-            get {
-                return this.PaymentIndicatorField;
-            }
-            set {
-                if ((this.PaymentIndicatorField.Equals(value) != true)) {
-                    this.PaymentIndicatorField = value;
-                    this.RaisePropertyChanged("PaymentIndicator");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DocumentAcknowledgementTypeDocumentType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum DocumentAcknowledgementTypeDocumentType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SSTPRegistration = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SERWithPayment = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SEROnly = 2,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PaymentOnly = 3,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        PrePayment = 4,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ItemChoiceType1", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum ItemChoiceType1 : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SSTPID = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        StateID = 1,
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentIndicatorType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    public enum PaymentIndicatorType : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        A = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        R = 1,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        N = 2,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTReceiptType", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTReceiptType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader receiptHeaderFieldField;
-        
-        private string receiptVersionFieldField;
-        
-        private WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt transmissionReceiptFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public WSClient.ServiceReference1.SSTReceiptTypeReceiptHeader receiptHeaderField {
-            get {
-                return this.receiptHeaderFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.receiptHeaderFieldField, value) != true)) {
-                    this.receiptHeaderFieldField = value;
-                    this.RaisePropertyChanged("receiptHeaderField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string receiptVersionField {
-            get {
-                return this.receiptVersionFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.receiptVersionFieldField, value) != true)) {
-                    this.receiptVersionFieldField = value;
-                    this.RaisePropertyChanged("receiptVersionField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public WSClient.ServiceReference1.SSTReceiptTypeTransmissionReceipt transmissionReceiptField {
-            get {
-                return this.transmissionReceiptFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.transmissionReceiptFieldField, value) != true)) {
-                    this.transmissionReceiptFieldField = value;
-                    this.RaisePropertyChanged("transmissionReceiptField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTReceiptTypeReceiptHeader", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTReceiptTypeReceiptHeader : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime receiptTimestampFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime receiptTimestampField {
-            get {
-                return this.receiptTimestampFieldField;
-            }
-            set {
-                if ((this.receiptTimestampFieldField.Equals(value) != true)) {
-                    this.receiptTimestampFieldField = value;
-                    this.RaisePropertyChanged("receiptTimestampField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SSTReceiptTypeTransmissionReceipt", Namespace="http://schemas.datacontract.org/2004/07/ws")]
-    [System.SerializableAttribute()]
-    public partial class SSTReceiptTypeTransmissionReceipt : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private string transmissionIDFieldField;
-        
-        private System.DateTime transmissionTimestampFieldField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string transmissionIDField {
-            get {
-                return this.transmissionIDFieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.transmissionIDFieldField, value) != true)) {
-                    this.transmissionIDFieldField = value;
-                    this.RaisePropertyChanged("transmissionIDField");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime transmissionTimestampField {
-            get {
-                return this.transmissionTimestampFieldField;
-            }
-            set {
-                if ((this.transmissionTimestampFieldField.Equals(value) != true)) {
-                    this.transmissionTimestampFieldField = value;
-                    this.RaisePropertyChanged("transmissionTimestampField");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://SST", ConfigurationName="ServiceReference1.IApiService")]
     public interface IApiService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/BulkRegistration", ReplyAction="http://SST/IApiService/BulkRegistrationResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSClient.ServiceReference1.BulkRegistrationAcknowledgementType BulkRegistration(WSClient.ServiceReference1.BulkRegistrationTransmissionType bulkRegistrationTransmission);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/BulkRegistration", ReplyAction="http://SST/IApiService/BulkRegistrationResponse")]
-        System.Threading.Tasks.Task<WSClient.ServiceReference1.BulkRegistrationAcknowledgementType> BulkRegistrationAsync(WSClient.ServiceReference1.BulkRegistrationTransmissionType bulkRegistrationTransmission);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/Registration", ReplyAction="http://SST/IApiService/RegistrationResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSClient.ServiceReference1.BulkRegistrationAcknowledgementType Registration(WSClient.ServiceReference1.BulkRegistrationTransmissionType registrationTransmission);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/Registration", ReplyAction="http://SST/IApiService/RegistrationResponse")]
-        System.Threading.Tasks.Task<WSClient.ServiceReference1.BulkRegistrationAcknowledgementType> RegistrationAsync(WSClient.ServiceReference1.BulkRegistrationTransmissionType registrationTransmission);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/GetDocuments", ReplyAction="http://SST/IApiService/GetDocumentsResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSClient.ServiceReference1.SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus, string RegistrationType, string ActiveStatus);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/GetDocuments", ReplyAction="http://SST/IApiService/GetDocumentsResponse")]
-        System.Threading.Tasks.Task<WSClient.ServiceReference1.SSTRegistrationTransmissionType> GetDocumentsAsync(string AcknowledgementStatus, string RegistrationType, string ActiveStatus);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/GetTransmission", ReplyAction="http://SST/IApiService/GetTransmissionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSClient.ServiceReference1.SSTRegistrationTransmissionType GetTransmission(string TransmissionId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/GetTransmission", ReplyAction="http://SST/IApiService/GetTransmissionResponse")]
-        System.Threading.Tasks.Task<WSClient.ServiceReference1.SSTRegistrationTransmissionType> GetTransmissionAsync(string TransmissionId);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/AcknowledgeTransmission", ReplyAction="http://SST/IApiService/AcknowledgeTransmissionResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSClient.ServiceReference1.SSTReceiptType AcknowledgeTransmission(WSClient.ServiceReference1.SSTPAcknowledgementType acknowledgement);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlRootAttribute("BulkRegistrationTransmission", Namespace = "", IsNullable = false)]
+    public partial class BulkRegistrationTransmissionType : object, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/AcknowledgeTransmission", ReplyAction="http://SST/IApiService/AcknowledgeTransmissionResponse")]
-        System.Threading.Tasks.Task<WSClient.ServiceReference1.SSTReceiptType> AcknowledgeTransmissionAsync(WSClient.ServiceReference1.SSTPAcknowledgementType acknowledgement);
+        private TransmissionHeaderType transmissionHeaderField;
+        
+        private BulkRegistrationDocumentType[] bulkRegistrationDocumentField;
+        
+        private string transmissionVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TransmissionHeaderType TransmissionHeader {
+            get {
+                return this.transmissionHeaderField;
+            }
+            set {
+                this.transmissionHeaderField = value;
+                this.RaisePropertyChanged("TransmissionHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BulkRegistrationDocument", Order=1)]
+        public BulkRegistrationDocumentType[] BulkRegistrationDocument {
+            get {
+                return this.bulkRegistrationDocumentField;
+            }
+            set {
+                this.bulkRegistrationDocumentField = value;
+                this.RaisePropertyChanged("BulkRegistrationDocument");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string transmissionVersion {
+            get {
+                return this.transmissionVersionField;
+            }
+            set {
+                this.transmissionVersionField = value;
+                this.RaisePropertyChanged("transmissionVersion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TransmissionHeaderType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string transmissionIdField;
+        
+        private System.DateTime timestampField;
+        
+        private bool timestampFieldSpecified;
+        
+        private TransmissionHeaderTypeTransmitter transmitterField;
+        
+        private TransmissionHeaderTypeProcessType processTypeField;
+        
+        private string documentCountField;
+        
+        private AmountType transmissionPaymentHashField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string TransmissionId {
+            get {
+                return this.transmissionIdField;
+            }
+            set {
+                this.transmissionIdField = value;
+                this.RaisePropertyChanged("TransmissionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime Timestamp {
+            get {
+                return this.timestampField;
+            }
+            set {
+                this.timestampField = value;
+                this.RaisePropertyChanged("Timestamp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TimestampSpecified {
+            get {
+                return this.timestampFieldSpecified;
+            }
+            set {
+                this.timestampFieldSpecified = value;
+                this.RaisePropertyChanged("TimestampSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public TransmissionHeaderTypeTransmitter Transmitter {
+            get {
+                return this.transmitterField;
+            }
+            set {
+                this.transmitterField = value;
+                this.RaisePropertyChanged("Transmitter");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public TransmissionHeaderTypeProcessType ProcessType {
+            get {
+                return this.processTypeField;
+            }
+            set {
+                this.processTypeField = value;
+                this.RaisePropertyChanged("ProcessType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger", Order=4)]
+        public string DocumentCount {
+            get {
+                return this.documentCountField;
+            }
+            set {
+                this.documentCountField = value;
+                this.RaisePropertyChanged("DocumentCount");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AmountType TransmissionPaymentHash {
+            get {
+                return this.transmissionPaymentHashField;
+            }
+            set {
+                this.transmissionPaymentHashField = value;
+                this.RaisePropertyChanged("TransmissionPaymentHash");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class TransmissionHeaderTypeTransmitter : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string eTINField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string ETIN {
+            get {
+                return this.eTINField;
+            }
+            set {
+                this.eTINField = value;
+                this.RaisePropertyChanged("ETIN");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlRootAttribute("SSTReceipt", Namespace = "", IsNullable = false)]
+    public partial class SSTReceiptType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SSTReceiptTypeReceiptHeader receiptHeaderField;
+        
+        private SSTReceiptTypeTransmissionReceipt transmissionReceiptField;
+        
+        private string receiptVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SSTReceiptTypeReceiptHeader ReceiptHeader {
+            get {
+                return this.receiptHeaderField;
+            }
+            set {
+                this.receiptHeaderField = value;
+                this.RaisePropertyChanged("ReceiptHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public SSTReceiptTypeTransmissionReceipt TransmissionReceipt {
+            get {
+                return this.transmissionReceiptField;
+            }
+            set {
+                this.transmissionReceiptField = value;
+                this.RaisePropertyChanged("TransmissionReceipt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string receiptVersion {
+            get {
+                return this.receiptVersionField;
+            }
+            set {
+                this.receiptVersionField = value;
+                this.RaisePropertyChanged("receiptVersion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class SSTReceiptTypeReceiptHeader : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime receiptTimestampField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime ReceiptTimestamp {
+            get {
+                return this.receiptTimestampField;
+            }
+            set {
+                this.receiptTimestampField = value;
+                this.RaisePropertyChanged("ReceiptTimestamp");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class SSTReceiptTypeTransmissionReceipt : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string transmissionIDField;
+        
+        private System.DateTime transmissionTimestampField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string TransmissionID {
+            get {
+                return this.transmissionIDField;
+            }
+            set {
+                this.transmissionIDField = value;
+                this.RaisePropertyChanged("TransmissionID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime TransmissionTimestamp {
+            get {
+                return this.transmissionTimestampField;
+            }
+            set {
+                this.transmissionTimestampField = value;
+                this.RaisePropertyChanged("TransmissionTimestamp");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlRootAttribute("DocumentAcknowledgement", Namespace = "", IsNullable = false)]
+    public partial class DocumentAcknowledgementType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string documentIdField;
+        
+        private string itemField;
+        
+        private ItemChoiceType2 itemElementNameField;
+        
+        private DocumentAcknowledgementTypeDocumentType documentTypeField;
+        
+        private StatusType documentStatusField;
+        
+        private PaymentIndicatorType paymentIndicatorField;
+        
+        private DocumentAcknowledgementTypeErrors errorsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DocumentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+                this.RaisePropertyChanged("DocumentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("SSTPID", typeof(string), Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute("StateID", typeof(string), Order=1)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType2 ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+                this.RaisePropertyChanged("ItemElementName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public DocumentAcknowledgementTypeDocumentType DocumentType {
+            get {
+                return this.documentTypeField;
+            }
+            set {
+                this.documentTypeField = value;
+                this.RaisePropertyChanged("DocumentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public StatusType DocumentStatus {
+            get {
+                return this.documentStatusField;
+            }
+            set {
+                this.documentStatusField = value;
+                this.RaisePropertyChanged("DocumentStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public PaymentIndicatorType PaymentIndicator {
+            get {
+                return this.paymentIndicatorField;
+            }
+            set {
+                this.paymentIndicatorField = value;
+                this.RaisePropertyChanged("PaymentIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public DocumentAcknowledgementTypeErrors Errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+                this.RaisePropertyChanged("Errors");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
+    public enum ItemChoiceType2 {
+        
+        /// <remarks/>
+        SSTPID,
+        
+        /// <remarks/>
+        StateID,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum DocumentAcknowledgementTypeDocumentType {
+        
+        /// <remarks/>
+        SSTPRegistration,
+        
+        /// <remarks/>
+        SERWithPayment,
+        
+        /// <remarks/>
+        SEROnly,
+        
+        /// <remarks/>
+        PaymentOnly,
+        
+        /// <remarks/>
+        PrePayment,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum StatusType {
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        R,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum PaymentIndicatorType {
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        R,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class DocumentAcknowledgementTypeErrors : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private DocumentAcknowledgementTypeErrorsError[] errorField;
+        
+        private string errorCountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Error", Order=0)]
+        public DocumentAcknowledgementTypeErrorsError[] Error {
+            get {
+                return this.errorField;
+            }
+            set {
+                this.errorField = value;
+                this.RaisePropertyChanged("Error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string errorCount {
+            get {
+                return this.errorCountField;
+            }
+            set {
+                this.errorCountField = value;
+                this.RaisePropertyChanged("errorCount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class DocumentAcknowledgementTypeErrorsError : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string itemField;
+        
+        private ItemChoiceType3 itemElementNameField;
+        
+        private string errorMessageField;
+        
+        private string additionalErrorMessageField;
+        
+        private string severityField;
+        
+        private string dataValueField;
+        
+        private string errorIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FieldIdentifier", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType3 ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+                this.RaisePropertyChanged("ItemElementName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ErrorMessage {
+            get {
+                return this.errorMessageField;
+            }
+            set {
+                this.errorMessageField = value;
+                this.RaisePropertyChanged("ErrorMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string AdditionalErrorMessage {
+            get {
+                return this.additionalErrorMessageField;
+            }
+            set {
+                this.additionalErrorMessageField = value;
+                this.RaisePropertyChanged("AdditionalErrorMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Severity {
+            get {
+                return this.severityField;
+            }
+            set {
+                this.severityField = value;
+                this.RaisePropertyChanged("Severity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string DataValue {
+            get {
+                return this.dataValueField;
+            }
+            set {
+                this.dataValueField = value;
+                this.RaisePropertyChanged("DataValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        public string errorId {
+            get {
+                return this.errorIdField;
+            }
+            set {
+                this.errorIdField = value;
+                this.RaisePropertyChanged("errorId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
+    public enum ItemChoiceType3 {
+        
+        /// <remarks/>
+        FieldIdentifier,
+        
+        /// <remarks/>
+        XPath,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlRootAttribute("SSTPAcknowledgement", Namespace = "", IsNullable = false)]
+    public partial class SSTPAcknowledgementType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AcknowledgementHeaderType acknowledgementHeaderField;
+        
+        private TransmissionAcknowledgementType transmissionAcknowledgementField;
+        
+        private DocumentAcknowledgementType[] documentAcknowledgementField;
+        
+        private string acknowledgementVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AcknowledgementHeaderType AcknowledgementHeader {
+            get {
+                return this.acknowledgementHeaderField;
+            }
+            set {
+                this.acknowledgementHeaderField = value;
+                this.RaisePropertyChanged("AcknowledgementHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TransmissionAcknowledgementType TransmissionAcknowledgement {
+            get {
+                return this.transmissionAcknowledgementField;
+            }
+            set {
+                this.transmissionAcknowledgementField = value;
+                this.RaisePropertyChanged("TransmissionAcknowledgement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("DocumentAcknowledgement", Order=2)]
+        public DocumentAcknowledgementType[] DocumentAcknowledgement {
+            get {
+                return this.documentAcknowledgementField;
+            }
+            set {
+                this.documentAcknowledgementField = value;
+                this.RaisePropertyChanged("DocumentAcknowledgement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string acknowledgementVersion {
+            get {
+                return this.acknowledgementVersionField;
+            }
+            set {
+                this.acknowledgementVersionField = value;
+                this.RaisePropertyChanged("acknowledgementVersion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AcknowledgementHeaderType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private System.DateTime acknowledgementTimestampField;
+        
+        private string acknowledgementCountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public System.DateTime AcknowledgementTimestamp {
+            get {
+                return this.acknowledgementTimestampField;
+            }
+            set {
+                this.acknowledgementTimestampField = value;
+                this.RaisePropertyChanged("AcknowledgementTimestamp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="positiveInteger", Order=1)]
+        public string AcknowledgementCount {
+            get {
+                return this.acknowledgementCountField;
+            }
+            set {
+                this.acknowledgementCountField = value;
+                this.RaisePropertyChanged("AcknowledgementCount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TransmissionAcknowledgementType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string transmissionIdField;
+        
+        private System.DateTime transmissionTimestampField;
+        
+        private bool transmissionTimestampFieldSpecified;
+        
+        private StatusType transmissionStatusField;
+        
+        private TransmissionAcknowledgementTypeErrors errorsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string TransmissionId {
+            get {
+                return this.transmissionIdField;
+            }
+            set {
+                this.transmissionIdField = value;
+                this.RaisePropertyChanged("TransmissionId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public System.DateTime TransmissionTimestamp {
+            get {
+                return this.transmissionTimestampField;
+            }
+            set {
+                this.transmissionTimestampField = value;
+                this.RaisePropertyChanged("TransmissionTimestamp");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool TransmissionTimestampSpecified {
+            get {
+                return this.transmissionTimestampFieldSpecified;
+            }
+            set {
+                this.transmissionTimestampFieldSpecified = value;
+                this.RaisePropertyChanged("TransmissionTimestampSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public StatusType TransmissionStatus {
+            get {
+                return this.transmissionStatusField;
+            }
+            set {
+                this.transmissionStatusField = value;
+                this.RaisePropertyChanged("TransmissionStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public TransmissionAcknowledgementTypeErrors Errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+                this.RaisePropertyChanged("Errors");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class TransmissionAcknowledgementTypeErrors : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private TransmissionAcknowledgementTypeErrorsError[] errorField;
+        
+        private string errorCountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Error", Order=0)]
+        public TransmissionAcknowledgementTypeErrorsError[] Error {
+            get {
+                return this.errorField;
+            }
+            set {
+                this.errorField = value;
+                this.RaisePropertyChanged("Error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string errorCount {
+            get {
+                return this.errorCountField;
+            }
+            set {
+                this.errorCountField = value;
+                this.RaisePropertyChanged("errorCount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class TransmissionAcknowledgementTypeErrorsError : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string itemField;
+        
+        private ItemChoiceType itemElementNameField;
+        
+        private string errorMessageField;
+        
+        private string additionalErrorMessageField;
+        
+        private string severityField;
+        
+        private string dataValueField;
+        
+        private string errorIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FieldIdentifier", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+                this.RaisePropertyChanged("ItemElementName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ErrorMessage {
+            get {
+                return this.errorMessageField;
+            }
+            set {
+                this.errorMessageField = value;
+                this.RaisePropertyChanged("ErrorMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string AdditionalErrorMessage {
+            get {
+                return this.additionalErrorMessageField;
+            }
+            set {
+                this.additionalErrorMessageField = value;
+                this.RaisePropertyChanged("AdditionalErrorMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Severity {
+            get {
+                return this.severityField;
+            }
+            set {
+                this.severityField = value;
+                this.RaisePropertyChanged("Severity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string DataValue {
+            get {
+                return this.dataValueField;
+            }
+            set {
+                this.dataValueField = value;
+                this.RaisePropertyChanged("DataValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        public string errorId {
+            get {
+                return this.errorIdField;
+            }
+            set {
+                this.errorIdField = value;
+                this.RaisePropertyChanged("errorId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
+    public enum ItemChoiceType {
+        
+        /// <remarks/>
+        FieldIdentifier,
+        
+        /// <remarks/>
+        XPath,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RegistrationCOUType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private RegistrationCOUTypeActionCode actionCodeField;
+        
+        private EntityType registrationEntityField;
+        
+        private object itemField;
+        
+        private string dBANameField;
+        
+        private string nAICSCodeField;
+        
+        private AddressType physicalAddressField;
+        
+        private AddressType mailingAddressField;
+        
+        private string sellerPhoneField;
+        
+        private string sellerPhoneExtField;
+        
+        private ContactType sSTPContactField;
+        
+        private string stateIncorporatedField;
+        
+        private TechModelType technologyModelField;
+        
+        private RegistrationCOUTypeRegistrationIndicator registrationIndicatorField;
+        
+        private bool registrationIndicatorFieldSpecified;
+        
+        private System.DateTime lastSaleDateField;
+        
+        private bool lastSaleDateFieldSpecified;
+        
+        private RegistrationCOUTypeStateAcctInd stateAcctIndField;
+        
+        private bool stateAcctIndFieldSpecified;
+        
+        private RegistrationCOUTypeRemoteSellerID remoteSellerIDField;
+        
+        private bool remoteSellerIDFieldSpecified;
+        
+        private System.DateTime remoteEffDateField;
+        
+        private bool remoteEffDateFieldSpecified;
+        
+        private System.DateTime remoteEndDateField;
+        
+        private bool remoteEndDateFieldSpecified;
+        
+        private System.DateTime cSPEndDateField;
+        
+        private bool cSPEndDateFieldSpecified;
+        
+        private string cSPLastFilingPdField;
+        
+        private System.DateTime acctCloseDateField;
+        
+        private bool acctCloseDateFieldSpecified;
+        
+        private System.DateTime firstSaleDateField;
+        
+        private bool firstSaleDateFieldSpecified;
+        
+        private RegistrationCOUTypeSSTPAllowanceIndicator sSTPAllowanceIndicatorField;
+        
+        private bool sSTPAllowanceIndicatorFieldSpecified;
+        
+        private string newPassField;
+        
+        private System.DateTime effectiveDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RegistrationCOUTypeActionCode ActionCode {
+            get {
+                return this.actionCodeField;
+            }
+            set {
+                this.actionCodeField = value;
+                this.RaisePropertyChanged("ActionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EntityType RegistrationEntity {
+            get {
+                return this.registrationEntityField;
+            }
+            set {
+                this.registrationEntityField = value;
+                this.RaisePropertyChanged("RegistrationEntity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BusinessName", typeof(BusinessNameType), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("IndividualName", typeof(IndividualNameType), Order=2)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DBAName {
+            get {
+                return this.dBANameField;
+            }
+            set {
+                this.dBANameField = value;
+                this.RaisePropertyChanged("DBAName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NAICSCode {
+            get {
+                return this.nAICSCodeField;
+            }
+            set {
+                this.nAICSCodeField = value;
+                this.RaisePropertyChanged("NAICSCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AddressType PhysicalAddress {
+            get {
+                return this.physicalAddressField;
+            }
+            set {
+                this.physicalAddressField = value;
+                this.RaisePropertyChanged("PhysicalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public AddressType MailingAddress {
+            get {
+                return this.mailingAddressField;
+            }
+            set {
+                this.mailingAddressField = value;
+                this.RaisePropertyChanged("MailingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string SellerPhone {
+            get {
+                return this.sellerPhoneField;
+            }
+            set {
+                this.sellerPhoneField = value;
+                this.RaisePropertyChanged("SellerPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string SellerPhoneExt {
+            get {
+                return this.sellerPhoneExtField;
+            }
+            set {
+                this.sellerPhoneExtField = value;
+                this.RaisePropertyChanged("SellerPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public ContactType SSTPContact {
+            get {
+                return this.sSTPContactField;
+            }
+            set {
+                this.sSTPContactField = value;
+                this.RaisePropertyChanged("SSTPContact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string StateIncorporated {
+            get {
+                return this.stateIncorporatedField;
+            }
+            set {
+                this.stateIncorporatedField = value;
+                this.RaisePropertyChanged("StateIncorporated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public TechModelType TechnologyModel {
+            get {
+                return this.technologyModelField;
+            }
+            set {
+                this.technologyModelField = value;
+                this.RaisePropertyChanged("TechnologyModel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public RegistrationCOUTypeRegistrationIndicator RegistrationIndicator {
+            get {
+                return this.registrationIndicatorField;
+            }
+            set {
+                this.registrationIndicatorField = value;
+                this.RaisePropertyChanged("RegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RegistrationIndicatorSpecified {
+            get {
+                return this.registrationIndicatorFieldSpecified;
+            }
+            set {
+                this.registrationIndicatorFieldSpecified = value;
+                this.RaisePropertyChanged("RegistrationIndicatorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=13)]
+        public System.DateTime LastSaleDate {
+            get {
+                return this.lastSaleDateField;
+            }
+            set {
+                this.lastSaleDateField = value;
+                this.RaisePropertyChanged("LastSaleDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LastSaleDateSpecified {
+            get {
+                return this.lastSaleDateFieldSpecified;
+            }
+            set {
+                this.lastSaleDateFieldSpecified = value;
+                this.RaisePropertyChanged("LastSaleDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=14)]
+        public RegistrationCOUTypeStateAcctInd StateAcctInd {
+            get {
+                return this.stateAcctIndField;
+            }
+            set {
+                this.stateAcctIndField = value;
+                this.RaisePropertyChanged("StateAcctInd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StateAcctIndSpecified {
+            get {
+                return this.stateAcctIndFieldSpecified;
+            }
+            set {
+                this.stateAcctIndFieldSpecified = value;
+                this.RaisePropertyChanged("StateAcctIndSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public RegistrationCOUTypeRemoteSellerID RemoteSellerID {
+            get {
+                return this.remoteSellerIDField;
+            }
+            set {
+                this.remoteSellerIDField = value;
+                this.RaisePropertyChanged("RemoteSellerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteSellerIDSpecified {
+            get {
+                return this.remoteSellerIDFieldSpecified;
+            }
+            set {
+                this.remoteSellerIDFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteSellerIDSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=16)]
+        public System.DateTime RemoteEffDate {
+            get {
+                return this.remoteEffDateField;
+            }
+            set {
+                this.remoteEffDateField = value;
+                this.RaisePropertyChanged("RemoteEffDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEffDateSpecified {
+            get {
+                return this.remoteEffDateFieldSpecified;
+            }
+            set {
+                this.remoteEffDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEffDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=17)]
+        public System.DateTime RemoteEndDate {
+            get {
+                return this.remoteEndDateField;
+            }
+            set {
+                this.remoteEndDateField = value;
+                this.RaisePropertyChanged("RemoteEndDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEndDateSpecified {
+            get {
+                return this.remoteEndDateFieldSpecified;
+            }
+            set {
+                this.remoteEndDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEndDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=18)]
+        public System.DateTime CSPEndDate {
+            get {
+                return this.cSPEndDateField;
+            }
+            set {
+                this.cSPEndDateField = value;
+                this.RaisePropertyChanged("CSPEndDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CSPEndDateSpecified {
+            get {
+                return this.cSPEndDateFieldSpecified;
+            }
+            set {
+                this.cSPEndDateFieldSpecified = value;
+                this.RaisePropertyChanged("CSPEndDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="gYearMonth", Order=19)]
+        public string CSPLastFilingPd {
+            get {
+                return this.cSPLastFilingPdField;
+            }
+            set {
+                this.cSPLastFilingPdField = value;
+                this.RaisePropertyChanged("CSPLastFilingPd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=20)]
+        public System.DateTime AcctCloseDate {
+            get {
+                return this.acctCloseDateField;
+            }
+            set {
+                this.acctCloseDateField = value;
+                this.RaisePropertyChanged("AcctCloseDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AcctCloseDateSpecified {
+            get {
+                return this.acctCloseDateFieldSpecified;
+            }
+            set {
+                this.acctCloseDateFieldSpecified = value;
+                this.RaisePropertyChanged("AcctCloseDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=21)]
+        public System.DateTime FirstSaleDate {
+            get {
+                return this.firstSaleDateField;
+            }
+            set {
+                this.firstSaleDateField = value;
+                this.RaisePropertyChanged("FirstSaleDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FirstSaleDateSpecified {
+            get {
+                return this.firstSaleDateFieldSpecified;
+            }
+            set {
+                this.firstSaleDateFieldSpecified = value;
+                this.RaisePropertyChanged("FirstSaleDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=22)]
+        public RegistrationCOUTypeSSTPAllowanceIndicator SSTPAllowanceIndicator {
+            get {
+                return this.sSTPAllowanceIndicatorField;
+            }
+            set {
+                this.sSTPAllowanceIndicatorField = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SSTPAllowanceIndicatorSpecified {
+            get {
+                return this.sSTPAllowanceIndicatorFieldSpecified;
+            }
+            set {
+                this.sSTPAllowanceIndicatorFieldSpecified = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicatorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=23)]
+        public string NewPass {
+            get {
+                return this.newPassField;
+            }
+            set {
+                this.newPassField = value;
+                this.RaisePropertyChanged("NewPass");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=24)]
+        public System.DateTime EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+                this.RaisePropertyChanged("EffectiveDate");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationCOUTypeActionCode {
+        
+        /// <remarks/>
+        C,
+        
+        /// <remarks/>
+        O,
+        
+        /// <remarks/>
+        U,
+        
+        /// <remarks/>
+        D,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum EntityType {
+        
+        /// <remarks/>
+        SP,
+        
+        /// <remarks/>
+        CO,
+        
+        /// <remarks/>
+        TR,
+        
+        /// <remarks/>
+        PA,
+        
+        /// <remarks/>
+        LL,
+        
+        /// <remarks/>
+        GO,
+        
+        /// <remarks/>
+        OT,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BusinessNameType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string businessNameLine1TxtField;
+        
+        private string businessNameLine2TxtField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string BusinessNameLine1Txt {
+            get {
+                return this.businessNameLine1TxtField;
+            }
+            set {
+                this.businessNameLine1TxtField = value;
+                this.RaisePropertyChanged("BusinessNameLine1Txt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string BusinessNameLine2Txt {
+            get {
+                return this.businessNameLine2TxtField;
+            }
+            set {
+                this.businessNameLine2TxtField = value;
+                this.RaisePropertyChanged("BusinessNameLine2Txt");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IndividualNameType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string firstNameField;
+        
+        private string middleInitialField;
+        
+        private string lastNameField;
+        
+        private GenerationalNameSuffixType nameSuffixField;
+        
+        private bool nameSuffixFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FirstName {
+            get {
+                return this.firstNameField;
+            }
+            set {
+                this.firstNameField = value;
+                this.RaisePropertyChanged("FirstName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string MiddleInitial {
+            get {
+                return this.middleInitialField;
+            }
+            set {
+                this.middleInitialField = value;
+                this.RaisePropertyChanged("MiddleInitial");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string LastName {
+            get {
+                return this.lastNameField;
+            }
+            set {
+                this.lastNameField = value;
+                this.RaisePropertyChanged("LastName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public GenerationalNameSuffixType NameSuffix {
+            get {
+                return this.nameSuffixField;
+            }
+            set {
+                this.nameSuffixField = value;
+                this.RaisePropertyChanged("NameSuffix");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool NameSuffixSpecified {
+            get {
+                return this.nameSuffixFieldSpecified;
+            }
+            set {
+                this.nameSuffixFieldSpecified = value;
+                this.RaisePropertyChanged("NameSuffixSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum GenerationalNameSuffixType {
+        
+        /// <remarks/>
+        JR,
+        
+        /// <remarks/>
+        SR,
+        
+        /// <remarks/>
+        I,
+        
+        /// <remarks/>
+        II,
+        
+        /// <remarks/>
+        III,
+        
+        /// <remarks/>
+        IV,
+        
+        /// <remarks/>
+        V,
+        
+        /// <remarks/>
+        VI,
+        
+        /// <remarks/>
+        VII,
+        
+        /// <remarks/>
+        VIII,
+        
+        /// <remarks/>
+        IX,
+        
+        /// <remarks/>
+        X,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AddressType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ForeignAddress", typeof(AddressTypeForeignAddress), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("USAddress", typeof(AddressTypeUSAddress), Order=0)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class AddressTypeForeignAddress : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string addressLine1TxtField;
+        
+        private string addressLine2TxtField;
+        
+        private string cityNmField;
+        
+        private string provinceOrStateNmField;
+        
+        private CountryType countryCdField;
+        
+        private string foreignPostalCdField;
+        
+        private string inCareOfNmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AddressLine1Txt {
+            get {
+                return this.addressLine1TxtField;
+            }
+            set {
+                this.addressLine1TxtField = value;
+                this.RaisePropertyChanged("AddressLine1Txt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string AddressLine2Txt {
+            get {
+                return this.addressLine2TxtField;
+            }
+            set {
+                this.addressLine2TxtField = value;
+                this.RaisePropertyChanged("AddressLine2Txt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string CityNm {
+            get {
+                return this.cityNmField;
+            }
+            set {
+                this.cityNmField = value;
+                this.RaisePropertyChanged("CityNm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ProvinceOrStateNm {
+            get {
+                return this.provinceOrStateNmField;
+            }
+            set {
+                this.provinceOrStateNmField = value;
+                this.RaisePropertyChanged("ProvinceOrStateNm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public CountryType CountryCd {
+            get {
+                return this.countryCdField;
+            }
+            set {
+                this.countryCdField = value;
+                this.RaisePropertyChanged("CountryCd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string ForeignPostalCd {
+            get {
+                return this.foreignPostalCdField;
+            }
+            set {
+                this.foreignPostalCdField = value;
+                this.RaisePropertyChanged("ForeignPostalCd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public string InCareOfNm {
+            get {
+                return this.inCareOfNmField;
+            }
+            set {
+                this.inCareOfNmField = value;
+                this.RaisePropertyChanged("InCareOfNm");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum CountryType {
+        
+        /// <remarks/>
+        AF,
+        
+        /// <remarks/>
+        AX,
+        
+        /// <remarks/>
+        XI,
+        
+        /// <remarks/>
+        AL,
+        
+        /// <remarks/>
+        AG,
+        
+        /// <remarks/>
+        AQ,
+        
+        /// <remarks/>
+        AN,
+        
+        /// <remarks/>
+        AO,
+        
+        /// <remarks/>
+        AV,
+        
+        /// <remarks/>
+        AY,
+        
+        /// <remarks/>
+        AC,
+        
+        /// <remarks/>
+        AR,
+        
+        /// <remarks/>
+        AM,
+        
+        /// <remarks/>
+        AA,
+        
+        /// <remarks/>
+        XA,
+        
+        /// <remarks/>
+        AT,
+        
+        /// <remarks/>
+        AS,
+        
+        /// <remarks/>
+        AU,
+        
+        /// <remarks/>
+        AJ,
+        
+        /// <remarks/>
+        XZ,
+        
+        /// <remarks/>
+        BF,
+        
+        /// <remarks/>
+        BA,
+        
+        /// <remarks/>
+        FQ,
+        
+        /// <remarks/>
+        BG,
+        
+        /// <remarks/>
+        BB,
+        
+        /// <remarks/>
+        BS,
+        
+        /// <remarks/>
+        BO,
+        
+        /// <remarks/>
+        BE,
+        
+        /// <remarks/>
+        BH,
+        
+        /// <remarks/>
+        BN,
+        
+        /// <remarks/>
+        BD,
+        
+        /// <remarks/>
+        BT,
+        
+        /// <remarks/>
+        BL,
+        
+        /// <remarks/>
+        BK,
+        
+        /// <remarks/>
+        BC,
+        
+        /// <remarks/>
+        BV,
+        
+        /// <remarks/>
+        BR,
+        
+        /// <remarks/>
+        IO,
+        
+        /// <remarks/>
+        VI,
+        
+        /// <remarks/>
+        BX,
+        
+        /// <remarks/>
+        BU,
+        
+        /// <remarks/>
+        UV,
+        
+        /// <remarks/>
+        BM,
+        
+        /// <remarks/>
+        BY,
+        
+        /// <remarks/>
+        CB,
+        
+        /// <remarks/>
+        CM,
+        
+        /// <remarks/>
+        CA,
+        
+        /// <remarks/>
+        XY,
+        
+        /// <remarks/>
+        CV,
+        
+        /// <remarks/>
+        CJ,
+        
+        /// <remarks/>
+        CT,
+        
+        /// <remarks/>
+        CD,
+        
+        /// <remarks/>
+        XC,
+        
+        /// <remarks/>
+        CI,
+        
+        /// <remarks/>
+        CH,
+        
+        /// <remarks/>
+        KT,
+        
+        /// <remarks/>
+        IP,
+        
+        /// <remarks/>
+        CK,
+        
+        /// <remarks/>
+        CO,
+        
+        /// <remarks/>
+        CN,
+        
+        /// <remarks/>
+        CF,
+        
+        /// <remarks/>
+        CG,
+        
+        /// <remarks/>
+        CW,
+        
+        /// <remarks/>
+        CR,
+        
+        /// <remarks/>
+        VP,
+        
+        /// <remarks/>
+        CS,
+        
+        /// <remarks/>
+        IV,
+        
+        /// <remarks/>
+        HR,
+        
+        /// <remarks/>
+        CU,
+        
+        /// <remarks/>
+        CY,
+        
+        /// <remarks/>
+        EZ,
+        
+        /// <remarks/>
+        DA,
+        
+        /// <remarks/>
+        DX,
+        
+        /// <remarks/>
+        DJ,
+        
+        /// <remarks/>
+        DO,
+        
+        /// <remarks/>
+        DR,
+        
+        /// <remarks/>
+        TT,
+        
+        /// <remarks/>
+        EC,
+        
+        /// <remarks/>
+        EG,
+        
+        /// <remarks/>
+        ES,
+        
+        /// <remarks/>
+        XE,
+        
+        /// <remarks/>
+        EK,
+        
+        /// <remarks/>
+        ER,
+        
+        /// <remarks/>
+        EN,
+        
+        /// <remarks/>
+        ET,
+        
+        /// <remarks/>
+        EU,
+        
+        /// <remarks/>
+        FK,
+        
+        /// <remarks/>
+        FO,
+        
+        /// <remarks/>
+        FM,
+        
+        /// <remarks/>
+        FJ,
+        
+        /// <remarks/>
+        FI,
+        
+        /// <remarks/>
+        FR,
+        
+        /// <remarks/>
+        FG,
+        
+        /// <remarks/>
+        FP,
+        
+        /// <remarks/>
+        FS,
+        
+        /// <remarks/>
+        GB,
+        
+        /// <remarks/>
+        GA,
+        
+        /// <remarks/>
+        GZ,
+        
+        /// <remarks/>
+        GG,
+        
+        /// <remarks/>
+        GM,
+        
+        /// <remarks/>
+        GH,
+        
+        /// <remarks/>
+        GI,
+        
+        /// <remarks/>
+        GO,
+        
+        /// <remarks/>
+        GR,
+        
+        /// <remarks/>
+        GL,
+        
+        /// <remarks/>
+        GJ,
+        
+        /// <remarks/>
+        VC,
+        
+        /// <remarks/>
+        GP,
+        
+        /// <remarks/>
+        GQ,
+        
+        /// <remarks/>
+        GT,
+        
+        /// <remarks/>
+        GK,
+        
+        /// <remarks/>
+        GV,
+        
+        /// <remarks/>
+        PU,
+        
+        /// <remarks/>
+        GY,
+        
+        /// <remarks/>
+        HA,
+        
+        /// <remarks/>
+        HM,
+        
+        /// <remarks/>
+        HO,
+        
+        /// <remarks/>
+        HK,
+        
+        /// <remarks/>
+        HQ,
+        
+        /// <remarks/>
+        HU,
+        
+        /// <remarks/>
+        IC,
+        
+        /// <remarks/>
+        IN,
+        
+        /// <remarks/>
+        ID,
+        
+        /// <remarks/>
+        IR,
+        
+        /// <remarks/>
+        IZ,
+        
+        /// <remarks/>
+        EI,
+        
+        /// <remarks/>
+        IS,
+        
+        /// <remarks/>
+        IT,
+        
+        /// <remarks/>
+        JM,
+        
+        /// <remarks/>
+        JN,
+        
+        /// <remarks/>
+        JA,
+        
+        /// <remarks/>
+        DQ,
+        
+        /// <remarks/>
+        JE,
+        
+        /// <remarks/>
+        JQ,
+        
+        /// <remarks/>
+        JO,
+        
+        /// <remarks/>
+        JU,
+        
+        /// <remarks/>
+        KZ,
+        
+        /// <remarks/>
+        KE,
+        
+        /// <remarks/>
+        KQ,
+        
+        /// <remarks/>
+        KR,
+        
+        /// <remarks/>
+        KN,
+        
+        /// <remarks/>
+        KS,
+        
+        /// <remarks/>
+        KU,
+        
+        /// <remarks/>
+        KG,
+        
+        /// <remarks/>
+        LA,
+        
+        /// <remarks/>
+        LG,
+        
+        /// <remarks/>
+        LE,
+        
+        /// <remarks/>
+        LT,
+        
+        /// <remarks/>
+        LI,
+        
+        /// <remarks/>
+        LY,
+        
+        /// <remarks/>
+        LS,
+        
+        /// <remarks/>
+        LH,
+        
+        /// <remarks/>
+        LU,
+        
+        /// <remarks/>
+        MC,
+        
+        /// <remarks/>
+        MK,
+        
+        /// <remarks/>
+        MA,
+        
+        /// <remarks/>
+        MI,
+        
+        /// <remarks/>
+        MY,
+        
+        /// <remarks/>
+        MV,
+        
+        /// <remarks/>
+        ML,
+        
+        /// <remarks/>
+        MT,
+        
+        /// <remarks/>
+        IM,
+        
+        /// <remarks/>
+        RM,
+        
+        /// <remarks/>
+        MB,
+        
+        /// <remarks/>
+        MR,
+        
+        /// <remarks/>
+        MP,
+        
+        /// <remarks/>
+        MF,
+        
+        /// <remarks/>
+        MX,
+        
+        /// <remarks/>
+        MQ,
+        
+        /// <remarks/>
+        MD,
+        
+        /// <remarks/>
+        MN,
+        
+        /// <remarks/>
+        MG,
+        
+        /// <remarks/>
+        MJ,
+        
+        /// <remarks/>
+        MH,
+        
+        /// <remarks/>
+        MO,
+        
+        /// <remarks/>
+        MZ,
+        
+        /// <remarks/>
+        XM,
+        
+        /// <remarks/>
+        WA,
+        
+        /// <remarks/>
+        NR,
+        
+        /// <remarks/>
+        BQ,
+        
+        /// <remarks/>
+        NP,
+        
+        /// <remarks/>
+        NL,
+        
+        /// <remarks/>
+        NT,
+        
+        /// <remarks/>
+        NC,
+        
+        /// <remarks/>
+        NZ,
+        
+        /// <remarks/>
+        NU,
+        
+        /// <remarks/>
+        NG,
+        
+        /// <remarks/>
+        NI,
+        
+        /// <remarks/>
+        NE,
+        
+        /// <remarks/>
+        NF,
+        
+        /// <remarks/>
+        XN,
+        
+        /// <remarks/>
+        CQ,
+        
+        /// <remarks/>
+        NO,
+        
+        /// <remarks/>
+        MU,
+        
+        /// <remarks/>
+        XX,
+        
+        /// <remarks/>
+        PK,
+        
+        /// <remarks/>
+        LQ,
+        
+        /// <remarks/>
+        PS,
+        
+        /// <remarks/>
+        PM,
+        
+        /// <remarks/>
+        PP,
+        
+        /// <remarks/>
+        PF,
+        
+        /// <remarks/>
+        PA,
+        
+        /// <remarks/>
+        PE,
+        
+        /// <remarks/>
+        RP,
+        
+        /// <remarks/>
+        PC,
+        
+        /// <remarks/>
+        PL,
+        
+        /// <remarks/>
+        PO,
+        
+        /// <remarks/>
+        RQ,
+        
+        /// <remarks/>
+        QA,
+        
+        /// <remarks/>
+        RE,
+        
+        /// <remarks/>
+        RO,
+        
+        /// <remarks/>
+        RS,
+        
+        /// <remarks/>
+        RW,
+        
+        /// <remarks/>
+        WS,
+        
+        /// <remarks/>
+        SM,
+        
+        /// <remarks/>
+        TP,
+        
+        /// <remarks/>
+        SA,
+        
+        /// <remarks/>
+        XS,
+        
+        /// <remarks/>
+        SG,
+        
+        /// <remarks/>
+        RB,
+        
+        /// <remarks/>
+        SE,
+        
+        /// <remarks/>
+        SL,
+        
+        /// <remarks/>
+        SN,
+        
+        /// <remarks/>
+        XR,
+        
+        /// <remarks/>
+        LO,
+        
+        /// <remarks/>
+        SI,
+        
+        /// <remarks/>
+        BP,
+        
+        /// <remarks/>
+        SO,
+        
+        /// <remarks/>
+        SF,
+        
+        /// <remarks/>
+        SX,
+        
+        /// <remarks/>
+        SP,
+        
+        /// <remarks/>
+        PG,
+        
+        /// <remarks/>
+        CE,
+        
+        /// <remarks/>
+        SH,
+        
+        /// <remarks/>
+        SC,
+        
+        /// <remarks/>
+        ST,
+        
+        /// <remarks/>
+        SB,
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlEnumAttribute("VC")]
+        VC1,
+        
+        /// <remarks/>
+        SU,
+        
+        /// <remarks/>
+        NS,
+        
+        /// <remarks/>
+        SV,
+        
+        /// <remarks/>
+        WZ,
+        
+        /// <remarks/>
+        SW,
+        
+        /// <remarks/>
+        SZ,
+        
+        /// <remarks/>
+        SY,
+        
+        /// <remarks/>
+        TW,
+        
+        /// <remarks/>
+        TI,
+        
+        /// <remarks/>
+        TZ,
+        
+        /// <remarks/>
+        TH,
+        
+        /// <remarks/>
+        TO,
+        
+        /// <remarks/>
+        TL,
+        
+        /// <remarks/>
+        TN,
+        
+        /// <remarks/>
+        TD,
+        
+        /// <remarks/>
+        XT,
+        
+        /// <remarks/>
+        TE,
+        
+        /// <remarks/>
+        TS,
+        
+        /// <remarks/>
+        TU,
+        
+        /// <remarks/>
+        TX,
+        
+        /// <remarks/>
+        TK,
+        
+        /// <remarks/>
+        TV,
+        
+        /// <remarks/>
+        UG,
+        
+        /// <remarks/>
+        UP,
+        
+        /// <remarks/>
+        AE,
+        
+        /// <remarks/>
+        UK,
+        
+        /// <remarks/>
+        UC,
+        
+        /// <remarks/>
+        US,
+        
+        /// <remarks/>
+        UY,
+        
+        /// <remarks/>
+        UZ,
+        
+        /// <remarks/>
+        NH,
+        
+        /// <remarks/>
+        VT,
+        
+        /// <remarks/>
+        VE,
+        
+        /// <remarks/>
+        VM,
+        
+        /// <remarks/>
+        VQ,
+        
+        /// <remarks/>
+        WQ,
+        
+        /// <remarks/>
+        XW,
+        
+        /// <remarks/>
+        WF,
+        
+        /// <remarks/>
+        WE,
+        
+        /// <remarks/>
+        WI,
+        
+        /// <remarks/>
+        YM,
+        
+        /// <remarks/>
+        YI,
+        
+        /// <remarks/>
+        ZA,
+        
+        /// <remarks/>
+        ZI,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class AddressTypeUSAddress : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string addressLine1TxtField;
+        
+        private string addressLine2TxtField;
+        
+        private string cityNmField;
+        
+        private StateType stateAbbreviationCdField;
+        
+        private string zIPCdField;
+        
+        private string inCareOfNmField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string AddressLine1Txt {
+            get {
+                return this.addressLine1TxtField;
+            }
+            set {
+                this.addressLine1TxtField = value;
+                this.RaisePropertyChanged("AddressLine1Txt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string AddressLine2Txt {
+            get {
+                return this.addressLine2TxtField;
+            }
+            set {
+                this.addressLine2TxtField = value;
+                this.RaisePropertyChanged("AddressLine2Txt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string CityNm {
+            get {
+                return this.cityNmField;
+            }
+            set {
+                this.cityNmField = value;
+                this.RaisePropertyChanged("CityNm");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public StateType StateAbbreviationCd {
+            get {
+                return this.stateAbbreviationCdField;
+            }
+            set {
+                this.stateAbbreviationCdField = value;
+                this.RaisePropertyChanged("StateAbbreviationCd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string ZIPCd {
+            get {
+                return this.zIPCdField;
+            }
+            set {
+                this.zIPCdField = value;
+                this.RaisePropertyChanged("ZIPCd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string InCareOfNm {
+            get {
+                return this.inCareOfNmField;
+            }
+            set {
+                this.inCareOfNmField = value;
+                this.RaisePropertyChanged("InCareOfNm");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum StateType {
+        
+        /// <remarks/>
+        AL,
+        
+        /// <remarks/>
+        AK,
+        
+        /// <remarks/>
+        AS,
+        
+        /// <remarks/>
+        AZ,
+        
+        /// <remarks/>
+        AR,
+        
+        /// <remarks/>
+        CA,
+        
+        /// <remarks/>
+        CO,
+        
+        /// <remarks/>
+        MP,
+        
+        /// <remarks/>
+        CT,
+        
+        /// <remarks/>
+        DE,
+        
+        /// <remarks/>
+        DC,
+        
+        /// <remarks/>
+        FM,
+        
+        /// <remarks/>
+        FL,
+        
+        /// <remarks/>
+        GA,
+        
+        /// <remarks/>
+        GU,
+        
+        /// <remarks/>
+        HI,
+        
+        /// <remarks/>
+        ID,
+        
+        /// <remarks/>
+        IL,
+        
+        /// <remarks/>
+        IN,
+        
+        /// <remarks/>
+        IA,
+        
+        /// <remarks/>
+        KS,
+        
+        /// <remarks/>
+        KY,
+        
+        /// <remarks/>
+        LA,
+        
+        /// <remarks/>
+        ME,
+        
+        /// <remarks/>
+        MH,
+        
+        /// <remarks/>
+        MD,
+        
+        /// <remarks/>
+        MA,
+        
+        /// <remarks/>
+        MI,
+        
+        /// <remarks/>
+        MN,
+        
+        /// <remarks/>
+        MS,
+        
+        /// <remarks/>
+        MO,
+        
+        /// <remarks/>
+        MT,
+        
+        /// <remarks/>
+        NE,
+        
+        /// <remarks/>
+        NV,
+        
+        /// <remarks/>
+        NH,
+        
+        /// <remarks/>
+        NJ,
+        
+        /// <remarks/>
+        NM,
+        
+        /// <remarks/>
+        NY,
+        
+        /// <remarks/>
+        NC,
+        
+        /// <remarks/>
+        ND,
+        
+        /// <remarks/>
+        OH,
+        
+        /// <remarks/>
+        OK,
+        
+        /// <remarks/>
+        OR,
+        
+        /// <remarks/>
+        PW,
+        
+        /// <remarks/>
+        PA,
+        
+        /// <remarks/>
+        PR,
+        
+        /// <remarks/>
+        RI,
+        
+        /// <remarks/>
+        SC,
+        
+        /// <remarks/>
+        SD,
+        
+        /// <remarks/>
+        TN,
+        
+        /// <remarks/>
+        TX,
+        
+        /// <remarks/>
+        VI,
+        
+        /// <remarks/>
+        UT,
+        
+        /// <remarks/>
+        VT,
+        
+        /// <remarks/>
+        VA,
+        
+        /// <remarks/>
+        WA,
+        
+        /// <remarks/>
+        WV,
+        
+        /// <remarks/>
+        WI,
+        
+        /// <remarks/>
+        WY,
+        
+        /// <remarks/>
+        AA,
+        
+        /// <remarks/>
+        AE,
+        
+        /// <remarks/>
+        AP,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ContactType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private IndividualNameType contactNameField;
+        
+        private string contactPhoneField;
+        
+        private string contactPhoneExtField;
+        
+        private string contactEmailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public IndividualNameType ContactName {
+            get {
+                return this.contactNameField;
+            }
+            set {
+                this.contactNameField = value;
+                this.RaisePropertyChanged("ContactName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string ContactPhone {
+            get {
+                return this.contactPhoneField;
+            }
+            set {
+                this.contactPhoneField = value;
+                this.RaisePropertyChanged("ContactPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ContactPhoneExt {
+            get {
+                return this.contactPhoneExtField;
+            }
+            set {
+                this.contactPhoneExtField = value;
+                this.RaisePropertyChanged("ContactPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string ContactEmail {
+            get {
+                return this.contactEmailField;
+            }
+            set {
+                this.contactEmailField = value;
+                this.RaisePropertyChanged("ContactEmail");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TechModelType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private object itemField;
+        
+        private ItemChoiceType4 itemElementNameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("ModelOne", typeof(ModelOneType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ModelThree", typeof(object), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("ModelTwo", typeof(ModelTwoType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("None", typeof(object), Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType4 ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+                this.RaisePropertyChanged("ItemElementName");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ModelOneType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cSPCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CSPCode {
+            get {
+                return this.cSPCodeField;
+            }
+            set {
+                this.cSPCodeField = value;
+                this.RaisePropertyChanged("CSPCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ModelTwoType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cASCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CASCode {
+            get {
+                return this.cASCodeField;
+            }
+            set {
+                this.cASCodeField = value;
+                this.RaisePropertyChanged("CASCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
+    public enum ItemChoiceType4 {
+        
+        /// <remarks/>
+        ModelOne,
+        
+        /// <remarks/>
+        ModelThree,
+        
+        /// <remarks/>
+        ModelTwo,
+        
+        /// <remarks/>
+        None,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationCOUTypeRegistrationIndicator {
+        
+        /// <remarks/>
+        R,
+        
+        /// <remarks/>
+        X,
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        Z,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationCOUTypeStateAcctInd {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationCOUTypeRemoteSellerID {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationCOUTypeSSTPAllowanceIndicator {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RegistrationNewType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private RegistrationNewTypeActionCode actionCodeField;
+        
+        private EntityType registrationEntityField;
+        
+        private object itemField;
+        
+        private string dBANameField;
+        
+        private string nAICSCodeField;
+        
+        private AddressType physicalAddressField;
+        
+        private AddressType mailingAddressField;
+        
+        private string sellerPhoneField;
+        
+        private string sellerPhoneExtField;
+        
+        private ContactType sSTPContactField;
+        
+        private string stateIncorporatedField;
+        
+        private TechModelType technologyModelField;
+        
+        private RegistrationNewTypeRegistrationIndicator registrationIndicatorField;
+        
+        private RegistrationNewTypeRemoteSellerID remoteSellerIDField;
+        
+        private System.DateTime remoteEffDateField;
+        
+        private bool remoteEffDateFieldSpecified;
+        
+        private RegistrationNewTypeSSTPAllowanceIndicator sSTPAllowanceIndicatorField;
+        
+        private string newPassField;
+        
+        private System.DateTime firstSalesDateField;
+        
+        private System.DateTime registrationDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public RegistrationNewTypeActionCode ActionCode {
+            get {
+                return this.actionCodeField;
+            }
+            set {
+                this.actionCodeField = value;
+                this.RaisePropertyChanged("ActionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EntityType RegistrationEntity {
+            get {
+                return this.registrationEntityField;
+            }
+            set {
+                this.registrationEntityField = value;
+                this.RaisePropertyChanged("RegistrationEntity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BusinessName", typeof(BusinessNameType), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("IndividualName", typeof(IndividualNameType), Order=2)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DBAName {
+            get {
+                return this.dBANameField;
+            }
+            set {
+                this.dBANameField = value;
+                this.RaisePropertyChanged("DBAName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NAICSCode {
+            get {
+                return this.nAICSCodeField;
+            }
+            set {
+                this.nAICSCodeField = value;
+                this.RaisePropertyChanged("NAICSCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AddressType PhysicalAddress {
+            get {
+                return this.physicalAddressField;
+            }
+            set {
+                this.physicalAddressField = value;
+                this.RaisePropertyChanged("PhysicalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public AddressType MailingAddress {
+            get {
+                return this.mailingAddressField;
+            }
+            set {
+                this.mailingAddressField = value;
+                this.RaisePropertyChanged("MailingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string SellerPhone {
+            get {
+                return this.sellerPhoneField;
+            }
+            set {
+                this.sellerPhoneField = value;
+                this.RaisePropertyChanged("SellerPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string SellerPhoneExt {
+            get {
+                return this.sellerPhoneExtField;
+            }
+            set {
+                this.sellerPhoneExtField = value;
+                this.RaisePropertyChanged("SellerPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public ContactType SSTPContact {
+            get {
+                return this.sSTPContactField;
+            }
+            set {
+                this.sSTPContactField = value;
+                this.RaisePropertyChanged("SSTPContact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string StateIncorporated {
+            get {
+                return this.stateIncorporatedField;
+            }
+            set {
+                this.stateIncorporatedField = value;
+                this.RaisePropertyChanged("StateIncorporated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public TechModelType TechnologyModel {
+            get {
+                return this.technologyModelField;
+            }
+            set {
+                this.technologyModelField = value;
+                this.RaisePropertyChanged("TechnologyModel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=12)]
+        public RegistrationNewTypeRegistrationIndicator RegistrationIndicator {
+            get {
+                return this.registrationIndicatorField;
+            }
+            set {
+                this.registrationIndicatorField = value;
+                this.RaisePropertyChanged("RegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=13)]
+        public RegistrationNewTypeRemoteSellerID RemoteSellerID {
+            get {
+                return this.remoteSellerIDField;
+            }
+            set {
+                this.remoteSellerIDField = value;
+                this.RaisePropertyChanged("RemoteSellerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=14)]
+        public System.DateTime RemoteEffDate {
+            get {
+                return this.remoteEffDateField;
+            }
+            set {
+                this.remoteEffDateField = value;
+                this.RaisePropertyChanged("RemoteEffDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEffDateSpecified {
+            get {
+                return this.remoteEffDateFieldSpecified;
+            }
+            set {
+                this.remoteEffDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEffDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public RegistrationNewTypeSSTPAllowanceIndicator SSTPAllowanceIndicator {
+            get {
+                return this.sSTPAllowanceIndicatorField;
+            }
+            set {
+                this.sSTPAllowanceIndicatorField = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=16)]
+        public string NewPass {
+            get {
+                return this.newPassField;
+            }
+            set {
+                this.newPassField = value;
+                this.RaisePropertyChanged("NewPass");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=17)]
+        public System.DateTime FirstSalesDate {
+            get {
+                return this.firstSalesDateField;
+            }
+            set {
+                this.firstSalesDateField = value;
+                this.RaisePropertyChanged("FirstSalesDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=18)]
+        public System.DateTime RegistrationDate {
+            get {
+                return this.registrationDateField;
+            }
+            set {
+                this.registrationDateField = value;
+                this.RaisePropertyChanged("RegistrationDate");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationNewTypeActionCode {
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationNewTypeRegistrationIndicator {
+        
+        /// <remarks/>
+        R,
+        
+        /// <remarks/>
+        X,
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        Z,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationNewTypeRemoteSellerID {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationNewTypeSSTPAllowanceIndicator {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SSTRegistrationHeaderType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SSTRegistrationHeaderTypeElectronicPostmark electronicPostmarkField;
+        
+        private System.DateTime dateReceivedField;
+        
+        private bool dateReceivedFieldSpecified;
+        
+        private SSTRegistrationHeaderTypeFilingType filingTypeField;
+        
+        private string sSTPIDField;
+        
+        private TINType tINField;
+        
+        private string fIPSCodeField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public SSTRegistrationHeaderTypeElectronicPostmark ElectronicPostmark {
+            get {
+                return this.electronicPostmarkField;
+            }
+            set {
+                this.electronicPostmarkField = value;
+                this.RaisePropertyChanged("ElectronicPostmark");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime DateReceived {
+            get {
+                return this.dateReceivedField;
+            }
+            set {
+                this.dateReceivedField = value;
+                this.RaisePropertyChanged("DateReceived");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DateReceivedSpecified {
+            get {
+                return this.dateReceivedFieldSpecified;
+            }
+            set {
+                this.dateReceivedFieldSpecified = value;
+                this.RaisePropertyChanged("DateReceivedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public SSTRegistrationHeaderTypeFilingType FilingType {
+            get {
+                return this.filingTypeField;
+            }
+            set {
+                this.filingTypeField = value;
+                this.RaisePropertyChanged("FilingType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string SSTPID {
+            get {
+                return this.sSTPIDField;
+            }
+            set {
+                this.sSTPIDField = value;
+                this.RaisePropertyChanged("SSTPID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public TINType TIN {
+            get {
+                return this.tINField;
+            }
+            set {
+                this.tINField = value;
+                this.RaisePropertyChanged("TIN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string FIPSCode {
+            get {
+                return this.fIPSCodeField;
+            }
+            set {
+                this.fIPSCodeField = value;
+                this.RaisePropertyChanged("FIPSCode");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class SSTRegistrationHeaderTypeElectronicPostmark : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier dateSupplierField;
+        
+        private bool dateSupplierFieldSpecified;
+        
+        private System.DateTime valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier DateSupplier {
+            get {
+                return this.dateSupplierField;
+            }
+            set {
+                this.dateSupplierField = value;
+                this.RaisePropertyChanged("DateSupplier");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DateSupplierSpecified {
+            get {
+                return this.dateSupplierFieldSpecified;
+            }
+            set {
+                this.dateSupplierFieldSpecified = value;
+                this.RaisePropertyChanged("DateSupplierSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute(DataType="date")]
+        public System.DateTime Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier {
+        
+        /// <remarks/>
+        Preparer,
+        
+        /// <remarks/>
+        Transmitter,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    public enum SSTRegistrationHeaderTypeFilingType {
+        
+        /// <remarks/>
+        RegNew,
+        
+        /// <remarks/>
+        RegCOU,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TINType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string fedTINField;
+        
+        private TINTypeTypeTIN typeTINField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string FedTIN {
+            get {
+                return this.fedTINField;
+            }
+            set {
+                this.fedTINField = value;
+                this.RaisePropertyChanged("FedTIN");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public TINTypeTypeTIN TypeTIN {
+            get {
+                return this.typeTINField;
+            }
+            set {
+                this.typeTINField = value;
+                this.RaisePropertyChanged("TypeTIN");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum TINTypeTypeTIN {
+        
+        /// <remarks/>
+        SSN,
+        
+        /// <remarks/>
+        FEIN,
+        
+        /// <remarks/>
+        Foreign,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RegistrationDocumentType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string documentIdField;
+        
+        private RegistrationDocumentTypeDocumentType documentTypeField;
+        
+        private SSTRegistrationHeaderType sSTRegistrationHeaderField;
+        
+        private RegistrationDocumentTypeRegistrationInformation registrationInformationField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DocumentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+                this.RaisePropertyChanged("DocumentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public RegistrationDocumentTypeDocumentType DocumentType {
+            get {
+                return this.documentTypeField;
+            }
+            set {
+                this.documentTypeField = value;
+                this.RaisePropertyChanged("DocumentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public SSTRegistrationHeaderType SSTRegistrationHeader {
+            get {
+                return this.sSTRegistrationHeaderField;
+            }
+            set {
+                this.sSTRegistrationHeaderField = value;
+                this.RaisePropertyChanged("SSTRegistrationHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public RegistrationDocumentTypeRegistrationInformation RegistrationInformation {
+            get {
+                return this.registrationInformationField;
+            }
+            set {
+                this.registrationInformationField = value;
+                this.RaisePropertyChanged("RegistrationInformation");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum RegistrationDocumentTypeDocumentType {
+        
+        /// <remarks/>
+        SSTRegistrationNew,
+        
+        /// <remarks/>
+        SSTRegistrationCOU,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class RegistrationDocumentTypeRegistrationInformation : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("StreamlinedRegistrationCOU", typeof(RegistrationCOUType), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("StreamlinedRegistrationNew", typeof(RegistrationNewType), Order=0)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlRootAttribute("SSTRegistrationTransmission", Namespace = "", IsNullable = false)]
+    public partial class SSTRegistrationTransmissionType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private TransmissionHeaderType transmissionHeaderField;
+        
+        private RegistrationDocumentType[] registrationDocumentField;
+        
+        private string transmissionVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public TransmissionHeaderType TransmissionHeader {
+            get {
+                return this.transmissionHeaderField;
+            }
+            set {
+                this.transmissionHeaderField = value;
+                this.RaisePropertyChanged("TransmissionHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("RegistrationDocument", Order=1)]
+        public RegistrationDocumentType[] RegistrationDocument {
+            get {
+                return this.registrationDocumentField;
+            }
+            set {
+                this.registrationDocumentField = value;
+                this.RaisePropertyChanged("RegistrationDocument");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string transmissionVersion {
+            get {
+                return this.transmissionVersionField;
+            }
+            set {
+                this.transmissionVersionField = value;
+                this.RaisePropertyChanged("transmissionVersion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegAcknowledgementType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string documentIdField;
+        
+        private string sSTPIDField;
+        
+        private string newPassField;
+        
+        private BulkRegAcknowledgementTypeDocumentType documentTypeField;
+        
+        private StatusType documentStatusField;
+        
+        private BulkRegAcknowledgementTypeErrors errorsField;
+        
+        private string documentVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DocumentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+                this.RaisePropertyChanged("DocumentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string SSTPID {
+            get {
+                return this.sSTPIDField;
+            }
+            set {
+                this.sSTPIDField = value;
+                this.RaisePropertyChanged("SSTPID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string NewPass {
+            get {
+                return this.newPassField;
+            }
+            set {
+                this.newPassField = value;
+                this.RaisePropertyChanged("NewPass");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public BulkRegAcknowledgementTypeDocumentType DocumentType {
+            get {
+                return this.documentTypeField;
+            }
+            set {
+                this.documentTypeField = value;
+                this.RaisePropertyChanged("DocumentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public StatusType DocumentStatus {
+            get {
+                return this.documentStatusField;
+            }
+            set {
+                this.documentStatusField = value;
+                this.RaisePropertyChanged("DocumentStatus");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public BulkRegAcknowledgementTypeErrors Errors {
+            get {
+                return this.errorsField;
+            }
+            set {
+                this.errorsField = value;
+                this.RaisePropertyChanged("Errors");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string documentVersion {
+            get {
+                return this.documentVersionField;
+            }
+            set {
+                this.documentVersionField = value;
+                this.RaisePropertyChanged("documentVersion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegAcknowledgementTypeDocumentType {
+        
+        /// <remarks/>
+        BulkRegNew,
+        
+        /// <remarks/>
+        BulkRegCOU,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class BulkRegAcknowledgementTypeErrors : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private BulkRegAcknowledgementTypeErrorsError[] errorField;
+        
+        private string errorCountField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("Error", Order=0)]
+        public BulkRegAcknowledgementTypeErrorsError[] Error {
+            get {
+                return this.errorField;
+            }
+            set {
+                this.errorField = value;
+                this.RaisePropertyChanged("Error");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        public string errorCount {
+            get {
+                return this.errorCountField;
+            }
+            set {
+                this.errorCountField = value;
+                this.RaisePropertyChanged("errorCount");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class BulkRegAcknowledgementTypeErrorsError : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string itemField;
+        
+        private ItemChoiceType1 itemElementNameField;
+        
+        private string errorMessageField;
+        
+        private string additionalErrorMessageField;
+        
+        private string severityField;
+        
+        private string dataValueField;
+        
+        private string errorIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("FieldIdentifier", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("XPath", typeof(string), Order=0)]
+        [System.Xml.Serialization.XmlChoiceIdentifierAttribute("ItemElementName")]
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public ItemChoiceType1 ItemElementName {
+            get {
+                return this.itemElementNameField;
+            }
+            set {
+                this.itemElementNameField = value;
+                this.RaisePropertyChanged("ItemElementName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public string ErrorMessage {
+            get {
+                return this.errorMessageField;
+            }
+            set {
+                this.errorMessageField = value;
+                this.RaisePropertyChanged("ErrorMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string AdditionalErrorMessage {
+            get {
+                return this.additionalErrorMessageField;
+            }
+            set {
+                this.additionalErrorMessageField = value;
+                this.RaisePropertyChanged("AdditionalErrorMessage");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Severity {
+            get {
+                return this.severityField;
+            }
+            set {
+                this.severityField = value;
+                this.RaisePropertyChanged("Severity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string DataValue {
+            get {
+                return this.dataValueField;
+            }
+            set {
+                this.dataValueField = value;
+                this.RaisePropertyChanged("DataValue");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        public string errorId {
+            get {
+                return this.errorIdField;
+            }
+            set {
+                this.errorIdField = value;
+                this.RaisePropertyChanged("errorId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
+    public enum ItemChoiceType1 {
+        
+        /// <remarks/>
+        FieldIdentifier,
+        
+        /// <remarks/>
+        XPath,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlRootAttribute("BulkRegistrationAcknowledgement", Namespace = "", IsNullable = false)]
+    public partial class BulkRegistrationAcknowledgementType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private AcknowledgementHeaderType acknowledgementHeaderField;
+        
+        private TransmissionAcknowledgementType transmissionAcknowledgementField;
+        
+        private BulkRegAcknowledgementType[] bulkRegAcknowledgementField;
+        
+        private string acknowledgementVersionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public AcknowledgementHeaderType AcknowledgementHeader {
+            get {
+                return this.acknowledgementHeaderField;
+            }
+            set {
+                this.acknowledgementHeaderField = value;
+                this.RaisePropertyChanged("AcknowledgementHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public TransmissionAcknowledgementType TransmissionAcknowledgement {
+            get {
+                return this.transmissionAcknowledgementField;
+            }
+            set {
+                this.transmissionAcknowledgementField = value;
+                this.RaisePropertyChanged("TransmissionAcknowledgement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BulkRegAcknowledgement", Order=2)]
+        public BulkRegAcknowledgementType[] BulkRegAcknowledgement {
+            get {
+                return this.bulkRegAcknowledgementField;
+            }
+            set {
+                this.bulkRegAcknowledgementField = value;
+                this.RaisePropertyChanged("BulkRegAcknowledgement");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string acknowledgementVersion {
+            get {
+                return this.acknowledgementVersionField;
+            }
+            set {
+                this.acknowledgementVersionField = value;
+                this.RaisePropertyChanged("acknowledgementVersion");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationCOUType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private BulkRegistrationCOUTypeActionCode actionCodeField;
+        
+        private string sSTPIDField;
+        
+        private object[] itemsField;
+        
+        private System.DateTime effectiveDateField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BulkRegistrationCOUTypeActionCode ActionCode {
+            get {
+                return this.actionCodeField;
+            }
+            set {
+                this.actionCodeField = value;
+                this.RaisePropertyChanged("ActionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string SSTPID {
+            get {
+                return this.sSTPIDField;
+            }
+            set {
+                this.sSTPIDField = value;
+                this.RaisePropertyChanged("SSTPID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BusinessInfo", typeof(BulkRegistrationCOUTypeBusinessInfo), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("StateIndicators", typeof(BulkRegistrationCOUTypeStateIndicators), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("TechnologyModel", typeof(TechModelType), Order=2)]
+        public object[] Items {
+            get {
+                return this.itemsField;
+            }
+            set {
+                this.itemsField = value;
+                this.RaisePropertyChanged("Items");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=3)]
+        public System.DateTime EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+                this.RaisePropertyChanged("EffectiveDate");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationCOUTypeActionCode {
+        
+        /// <remarks/>
+        C,
+        
+        /// <remarks/>
+        O,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class BulkRegistrationCOUTypeBusinessInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string dBANameField;
+        
+        private string nAICSCodeField;
+        
+        private AddressType physicalAddressField;
+        
+        private AddressType mailingAddressField;
+        
+        private string sellerPhoneField;
+        
+        private string sellerPhoneExtField;
+        
+        private ContactType sSTPContactField;
+        
+        private string stateIncorporatedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DBAName {
+            get {
+                return this.dBANameField;
+            }
+            set {
+                this.dBANameField = value;
+                this.RaisePropertyChanged("DBAName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string NAICSCode {
+            get {
+                return this.nAICSCodeField;
+            }
+            set {
+                this.nAICSCodeField = value;
+                this.RaisePropertyChanged("NAICSCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public AddressType PhysicalAddress {
+            get {
+                return this.physicalAddressField;
+            }
+            set {
+                this.physicalAddressField = value;
+                this.RaisePropertyChanged("PhysicalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AddressType MailingAddress {
+            get {
+                return this.mailingAddressField;
+            }
+            set {
+                this.mailingAddressField = value;
+                this.RaisePropertyChanged("MailingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SellerPhone {
+            get {
+                return this.sellerPhoneField;
+            }
+            set {
+                this.sellerPhoneField = value;
+                this.RaisePropertyChanged("SellerPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string SellerPhoneExt {
+            get {
+                return this.sellerPhoneExtField;
+            }
+            set {
+                this.sellerPhoneExtField = value;
+                this.RaisePropertyChanged("SellerPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public ContactType SSTPContact {
+            get {
+                return this.sSTPContactField;
+            }
+            set {
+                this.sSTPContactField = value;
+                this.RaisePropertyChanged("SSTPContact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string StateIncorporated {
+            get {
+                return this.stateIncorporatedField;
+            }
+            set {
+                this.stateIncorporatedField = value;
+                this.RaisePropertyChanged("StateIncorporated");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class BulkRegistrationCOUTypeStateIndicators : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string stateField;
+        
+        private BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator registrationIndicatorField;
+        
+        private bool registrationIndicatorFieldSpecified;
+        
+        private System.DateTime lastSaleDateField;
+        
+        private bool lastSaleDateFieldSpecified;
+        
+        private BulkRegistrationCOUTypeStateIndicatorsStateAcctInd stateAcctIndField;
+        
+        private bool stateAcctIndFieldSpecified;
+        
+        private BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID remoteSellerIDField;
+        
+        private bool remoteSellerIDFieldSpecified;
+        
+        private System.DateTime remoteEffDateField;
+        
+        private bool remoteEffDateFieldSpecified;
+        
+        private System.DateTime remoteEndDateField;
+        
+        private bool remoteEndDateFieldSpecified;
+        
+        private System.DateTime cSPEndDateField;
+        
+        private bool cSPEndDateFieldSpecified;
+        
+        private string cSPLastFilingPdField;
+        
+        private System.DateTime acctCloseDateField;
+        
+        private bool acctCloseDateFieldSpecified;
+        
+        private System.DateTime firstSaleDateField;
+        
+        private bool firstSaleDateFieldSpecified;
+        
+        private BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator sSTPAllowanceIndicatorField;
+        
+        private bool sSTPAllowanceIndicatorFieldSpecified;
+        
+        private System.DateTime firstFilingPeriodField;
+        
+        private bool firstFilingPeriodFieldSpecified;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string State {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("State");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator RegistrationIndicator {
+            get {
+                return this.registrationIndicatorField;
+            }
+            set {
+                this.registrationIndicatorField = value;
+                this.RaisePropertyChanged("RegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RegistrationIndicatorSpecified {
+            get {
+                return this.registrationIndicatorFieldSpecified;
+            }
+            set {
+                this.registrationIndicatorFieldSpecified = value;
+                this.RaisePropertyChanged("RegistrationIndicatorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
+        public System.DateTime LastSaleDate {
+            get {
+                return this.lastSaleDateField;
+            }
+            set {
+                this.lastSaleDateField = value;
+                this.RaisePropertyChanged("LastSaleDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool LastSaleDateSpecified {
+            get {
+                return this.lastSaleDateFieldSpecified;
+            }
+            set {
+                this.lastSaleDateFieldSpecified = value;
+                this.RaisePropertyChanged("LastSaleDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public BulkRegistrationCOUTypeStateIndicatorsStateAcctInd StateAcctInd {
+            get {
+                return this.stateAcctIndField;
+            }
+            set {
+                this.stateAcctIndField = value;
+                this.RaisePropertyChanged("StateAcctInd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool StateAcctIndSpecified {
+            get {
+                return this.stateAcctIndFieldSpecified;
+            }
+            set {
+                this.stateAcctIndFieldSpecified = value;
+                this.RaisePropertyChanged("StateAcctIndSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID RemoteSellerID {
+            get {
+                return this.remoteSellerIDField;
+            }
+            set {
+                this.remoteSellerIDField = value;
+                this.RaisePropertyChanged("RemoteSellerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteSellerIDSpecified {
+            get {
+                return this.remoteSellerIDFieldSpecified;
+            }
+            set {
+                this.remoteSellerIDFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteSellerIDSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=5)]
+        public System.DateTime RemoteEffDate {
+            get {
+                return this.remoteEffDateField;
+            }
+            set {
+                this.remoteEffDateField = value;
+                this.RaisePropertyChanged("RemoteEffDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEffDateSpecified {
+            get {
+                return this.remoteEffDateFieldSpecified;
+            }
+            set {
+                this.remoteEffDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEffDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=6)]
+        public System.DateTime RemoteEndDate {
+            get {
+                return this.remoteEndDateField;
+            }
+            set {
+                this.remoteEndDateField = value;
+                this.RaisePropertyChanged("RemoteEndDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEndDateSpecified {
+            get {
+                return this.remoteEndDateFieldSpecified;
+            }
+            set {
+                this.remoteEndDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEndDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=7)]
+        public System.DateTime CSPEndDate {
+            get {
+                return this.cSPEndDateField;
+            }
+            set {
+                this.cSPEndDateField = value;
+                this.RaisePropertyChanged("CSPEndDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool CSPEndDateSpecified {
+            get {
+                return this.cSPEndDateFieldSpecified;
+            }
+            set {
+                this.cSPEndDateFieldSpecified = value;
+                this.RaisePropertyChanged("CSPEndDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="gYearMonth", Order=8)]
+        public string CSPLastFilingPd {
+            get {
+                return this.cSPLastFilingPdField;
+            }
+            set {
+                this.cSPLastFilingPdField = value;
+                this.RaisePropertyChanged("CSPLastFilingPd");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=9)]
+        public System.DateTime AcctCloseDate {
+            get {
+                return this.acctCloseDateField;
+            }
+            set {
+                this.acctCloseDateField = value;
+                this.RaisePropertyChanged("AcctCloseDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool AcctCloseDateSpecified {
+            get {
+                return this.acctCloseDateFieldSpecified;
+            }
+            set {
+                this.acctCloseDateFieldSpecified = value;
+                this.RaisePropertyChanged("AcctCloseDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=10)]
+        public System.DateTime FirstSaleDate {
+            get {
+                return this.firstSaleDateField;
+            }
+            set {
+                this.firstSaleDateField = value;
+                this.RaisePropertyChanged("FirstSaleDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FirstSaleDateSpecified {
+            get {
+                return this.firstSaleDateFieldSpecified;
+            }
+            set {
+                this.firstSaleDateFieldSpecified = value;
+                this.RaisePropertyChanged("FirstSaleDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator SSTPAllowanceIndicator {
+            get {
+                return this.sSTPAllowanceIndicatorField;
+            }
+            set {
+                this.sSTPAllowanceIndicatorField = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool SSTPAllowanceIndicatorSpecified {
+            get {
+                return this.sSTPAllowanceIndicatorFieldSpecified;
+            }
+            set {
+                this.sSTPAllowanceIndicatorFieldSpecified = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicatorSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=12)]
+        public System.DateTime FirstFilingPeriod {
+            get {
+                return this.firstFilingPeriodField;
+            }
+            set {
+                this.firstFilingPeriodField = value;
+                this.RaisePropertyChanged("FirstFilingPeriod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool FirstFilingPeriodSpecified {
+            get {
+                return this.firstFilingPeriodFieldSpecified;
+            }
+            set {
+                this.firstFilingPeriodFieldSpecified = value;
+                this.RaisePropertyChanged("FirstFilingPeriodSpecified");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator {
+        
+        /// <remarks/>
+        R,
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationCOUTypeStateIndicatorsStateAcctInd {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationNewType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private BulkRegistrationNewTypeActionCode actionCodeField;
+        
+        private EntityType registrationEntityField;
+        
+        private object itemField;
+        
+        private string dBANameField;
+        
+        private string nAICSCodeField;
+        
+        private AddressType physicalAddressField;
+        
+        private AddressType mailingAddressField;
+        
+        private string sellerPhoneField;
+        
+        private string sellerPhoneExtField;
+        
+        private ContactType sSTPContactField;
+        
+        private string stateIncorporatedField;
+        
+        private TechModelType technologyModelField;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicator[] stateRegistrationIndicatorField;
+        
+        private System.DateTime effectiveDateField;
+        
+        private string firstFilingPeriodField;
+        
+        private string newPassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BulkRegistrationNewTypeActionCode ActionCode {
+            get {
+                return this.actionCodeField;
+            }
+            set {
+                this.actionCodeField = value;
+                this.RaisePropertyChanged("ActionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EntityType RegistrationEntity {
+            get {
+                return this.registrationEntityField;
+            }
+            set {
+                this.registrationEntityField = value;
+                this.RaisePropertyChanged("RegistrationEntity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BusinessName", typeof(BusinessNameType), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("IndividualName", typeof(IndividualNameType), Order=2)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DBAName {
+            get {
+                return this.dBANameField;
+            }
+            set {
+                this.dBANameField = value;
+                this.RaisePropertyChanged("DBAName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NAICSCode {
+            get {
+                return this.nAICSCodeField;
+            }
+            set {
+                this.nAICSCodeField = value;
+                this.RaisePropertyChanged("NAICSCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AddressType PhysicalAddress {
+            get {
+                return this.physicalAddressField;
+            }
+            set {
+                this.physicalAddressField = value;
+                this.RaisePropertyChanged("PhysicalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public AddressType MailingAddress {
+            get {
+                return this.mailingAddressField;
+            }
+            set {
+                this.mailingAddressField = value;
+                this.RaisePropertyChanged("MailingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string SellerPhone {
+            get {
+                return this.sellerPhoneField;
+            }
+            set {
+                this.sellerPhoneField = value;
+                this.RaisePropertyChanged("SellerPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string SellerPhoneExt {
+            get {
+                return this.sellerPhoneExtField;
+            }
+            set {
+                this.sellerPhoneExtField = value;
+                this.RaisePropertyChanged("SellerPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public ContactType SSTPContact {
+            get {
+                return this.sSTPContactField;
+            }
+            set {
+                this.sSTPContactField = value;
+                this.RaisePropertyChanged("SSTPContact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string StateIncorporated {
+            get {
+                return this.stateIncorporatedField;
+            }
+            set {
+                this.stateIncorporatedField = value;
+                this.RaisePropertyChanged("StateIncorporated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public TechModelType TechnologyModel {
+            get {
+                return this.technologyModelField;
+            }
+            set {
+                this.technologyModelField = value;
+                this.RaisePropertyChanged("TechnologyModel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("StateRegistrationIndicator", Order=12)]
+        public BulkRegistrationNewTypeStateRegistrationIndicator[] StateRegistrationIndicator {
+            get {
+                return this.stateRegistrationIndicatorField;
+            }
+            set {
+                this.stateRegistrationIndicatorField = value;
+                this.RaisePropertyChanged("StateRegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=13)]
+        public System.DateTime EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+                this.RaisePropertyChanged("EffectiveDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="gYearMonth", Order=14)]
+        public string FirstFilingPeriod {
+            get {
+                return this.firstFilingPeriodField;
+            }
+            set {
+                this.firstFilingPeriodField = value;
+                this.RaisePropertyChanged("FirstFilingPeriod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string NewPass {
+            get {
+                return this.newPassField;
+            }
+            set {
+                this.newPassField = value;
+                this.RaisePropertyChanged("NewPass");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeActionCode {
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class BulkRegistrationNewTypeStateRegistrationIndicator : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string stateField;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator registrationIndicatorField;
+        
+        private System.DateTime firstSaleDateField;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID remoteSellerIDField;
+        
+        private System.DateTime remoteEffDateField;
+        
+        private bool remoteEffDateFieldSpecified;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator sSTPAllowanceIndicatorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string State {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("State");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator RegistrationIndicator {
+            get {
+                return this.registrationIndicatorField;
+            }
+            set {
+                this.registrationIndicatorField = value;
+                this.RaisePropertyChanged("RegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
+        public System.DateTime FirstSaleDate {
+            get {
+                return this.firstSaleDateField;
+            }
+            set {
+                this.firstSaleDateField = value;
+                this.RaisePropertyChanged("FirstSaleDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID RemoteSellerID {
+            get {
+                return this.remoteSellerIDField;
+            }
+            set {
+                this.remoteSellerIDField = value;
+                this.RaisePropertyChanged("RemoteSellerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
+        public System.DateTime RemoteEffDate {
+            get {
+                return this.remoteEffDateField;
+            }
+            set {
+                this.remoteEffDateField = value;
+                this.RaisePropertyChanged("RemoteEffDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEffDateSpecified {
+            get {
+                return this.remoteEffDateFieldSpecified;
+            }
+            set {
+                this.remoteEffDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEffDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator SSTPAllowanceIndicator {
+            get {
+                return this.sSTPAllowanceIndicatorField;
+            }
+            set {
+                this.sSTPAllowanceIndicatorField = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicator");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator {
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        R,
+        
+        /// <remarks/>
+        X,
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        Z,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator {
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationHeaderType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private BulkRegistrationHeaderTypeElectronicPostmark electronicPostmarkField;
+        
+        private System.DateTime dateReceivedField;
+        
+        private bool dateReceivedFieldSpecified;
+        
+        private BulkRegistrationHeaderTypeFilingType filingTypeField;
+        
+        private TINType tINField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BulkRegistrationHeaderTypeElectronicPostmark ElectronicPostmark {
+            get {
+                return this.electronicPostmarkField;
+            }
+            set {
+                this.electronicPostmarkField = value;
+                this.RaisePropertyChanged("ElectronicPostmark");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=1)]
+        public System.DateTime DateReceived {
+            get {
+                return this.dateReceivedField;
+            }
+            set {
+                this.dateReceivedField = value;
+                this.RaisePropertyChanged("DateReceived");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool DateReceivedSpecified {
+            get {
+                return this.dateReceivedFieldSpecified;
+            }
+            set {
+                this.dateReceivedFieldSpecified = value;
+                this.RaisePropertyChanged("DateReceivedSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public BulkRegistrationHeaderTypeFilingType FilingType {
+            get {
+                return this.filingTypeField;
+            }
+            set {
+                this.filingTypeField = value;
+                this.RaisePropertyChanged("FilingType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public TINType TIN {
+            get {
+                return this.tINField;
+            }
+            set {
+                this.tINField = value;
+                this.RaisePropertyChanged("TIN");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public partial class BulkRegistrationHeaderTypeElectronicPostmark : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string cSPIDField;
+        
+        private System.DateTime valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string CSPID {
+            get {
+                return this.cSPIDField;
+            }
+            set {
+                this.cSPIDField = value;
+                this.RaisePropertyChanged("CSPID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute(DataType="date")]
+        public System.DateTime Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationHeaderTypeFilingType {
+        
+        /// <remarks/>
+        BulkRegNew,
+        
+        /// <remarks/>
+        BulkRegCOU,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationDocumentType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string documentIdField;
+        
+        private BulkRegistrationDocumentTypeDocumentType documentTypeField;
+        
+        private BulkRegistrationHeaderType bulkRegistrationHeaderField;
+        
+        private object itemField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DocumentId {
+            get {
+                return this.documentIdField;
+            }
+            set {
+                this.documentIdField = value;
+                this.RaisePropertyChanged("DocumentId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public BulkRegistrationDocumentTypeDocumentType DocumentType {
+            get {
+                return this.documentTypeField;
+            }
+            set {
+                this.documentTypeField = value;
+                this.RaisePropertyChanged("DocumentType");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public BulkRegistrationHeaderType BulkRegistrationHeader {
+            get {
+                return this.bulkRegistrationHeaderField;
+            }
+            set {
+                this.bulkRegistrationHeaderField = value;
+                this.RaisePropertyChanged("BulkRegistrationHeader");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BulkRegistrationCOU", typeof(BulkRegistrationCOUType), Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute("BulkRegistrationNew", typeof(BulkRegistrationNewType), Order=3)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationDocumentTypeDocumentType {
+        
+        /// <remarks/>
+        BulkRegistrationNew,
+        
+        /// <remarks/>
+        BulkRegistrationCOU,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AmountType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private decimal valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlTextAttribute()]
+        public decimal Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+                this.RaisePropertyChanged("Value");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum TransmissionHeaderTypeProcessType {
+        
+        /// <remarks/>
+        T,
+        
+        /// <remarks/>
+        P,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -7061,40 +5951,20 @@ namespace WSClient.ServiceReference1 {
             return base.Channel.BulkRegistration(bulkRegistrationTransmission);
         }
         
-        public System.Threading.Tasks.Task<WSClient.ServiceReference1.BulkRegistrationAcknowledgementType> BulkRegistrationAsync(WSClient.ServiceReference1.BulkRegistrationTransmissionType bulkRegistrationTransmission) {
-            return base.Channel.BulkRegistrationAsync(bulkRegistrationTransmission);
-        }
-        
         public WSClient.ServiceReference1.BulkRegistrationAcknowledgementType Registration(WSClient.ServiceReference1.BulkRegistrationTransmissionType registrationTransmission) {
             return base.Channel.Registration(registrationTransmission);
-        }
-        
-        public System.Threading.Tasks.Task<WSClient.ServiceReference1.BulkRegistrationAcknowledgementType> RegistrationAsync(WSClient.ServiceReference1.BulkRegistrationTransmissionType registrationTransmission) {
-            return base.Channel.RegistrationAsync(registrationTransmission);
         }
         
         public WSClient.ServiceReference1.SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus, string RegistrationType, string ActiveStatus) {
             return base.Channel.GetDocuments(AcknowledgementStatus, RegistrationType, ActiveStatus);
         }
         
-        public System.Threading.Tasks.Task<WSClient.ServiceReference1.SSTRegistrationTransmissionType> GetDocumentsAsync(string AcknowledgementStatus, string RegistrationType, string ActiveStatus) {
-            return base.Channel.GetDocumentsAsync(AcknowledgementStatus, RegistrationType, ActiveStatus);
-        }
-        
         public WSClient.ServiceReference1.SSTRegistrationTransmissionType GetTransmission(string TransmissionId) {
             return base.Channel.GetTransmission(TransmissionId);
         }
         
-        public System.Threading.Tasks.Task<WSClient.ServiceReference1.SSTRegistrationTransmissionType> GetTransmissionAsync(string TransmissionId) {
-            return base.Channel.GetTransmissionAsync(TransmissionId);
-        }
-        
         public WSClient.ServiceReference1.SSTReceiptType AcknowledgeTransmission(WSClient.ServiceReference1.SSTPAcknowledgementType acknowledgement) {
             return base.Channel.AcknowledgeTransmission(acknowledgement);
-        }
-        
-        public System.Threading.Tasks.Task<WSClient.ServiceReference1.SSTReceiptType> AcknowledgeTransmissionAsync(WSClient.ServiceReference1.SSTPAcknowledgementType acknowledgement) {
-            return base.Channel.AcknowledgeTransmissionAsync(acknowledgement);
         }
     }
 }

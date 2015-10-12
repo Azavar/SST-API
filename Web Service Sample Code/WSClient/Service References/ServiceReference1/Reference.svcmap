@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dbf10224-ae61-46b1-b19b-5058102bcfff" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6fd96a38-179b-423d-adf1-51ec59dfa435" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
-    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
     <ReferencedAssemblies />
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://54.174.97.188/Api.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:57320/Api.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Api.disco" MetadataType="Disco" ID="30b486ab-952e-4231-b824-e91dbb04e758" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?disco" />
-    <MetadataFile FileName="Api.wsdl" MetadataType="Wsdl" ID="4575f423-35d1-435a-8d52-d8cfc0f1658d" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="Api.xsd" MetadataType="Schema" ID="33114b19-7620-425e-bb08-b54ea3473137" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?xsd=xsd1" />
-    <MetadataFile FileName="ApiService.wsdl" MetadataType="Wsdl" ID="bd7039cb-8b26-4beb-8921-904bafcda981" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?wsdl" />
-    <MetadataFile FileName="Api1.xsd" MetadataType="Schema" ID="953a5616-91a0-4acf-959a-0b8a4310c22c" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?xsd=xsd0" />
-    <MetadataFile FileName="Api2.xsd" MetadataType="Schema" ID="0e2d6381-e7c4-45c2-b2ca-6340c7e41da6" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?xsd=xsd3" />
-    <MetadataFile FileName="Api3.xsd" MetadataType="Schema" ID="25636004-dc6b-489f-8807-37326aa9c3b4" SourceId="1" SourceUrl="http://54.174.97.188/Api.svc?xsd=xsd2" />
+    <MetadataFile FileName="Api.wsdl" MetadataType="Wsdl" ID="82014bb1-8b64-41d0-a0f8-89a6f289f174" SourceId="1" SourceUrl="http://localhost:57320/Api.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Api.disco" MetadataType="Disco" ID="376d803f-7964-4893-849d-80857c09e269" SourceId="1" SourceUrl="http://localhost:57320/Api.svc?disco" />
+    <MetadataFile FileName="Api.xsd" MetadataType="Schema" ID="5416f1f7-943f-4fee-97fd-62d7fb830eaa" SourceId="1" SourceUrl="http://localhost:57320/Api.svc?xsd=xsd0" />
+    <MetadataFile FileName="ApiService.wsdl" MetadataType="Wsdl" ID="5ffb05a3-8913-48be-ac1d-cb42f89fb0d0" SourceId="1" SourceUrl="http://localhost:57320/Api.svc?wsdl" />
+    <MetadataFile FileName="Api1.xsd" MetadataType="Schema" ID="d3c2d8e6-73a2-4d80-801e-16a7388b6bea" SourceId="1" SourceUrl="http://localhost:57320/Api.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

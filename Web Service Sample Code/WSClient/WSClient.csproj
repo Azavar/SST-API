@@ -66,12 +66,6 @@
     <None Include="Service References\ServiceReference1\Api1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\Api2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ServiceReference1\Api3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Service References\ServiceReference1\ApiService.wsdl" />
     <None Include="Service References\ServiceReference1\WSClient.ServiceReference1.BulkRegistrationAcknowledgementType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
