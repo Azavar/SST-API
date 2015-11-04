@@ -85,7 +85,7 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
-						<xs:element name="FirstSaleDate" type="DateType"/>
+						<xs:element name="FirstSalesDate" type="DateType"/>
 						<xs:element name="RemoteSellerID">
 							<xs:simpleType>
 								<xs:restriction base="xs:string">
@@ -95,17 +95,27 @@
 							</xs:simpleType>
 						</xs:element>
 						<xs:element name="RemoteEffDate" type="DateType" minOccurs="0"/>
-						<xs:element name="SSTPAllowanceIndicator">
-							<xs:simpleType>
-								<xs:restriction base="xs:string">
-									<xs:enumeration value="U">
-										<xs:annotation>
-											<xs:documentation>Undetermined whether the seller is a volunteer for purposes of CSP/CAS compensation</xs:documentation>
-										</xs:annotation>
-									</xs:enumeration>
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:element>
+						<xs:element name="SSTPAllowanceIndicator" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Y">
+											<xs:annotation>
+												<xs:documentation>Yes, seller is a volunteer for purposes of CSP/CAS compensation</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="N">
+											<xs:annotation>
+												<xs:documentation>No, seller is not a volunteer for compensation purposes</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="U">
+											<xs:annotation>
+												<xs:documentation>Undetermined whether seller is a volunteer for compensation purposes</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>

@@ -125,7 +125,7 @@
 			<xs:element name="CSPEndDate" type="DateType" minOccurs="0"/>
 			<xs:element name="CSPLastFilingPd" type="YearMonthType" minOccurs="0"/>
 			<xs:element name="AcctCloseDate" type="DateType" minOccurs="0"/>
-			<xs:element name="FirstSaleDate" type="DateType" minOccurs="0"/>
+			<xs:element name="FirstSalesDate" type="DateType" minOccurs="0"/>
 			<xs:element name="SSTPAllowanceIndicator" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
