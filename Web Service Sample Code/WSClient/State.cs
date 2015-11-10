@@ -29,7 +29,7 @@ namespace WSClient
                     Console.WriteLine("Calling API GetDocuments(..)");
 
                     //Make web service call to request unacknowledged registrations.
-                    var transmission = client.GetDocuments("A", "", "");
+                    var transmission = client.GetDocuments("U", "", "");
 
                     var registrations = new List<InternalRegistration>();
                     if (int.Parse(transmission.TransmissionHeader.DocumentCount) > 0)
@@ -98,8 +98,8 @@ namespace WSClient
                     }
 
                     //Submit the acknowledgement
-                    var receipt = client.AcknowledgeTransmission(ackMessage);
-                    Console.WriteLine("Confirmed Receipt {0} at {1}", receipt.TransmissionReceipt.TransmissionID, receipt.ReceiptHeader.ReceiptTimestamp);
+                    //var receipt = client.AcknowledgeTransmission(ackMessage);
+                    //Console.WriteLine("Confirmed Receipt {0} at {1}", receipt.TransmissionReceipt.TransmissionID, receipt.ReceiptHeader.ReceiptTimestamp);
 
 
                 } catch (MessageSecurityException ex)
@@ -144,11 +144,10 @@ namespace WSClient
                 i.Middle = name.MiddleInitial;
                 i.Last = name.LastName;
             }
-            else if (nameType.GetType() == typeof(BusinessNameType))
+            else if (nameType is string)
             {
-                var name = (BusinessNameType) nameType;
-                i.BusinessNameLine1 = name.BusinessNameLine1Txt;
-                i.BusinessNameLine2 = name.BusinessNameLine2Txt;
+                var name = (string) nameType;
+                i.BusinessNameLine1 = name;
             }
         }
 

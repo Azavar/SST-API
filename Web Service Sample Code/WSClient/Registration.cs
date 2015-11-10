@@ -50,10 +50,7 @@ namespace WSClient
             var registrationNew = new BulkRegistrationNewType()
                                       {
                                           ActionCode = BulkRegistrationNewTypeActionCode.N,
-                                          Item = new ServiceReference1.BusinessNameType()
-                                                     {
-                                                         BusinessNameLine1Txt = "Acme Inc."
-                                                     },
+                                          Item ="Acme Inc.",
                                           MailingAddress = new AddressType()
                                                                {
                                                                    Item = new AddressTypeUSAddress()

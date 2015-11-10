@@ -11,13 +11,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="TransmissionId" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="Timestamp" type="xs:dateTime" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Transmitter">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="ETIN" type="xs:string" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Transmitter" type="TransmissionHeaderTypeTransmitter" />
       <xs:element minOccurs="1" maxOccurs="1" name="ProcessType">
         <xs:simpleType>
           <xs:restriction base="xs:string">
@@ -28,6 +22,11 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="DocumentCount" type="xs:positiveInteger" />
       <xs:element minOccurs="0" maxOccurs="1" name="TransmissionPaymentHash" type="AmountType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransmissionHeaderTypeTransmitter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ETIN" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="AmountType">
@@ -48,22 +47,14 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="BulkRegistrationHeader" type="BulkRegistrationHeaderType" />
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="BulkRegistrationNew" type="BulkRegistrationNewType" />
         <xs:element minOccurs="0" maxOccurs="1" name="BulkRegistrationCOU" type="BulkRegistrationCOUType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="BulkRegistrationNew" type="BulkRegistrationNewType" />
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BulkRegistrationHeaderType">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="ElectronicPostmark">
-        <xs:complexType>
-          <xs:simpleContent>
-            <xs:extension base="xs:date">
-              <xs:attribute name="CSPID" type="xs:string" />
-            </xs:extension>
-          </xs:simpleContent>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ElectronicPostmark" type="BulkRegistrationHeaderTypeElectronicPostmark" />
       <xs:element minOccurs="0" maxOccurs="1" name="DateReceived" type="xs:date" />
       <xs:element minOccurs="1" maxOccurs="1" name="FilingType">
         <xs:simpleType>
@@ -75,6 +66,13 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="TIN" type="TINType" />
     </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BulkRegistrationHeaderTypeElectronicPostmark">
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="CSPID" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="TINType">
     <xs:sequence>
@@ -90,20 +88,28 @@
       </xs:simpleType>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="BulkRegistrationNewType">
+  <xs:complexType name="BulkRegistrationCOUType">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="ActionCode">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="N" />
+            <xs:enumeration value="C" />
+            <xs:enumeration value="O" />
+            <xs:enumeration value="U" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
-      <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="BusinessNameType" />
-        <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SSTPID" type="xs:string" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="0" maxOccurs="1" name="BusinessInfo" type="BulkRegistrationCOUTypeBusinessInfo" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StateIndicators" type="BulkRegistrationCOUTypeStateIndicators" />
+        <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
       </xs:choice>
+      <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BulkRegistrationCOUTypeBusinessInfo">
+    <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
@@ -112,119 +118,101 @@
       <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
       <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateRegistrationIndicator">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string" />
-            <xs:element minOccurs="1" maxOccurs="1" name="RegistrationIndicator">
-              <xs:simpleType>
-                <xs:restriction base="xs:string">
-                  <xs:enumeration value="N" />
-                  <xs:enumeration value="R" />
-                  <xs:enumeration value="X" />
-                  <xs:enumeration value="A" />
-                  <xs:enumeration value="Z" />
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:element>
-            <xs:element minOccurs="1" maxOccurs="1" name="FirstSaleDate" type="xs:date" />
-            <xs:element minOccurs="1" maxOccurs="1" name="RemoteSellerID">
-              <xs:simpleType>
-                <xs:restriction base="xs:string">
-                  <xs:enumeration value="Y" />
-                  <xs:enumeration value="N" />
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:element>
-            <xs:element minOccurs="0" maxOccurs="1" name="RemoteEffDate" type="xs:date" />
-            <xs:element minOccurs="1" maxOccurs="1" name="SSTPAllowanceIndicator">
-              <xs:simpleType>
-                <xs:restriction base="xs:string">
-                  <xs:enumeration value="N" />
-                  <xs:enumeration value="Y" />
-                  <xs:enumeration value="U" />
-                </xs:restriction>
-              </xs:simpleType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="FirstFilingPeriod" type="xs:gYearMonth" />
-      <xs:element minOccurs="0" maxOccurs="1" name="NewPass" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:simpleType name="EntityType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="SP" />
-      <xs:enumeration value="CO" />
-      <xs:enumeration value="TR" />
-      <xs:enumeration value="PA" />
-      <xs:enumeration value="LL" />
-      <xs:enumeration value="GO" />
-      <xs:enumeration value="OT" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="BusinessNameType">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="BusinessNameLine1Txt" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="BusinessNameLine2Txt" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="IndividualNameType">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="MiddleInitial" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="NameSuffix" type="GenerationalNameSuffixType" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:simpleType name="GenerationalNameSuffixType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="JR" />
-      <xs:enumeration value="SR" />
-      <xs:enumeration value="I" />
-      <xs:enumeration value="II" />
-      <xs:enumeration value="III" />
-      <xs:enumeration value="IV" />
-      <xs:enumeration value="V" />
-      <xs:enumeration value="VI" />
-      <xs:enumeration value="VII" />
-      <xs:enumeration value="VIII" />
-      <xs:enumeration value="IX" />
-      <xs:enumeration value="X" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:complexType name="AddressType">
     <xs:sequence>
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="ForeignAddress">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1Txt" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2Txt" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="CityNm" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="ProvinceOrStateNm" type="xs:string" />
-              <xs:element minOccurs="1" maxOccurs="1" name="CountryCd" type="CountryType" />
-              <xs:element minOccurs="0" maxOccurs="1" name="ForeignPostalCd" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="InCareOfNm" type="xs:string" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element minOccurs="0" maxOccurs="1" name="USAddress">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1Txt" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2Txt" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="CityNm" type="xs:string" />
-              <xs:element minOccurs="1" maxOccurs="1" name="StateAbbreviationCd" type="StateType" />
-              <xs:element minOccurs="0" maxOccurs="1" name="ZIPCd" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="InCareOfNm" type="xs:string" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="USAddress" type="AddressTypeUSAddress" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ForeignAddress" type="AddressTypeForeignAddress" />
       </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AddressTypeUSAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1Txt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2Txt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CityNm" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="StateAbbreviationCd" type="StateType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ZIPCd" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InCareOfNm" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="StateType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AL" />
+      <xs:enumeration value="AK" />
+      <xs:enumeration value="AS" />
+      <xs:enumeration value="AZ" />
+      <xs:enumeration value="AR" />
+      <xs:enumeration value="CA" />
+      <xs:enumeration value="CO" />
+      <xs:enumeration value="MP" />
+      <xs:enumeration value="CT" />
+      <xs:enumeration value="DE" />
+      <xs:enumeration value="DC" />
+      <xs:enumeration value="FM" />
+      <xs:enumeration value="FL" />
+      <xs:enumeration value="GA" />
+      <xs:enumeration value="GU" />
+      <xs:enumeration value="HI" />
+      <xs:enumeration value="ID" />
+      <xs:enumeration value="IL" />
+      <xs:enumeration value="IN" />
+      <xs:enumeration value="IA" />
+      <xs:enumeration value="KS" />
+      <xs:enumeration value="KY" />
+      <xs:enumeration value="LA" />
+      <xs:enumeration value="ME" />
+      <xs:enumeration value="MH" />
+      <xs:enumeration value="MD" />
+      <xs:enumeration value="MA" />
+      <xs:enumeration value="MI" />
+      <xs:enumeration value="MN" />
+      <xs:enumeration value="MS" />
+      <xs:enumeration value="MO" />
+      <xs:enumeration value="MT" />
+      <xs:enumeration value="NE" />
+      <xs:enumeration value="NV" />
+      <xs:enumeration value="NH" />
+      <xs:enumeration value="NJ" />
+      <xs:enumeration value="NM" />
+      <xs:enumeration value="NY" />
+      <xs:enumeration value="NC" />
+      <xs:enumeration value="ND" />
+      <xs:enumeration value="OH" />
+      <xs:enumeration value="OK" />
+      <xs:enumeration value="OR" />
+      <xs:enumeration value="PW" />
+      <xs:enumeration value="PA" />
+      <xs:enumeration value="PR" />
+      <xs:enumeration value="RI" />
+      <xs:enumeration value="SC" />
+      <xs:enumeration value="SD" />
+      <xs:enumeration value="TN" />
+      <xs:enumeration value="TX" />
+      <xs:enumeration value="VI" />
+      <xs:enumeration value="UT" />
+      <xs:enumeration value="VT" />
+      <xs:enumeration value="VA" />
+      <xs:enumeration value="WA" />
+      <xs:enumeration value="WV" />
+      <xs:enumeration value="WI" />
+      <xs:enumeration value="WY" />
+      <xs:enumeration value="AA" />
+      <xs:enumeration value="AE" />
+      <xs:enumeration value="AP" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AddressTypeForeignAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressLine1Txt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressLine2Txt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CityNm" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProvinceOrStateNm" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CountryCd" type="CountryType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ForeignPostalCd" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InCareOfNm" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="CountryType">
@@ -513,72 +501,6 @@
       <xs:enumeration value="ZI" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="StateType">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="AL" />
-      <xs:enumeration value="AK" />
-      <xs:enumeration value="AS" />
-      <xs:enumeration value="AZ" />
-      <xs:enumeration value="AR" />
-      <xs:enumeration value="CA" />
-      <xs:enumeration value="CO" />
-      <xs:enumeration value="MP" />
-      <xs:enumeration value="CT" />
-      <xs:enumeration value="DE" />
-      <xs:enumeration value="DC" />
-      <xs:enumeration value="FM" />
-      <xs:enumeration value="FL" />
-      <xs:enumeration value="GA" />
-      <xs:enumeration value="GU" />
-      <xs:enumeration value="HI" />
-      <xs:enumeration value="ID" />
-      <xs:enumeration value="IL" />
-      <xs:enumeration value="IN" />
-      <xs:enumeration value="IA" />
-      <xs:enumeration value="KS" />
-      <xs:enumeration value="KY" />
-      <xs:enumeration value="LA" />
-      <xs:enumeration value="ME" />
-      <xs:enumeration value="MH" />
-      <xs:enumeration value="MD" />
-      <xs:enumeration value="MA" />
-      <xs:enumeration value="MI" />
-      <xs:enumeration value="MN" />
-      <xs:enumeration value="MS" />
-      <xs:enumeration value="MO" />
-      <xs:enumeration value="MT" />
-      <xs:enumeration value="NE" />
-      <xs:enumeration value="NV" />
-      <xs:enumeration value="NH" />
-      <xs:enumeration value="NJ" />
-      <xs:enumeration value="NM" />
-      <xs:enumeration value="NY" />
-      <xs:enumeration value="NC" />
-      <xs:enumeration value="ND" />
-      <xs:enumeration value="OH" />
-      <xs:enumeration value="OK" />
-      <xs:enumeration value="OR" />
-      <xs:enumeration value="PW" />
-      <xs:enumeration value="PA" />
-      <xs:enumeration value="PR" />
-      <xs:enumeration value="RI" />
-      <xs:enumeration value="SC" />
-      <xs:enumeration value="SD" />
-      <xs:enumeration value="TN" />
-      <xs:enumeration value="TX" />
-      <xs:enumeration value="VI" />
-      <xs:enumeration value="UT" />
-      <xs:enumeration value="VT" />
-      <xs:enumeration value="VA" />
-      <xs:enumeration value="WA" />
-      <xs:enumeration value="WV" />
-      <xs:enumeration value="WI" />
-      <xs:enumeration value="WY" />
-      <xs:enumeration value="AA" />
-      <xs:enumeration value="AE" />
-      <xs:enumeration value="AP" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:complexType name="ContactType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="ContactName" type="IndividualNameType" />
@@ -587,13 +509,84 @@
       <xs:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="IndividualNameType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MiddleInitial" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LastName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NameSuffix" type="GenerationalNameSuffixType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="GenerationalNameSuffixType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="JR" />
+      <xs:enumeration value="SR" />
+      <xs:enumeration value="I" />
+      <xs:enumeration value="II" />
+      <xs:enumeration value="III" />
+      <xs:enumeration value="IV" />
+      <xs:enumeration value="V" />
+      <xs:enumeration value="VI" />
+      <xs:enumeration value="VII" />
+      <xs:enumeration value="VIII" />
+      <xs:enumeration value="IX" />
+      <xs:enumeration value="X" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BulkRegistrationCOUTypeStateIndicators">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RegistrationIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="R" />
+            <xs:enumeration value="A" />
+            <xs:enumeration value="U" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LastSaleDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateAcctInd">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteSellerID">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEffDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEndDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CSPEndDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CSPLastFilingPd" type="xs:gYearMonth" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AcctCloseDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstSalesDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SSTPAllowanceIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+            <xs:enumeration value="U" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstFilingPeriod" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="TechModelType">
     <xs:sequence>
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="None" />
-        <xs:element minOccurs="0" maxOccurs="1" name="ModelThree" />
         <xs:element minOccurs="0" maxOccurs="1" name="ModelTwo" type="ModelTwoType" />
         <xs:element minOccurs="0" maxOccurs="1" name="ModelOne" type="ModelOneType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ModelThree" />
+        <xs:element minOccurs="0" maxOccurs="1" name="None" />
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
@@ -603,85 +596,79 @@
   <xs:complexType name="ModelOneType">
     <xs:attribute name="CSPCode" type="xs:string" />
   </xs:complexType>
-  <xs:complexType name="BulkRegistrationCOUType">
+  <xs:complexType name="BulkRegistrationNewType">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="ActionCode">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="C" />
-            <xs:enumeration value="O" />
+            <xs:enumeration value="N" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MailingAddress" type="AddressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StateRegistrationIndicator" type="BulkRegistrationNewTypeStateRegistrationIndicator" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstFilingPeriod" type="xs:gYearMonth" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NewPass" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="EntityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SP" />
+      <xs:enumeration value="CO" />
+      <xs:enumeration value="TR" />
+      <xs:enumeration value="PA" />
+      <xs:enumeration value="LL" />
+      <xs:enumeration value="GO" />
+      <xs:enumeration value="OT" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="BulkRegistrationNewTypeStateRegistrationIndicator">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RegistrationIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="N" />
+            <xs:enumeration value="R" />
+            <xs:enumeration value="X" />
+            <xs:enumeration value="A" />
+            <xs:enumeration value="Z" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="FirstSalesDate" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="RemoteSellerID">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEffDate" type="xs:date" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SSTPAllowanceIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="N" />
+            <xs:enumeration value="Y" />
             <xs:enumeration value="U" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="SSTPID" type="xs:string" />
-      <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
-        <xs:element minOccurs="0" maxOccurs="1" name="BusinessInfo">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
-              <xs:element minOccurs="0" maxOccurs="1" name="MailingAddress" type="AddressType" />
-              <xs:element minOccurs="0" maxOccurs="1" name="SellerPhone" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
-              <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element minOccurs="0" maxOccurs="1" name="StateIndicators">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element minOccurs="0" maxOccurs="1" name="State" type="xs:string" />
-              <xs:element minOccurs="0" maxOccurs="1" name="RegistrationIndicator">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:enumeration value="R" />
-                    <xs:enumeration value="A" />
-                    <xs:enumeration value="U" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" maxOccurs="1" name="LastSaleDate" type="xs:date" />
-              <xs:element minOccurs="0" maxOccurs="1" name="StateAcctInd">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:enumeration value="Y" />
-                    <xs:enumeration value="N" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" maxOccurs="1" name="RemoteSellerID">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:enumeration value="Y" />
-                    <xs:enumeration value="N" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" maxOccurs="1" name="RemoteEffDate" type="xs:date" />
-              <xs:element minOccurs="0" maxOccurs="1" name="RemoteEndDate" type="xs:date" />
-              <xs:element minOccurs="0" maxOccurs="1" name="CSPEndDate" type="xs:date" />
-              <xs:element minOccurs="0" maxOccurs="1" name="CSPLastFilingPd" type="xs:gYearMonth" />
-              <xs:element minOccurs="0" maxOccurs="1" name="AcctCloseDate" type="xs:date" />
-              <xs:element minOccurs="0" maxOccurs="1" name="FirstSaleDate" type="xs:date" />
-              <xs:element minOccurs="0" maxOccurs="1" name="SSTPAllowanceIndicator">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:enumeration value="Y" />
-                    <xs:enumeration value="N" />
-                    <xs:enumeration value="U" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element minOccurs="0" maxOccurs="1" name="FirstFilingPeriod" type="xs:date" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:choice>
-      <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BulkRegistrationAcknowledgementType">
@@ -703,28 +690,7 @@
       <xs:element minOccurs="0" maxOccurs="1" name="TransmissionId" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="TransmissionTimestamp" type="xs:dateTime" />
       <xs:element minOccurs="1" maxOccurs="1" name="TransmissionStatus" type="StatusType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Errors">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="Error">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:choice minOccurs="1" maxOccurs="1">
-                    <xs:element minOccurs="0" maxOccurs="1" name="FieldIdentifier" type="xs:string" />
-                    <xs:element minOccurs="0" maxOccurs="1" name="XPath" type="xs:string" />
-                  </xs:choice>
-                  <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="AdditionalErrorMessage" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="Severity" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="DataValue" type="xs:string" />
-                </xs:sequence>
-                <xs:attribute name="errorId" type="xs:positiveInteger" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute name="errorCount" type="xs:nonNegativeInteger" />
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="Errors" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="StatusType">
@@ -733,6 +699,30 @@
       <xs:enumeration value="R" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="Errors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Error" type="ArrayOfErrorsError" />
+    </xs:sequence>
+    <xs:attribute name="errorCount" type="xs:nonNegativeInteger" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfErrorsError">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ErrorsError" nillable="true" type="ErrorsError" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorsError">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="FieldIdentifier" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="XPath" type="xs:string" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AdditionalErrorMessage" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Severity" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DataValue" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="errorId" type="xs:positiveInteger" />
+  </xs:complexType>
   <xs:complexType name="BulkRegAcknowledgementType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="DocumentId" type="xs:string" />
@@ -747,28 +737,7 @@
         </xs:simpleType>
       </xs:element>
       <xs:element minOccurs="1" maxOccurs="1" name="DocumentStatus" type="StatusType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Errors">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="Error">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:choice minOccurs="1" maxOccurs="1">
-                    <xs:element minOccurs="0" maxOccurs="1" name="FieldIdentifier" type="xs:string" />
-                    <xs:element minOccurs="0" maxOccurs="1" name="XPath" type="xs:string" />
-                  </xs:choice>
-                  <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="AdditionalErrorMessage" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="Severity" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="DataValue" type="xs:string" />
-                </xs:sequence>
-                <xs:attribute name="errorId" type="xs:positiveInteger" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute name="errorCount" type="xs:nonNegativeInteger" />
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="Errors" />
     </xs:sequence>
     <xs:attribute name="documentVersion" type="xs:string" />
   </xs:complexType>
@@ -791,36 +760,12 @@
         </xs:simpleType>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="SSTRegistrationHeader" type="SSTRegistrationHeaderType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="RegistrationInformation">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:choice minOccurs="1" maxOccurs="1">
-              <xs:element minOccurs="0" maxOccurs="1" name="StreamlinedRegistrationNew" type="RegistrationNewType" />
-              <xs:element minOccurs="0" maxOccurs="1" name="StreamlinedRegistrationCOU" type="RegistrationCOUType" />
-            </xs:choice>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RegistrationInformation" type="RegistrationDocumentTypeRegistrationInformation" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="SSTRegistrationHeaderType">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="ElectronicPostmark">
-        <xs:complexType>
-          <xs:simpleContent>
-            <xs:extension base="xs:date">
-              <xs:attribute name="DateSupplier">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:enumeration value="Preparer" />
-                    <xs:enumeration value="Transmitter" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:attribute>
-            </xs:extension>
-          </xs:simpleContent>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ElectronicPostmark" type="SSTRegistrationHeaderTypeElectronicPostmark" />
       <xs:element minOccurs="0" maxOccurs="1" name="DateReceived" type="xs:date" />
       <xs:element minOccurs="1" maxOccurs="1" name="FilingType" type="SSTRegistrationHeaderTypeFilingType" />
       <xs:element minOccurs="0" maxOccurs="1" name="SSTPID" type="xs:string" />
@@ -828,12 +773,107 @@
       <xs:element minOccurs="0" maxOccurs="1" name="FIPSCode" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="SSTRegistrationHeaderTypeElectronicPostmark">
+    <xs:simpleContent>
+      <xs:extension base="xs:date">
+        <xs:attribute name="DateSupplier">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Preparer" />
+              <xs:enumeration value="Transmitter" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
   <xs:simpleType name="SSTRegistrationHeaderTypeFilingType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="RegNew" />
       <xs:enumeration value="RegCOU" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:complexType name="RegistrationDocumentTypeRegistrationInformation">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="StreamlinedRegistrationCOU" type="RegistrationCOUType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StreamlinedRegistrationNew" type="RegistrationNewType" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RegistrationCOUType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ActionCode">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="C" />
+            <xs:enumeration value="O" />
+            <xs:enumeration value="U" />
+            <xs:enumeration value="D" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="xs:string" />
+      </xs:choice>
+      <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MailingAddress" type="AddressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RegistrationIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="R" />
+            <xs:enumeration value="X" />
+            <xs:enumeration value="A" />
+            <xs:enumeration value="Z" />
+            <xs:enumeration value="U" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LastSaleDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateAcctInd">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteSellerID">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEffDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEndDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CSPEndDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CSPLastFilingPd" type="xs:gYearMonth" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AcctCloseDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FirstSalesDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SSTPAllowanceIndicator">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Y" />
+            <xs:enumeration value="N" />
+            <xs:enumeration value="U" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="NewPass" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="RegistrationNewType">
     <xs:sequence>
       <xs:element minOccurs="1" maxOccurs="1" name="ActionCode">
@@ -845,7 +885,7 @@
       </xs:element>
       <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="BusinessNameType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="xs:string" />
         <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
       </xs:choice>
       <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
@@ -890,79 +930,6 @@
       <xs:element minOccurs="1" maxOccurs="1" name="RegistrationDate" type="xs:date" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="RegistrationCOUType">
-    <xs:sequence>
-      <xs:element minOccurs="1" maxOccurs="1" name="ActionCode">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="C" />
-            <xs:enumeration value="O" />
-            <xs:enumeration value="U" />
-            <xs:enumeration value="D" />
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
-      <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="BusinessNameType" />
-        <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
-      </xs:choice>
-      <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="MailingAddress" type="AddressType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhone" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="RegistrationIndicator">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="R" />
-            <xs:enumeration value="X" />
-            <xs:enumeration value="A" />
-            <xs:enumeration value="Z" />
-            <xs:enumeration value="U" />
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="LastSaleDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="StateAcctInd">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="Y" />
-            <xs:enumeration value="N" />
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="RemoteSellerID">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="Y" />
-            <xs:enumeration value="N" />
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEffDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="RemoteEndDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="CSPEndDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="CSPLastFilingPd" type="xs:gYearMonth" />
-      <xs:element minOccurs="0" maxOccurs="1" name="AcctCloseDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="FirstSaleDate" type="xs:date" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SSTPAllowanceIndicator">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="Y" />
-            <xs:enumeration value="N" />
-            <xs:enumeration value="U" />
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="NewPass" type="xs:string" />
-      <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="SSTPAcknowledgementType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="AcknowledgementHeader" type="AcknowledgementHeaderType" />
@@ -975,46 +942,24 @@
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="1" name="DocumentId" type="xs:string" />
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="StateID" type="xs:string" />
         <xs:element minOccurs="0" maxOccurs="1" name="SSTPID" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StateID" type="xs:string" />
       </xs:choice>
-      <xs:element minOccurs="1" maxOccurs="1" name="DocumentType">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="SSTPRegistration" />
-            <xs:enumeration value="SERWithPayment" />
-            <xs:enumeration value="SEROnly" />
-            <xs:enumeration value="PaymentOnly" />
-            <xs:enumeration value="PrePayment" />
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentType" type="DocumentAcknowledgementTypeDocumentType" />
       <xs:element minOccurs="1" maxOccurs="1" name="DocumentStatus" type="StatusType" />
       <xs:element minOccurs="1" maxOccurs="1" name="PaymentIndicator" type="PaymentIndicatorType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="Errors">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" name="Error">
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:choice minOccurs="1" maxOccurs="1">
-                    <xs:element minOccurs="0" maxOccurs="1" name="FieldIdentifier" type="xs:string" />
-                    <xs:element minOccurs="0" maxOccurs="1" name="XPath" type="xs:string" />
-                  </xs:choice>
-                  <xs:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="AdditionalErrorMessage" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="Severity" type="xs:string" />
-                  <xs:element minOccurs="0" maxOccurs="1" name="DataValue" type="xs:string" />
-                </xs:sequence>
-                <xs:attribute name="errorId" type="xs:positiveInteger" />
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute name="errorCount" type="xs:nonNegativeInteger" />
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="Errors" />
     </xs:sequence>
   </xs:complexType>
+  <xs:simpleType name="DocumentAcknowledgementTypeDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SSTPRegistration" />
+      <xs:enumeration value="SERWithPayment" />
+      <xs:enumeration value="SEROnly" />
+      <xs:enumeration value="PaymentOnly" />
+      <xs:enumeration value="PrePayment" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="PaymentIndicatorType">
     <xs:restriction base="xs:string">
       <xs:enumeration value="A" />
@@ -1024,22 +969,20 @@
   </xs:simpleType>
   <xs:complexType name="SSTReceiptType">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="ReceiptHeader">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="1" maxOccurs="1" name="ReceiptTimestamp" type="xs:dateTime" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element minOccurs="0" maxOccurs="1" name="TransmissionReceipt">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="1" name="TransmissionID" type="xs:string" />
-            <xs:element minOccurs="1" maxOccurs="1" name="TransmissionTimestamp" type="xs:dateTime" />
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReceiptHeader" type="SSTReceiptTypeReceiptHeader" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransmissionReceipt" type="SSTReceiptTypeTransmissionReceipt" />
     </xs:sequence>
     <xs:attribute name="receiptVersion" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="SSTReceiptTypeReceiptHeader">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="ReceiptTimestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SSTReceiptTypeTransmissionReceipt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransmissionID" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="TransmissionTimestamp" type="xs:dateTime" />
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>
