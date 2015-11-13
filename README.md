@@ -14,14 +14,8 @@ The API exposes the following functions: BulkRegistration, Registration, GetDocu
 
 
 ## BulkRegistration
-
-BulkRegistration() is called by the CSP to register one or many businesses in a single transmission to the SST system.  Please see Schema SST2015V01 for details in constructing this object.
-
-````
-BulkRegistrationAcknowledgementType BulkRegistration(BulkRegistrationTransmissionType bulkRegistrationTransmission)
-````
-
-
+BulkRegistration() is called by the CSP to register and/or update registration info for one registration or more in a single transmission to the SST system.
+Documentation of BulkRegistration can be found [here](https://github.com/azavar/SST-API/blob/master/Bulk%20Registration%20ReadMe.md)
 
 ## GetDocuments
 
