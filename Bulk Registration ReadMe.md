@@ -6,23 +6,23 @@ BulkRegistrationAcknowledgementType BulkRegistration(BulkRegistrationTransmissio
 ````
 
 ## General Rules
-- BulkRegistration is only avaiable for CSPs and CASs
-- The caller is reponsible for generating a `TransmissionId`, which is a 20 character string defined as: Transmitter ID (9 characters) + Year(2 digits) + Julian Day(3 digits) + Sequence Number (6 alphanumeric)
+- BulkRegistration is only avaiable for service providers (CSPs and CASs)
+- The caller is reponsible for generating a `TransmissionId`, which is a 20 character string defined as: service provider ID (9 characters) + Year(2 digits) + Julian Day(3 digits) + Sequence Number (6 alphanumeric)
 - TransmissionId can't be reused
 
 ## Input
 As defined in SST2015V01, BulkRegistration input is a Transmission that contains a number of Documents.
-A document can convey one of several actions a transmitter can apply for a registraion:
+A document can convey one of several actions a service provider can apply for a registraion:
 - Create new registration (N)
 - Change an exsisting registration (C)
   - Update business info
   - Update registraion info for a state or more
-  - Confirm starting to manage a registration
-  - Release a registration from being managed by the transmitter
+  - Start managing a registration
+  - End managing a registration
 - Out of business (O)
 - Unvolunteer from a non member state or more (U)
 
-For all actions the tranmsmitter must already have authorization to manage the registration except when confirming to start managing. Newly created registrations will be automatically managable by the transmitter who created them.
+For all actions the tranmsmitter must already have authorization to manage the registration except when confirming to start managing. Newly created registrations will be automatically managable by the service provider who created them.
 
 ### Create A New Registration
 
@@ -113,8 +113,9 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
 ````
-### Confirm Starting To Manage A Registration
+### Start Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
+`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the start date
 #### Confirm Starting To Manage A Registration - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -143,9 +144,10 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
 ````
-### Release A Registration From Being Managed By The Transmitter
+### End Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
-#### Release A Registration From Being Managed By The Transmitter - Example (minimal input)
+`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<None>`, `<EffectiveDate>` will be used as the end date
+#### End Managing A Registration - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
