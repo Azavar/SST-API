@@ -29,17 +29,20 @@ namespace WSClient
             //http://www.statemef.com/projects/sst/SST2015V01.zip
 
             var transmission = new BulkRegistrationTransmissionType();
-            transmission.TransmissionHeader = new TransmissionHeaderType() {
+            transmission.TransmissionHeader = new TransmissionHeaderType()
+            {
                 DocumentCount = "1",
                 Timestamp = DateTime.Now,
 
                 //You should increment transmission each time.  Do not submit duplicate transmissionids
-                TransmissionId = "12345",
+                TransmissionId = "CSP00001615200000037",
             };
 
             transmission.BulkRegistrationDocument = new BulkRegistrationDocumentType[1];
-            transmission.BulkRegistrationDocument[0] = new BulkRegistrationDocumentType() {
-                BulkRegistrationHeader = new BulkRegistrationHeaderType() {
+            transmission.BulkRegistrationDocument[0] = new BulkRegistrationDocumentType()
+            {
+                BulkRegistrationHeader = new BulkRegistrationHeaderType()
+                {
                     DateReceived = new DateTime(),
                     FilingType = BulkRegistrationHeaderTypeFilingType.BulkRegNew
                 },
@@ -50,14 +53,14 @@ namespace WSClient
             var registrationNew = new BulkRegistrationNewType()
                                       {
                                           ActionCode = BulkRegistrationNewTypeActionCode.N,
-                                          Item ="Acme Inc.",
+                                          Item = "Acme Inc.",
                                           MailingAddress = new AddressType()
                                                                {
                                                                    Item = new AddressTypeUSAddress()
                                                                               {
                                                                                   AddressLine1Txt = "P.O. Box 9876",
                                                                                   CityNm = "Chicago",
-                                                                                  StateAbbreviationCd = (StateType) Enum.Parse(typeof (StateType), "IL", true),
+                                                                                  StateAbbreviationCd = (StateType)Enum.Parse(typeof(StateType), "IL", true),
                                                                                   ZIPCd = "60603"
                                                                               }
                                                                },
@@ -67,11 +70,11 @@ namespace WSClient
                                                                               {
                                                                                   AddressLine1Txt = "1234 Main Street",
                                                                                   CityNm = "Chicago",
-                                                                                  StateAbbreviationCd = (StateType) Enum.Parse(typeof (StateType), "IL", true),
+                                                                                  StateAbbreviationCd = (StateType)Enum.Parse(typeof(StateType), "IL", true),
                                                                                   ZIPCd = "60604"
                                                                               }
                                                                },
-                                          
+
                                       };
             transmission.BulkRegistrationDocument[0].Item = registrationNew;
 
@@ -82,32 +85,45 @@ namespace WSClient
                 var receipt = client.BulkRegistration(transmission);
                 if (receipt != null)
                 {
-                    foreach (var ack in receipt.BulkRegAcknowledgement)
+                    if (receipt.TransmissionAcknowledgement.TransmissionStatus == StatusType.R)
                     {
-                        var errors = ack.Errors;
-                        Console.WriteLine("There were {0} errors detected", errors.errorCount );
-                        foreach (var error in ack.Errors.Error)
+                        Console.WriteLine("Transmission was rejected, {0} errors:", receipt.TransmissionAcknowledgement.Errors.errorCount);
+                        foreach (var error in receipt.TransmissionAcknowledgement.Errors.Error)
                         {
-                            Console.WriteLine("{0} in item {1}", error.ErrorMessage, error.Item);
-                            
+                            Console.WriteLine(GenerateMessage(error));
                         }
                     }
-                    
+                    else
+                    {
+                        foreach (var ack in receipt.BulkRegAcknowledgement)
+                        {
+                            var errors = ack.Errors;
+                            Console.WriteLine("There were {0} errors detected", errors.errorCount);
+                            foreach (var error in ack.Errors.Error)
+                            {
+                                Console.WriteLine(GenerateMessage(error));
+                            }
+                        }
+                    }
+
                     //Store the new SSTPID that was provided to you.
                     //ack.SSTPID
-                } else
+                }
+                else
                 {
                     Console.WriteLine("Success");
                 }
 
                 //Console.WriteLine("Received Transmission Status: {0}", receipt.);
 
-            } catch (TimeoutException toException)
+            }
+            catch (TimeoutException toException)
             {
                 //The application timed out waiting for a response.
                 Console.Error.WriteLine(toException.Message);
                 client.Abort();
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 //Generally this would mean a login/password error, or failure to authenticate or establish certificate trust.
                 Console.Error.WriteLine(ex.Message);
@@ -116,6 +132,16 @@ namespace WSClient
             }
 
             client.Close();
+        }
+
+        private static string GenerateMessage(ErrorsError error)
+        {
+            var msg = string.Format("Error Code: {0}, Error Message: \"{1}\" in {2} ({3})", error.errorId, error.ErrorMessage, error.Item, error.ItemElementName);
+            if (!string.IsNullOrEmpty(error.AdditionalErrorMessage))
+                msg += ", Additional Error Message: " + error.AdditionalErrorMessage;
+            if (!string.IsNullOrEmpty(error.DataValue))
+                msg += ", Data Value: " + error.DataValue;
+            return msg;
         }
     }
 }

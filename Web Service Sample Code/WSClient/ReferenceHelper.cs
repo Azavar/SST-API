@@ -50,4 +50,8 @@ namespace WSClient.ServiceReference1
 
     [System.Xml.Serialization.XmlRootAttribute("BulkRegistrationDocument", Namespace = "", IsNullable = false)]
     public partial class BulkRegistrationDocumentType{}
+
+    [System.Xml.Serialization.XmlRootAttribute("BulkRegistrationAcknowledgement", Namespace = "", IsNullable = false)]
+    public partial class BulkRegistrationAcknowledgementType { }
+    
 }
