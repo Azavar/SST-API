@@ -27,6 +27,7 @@ For all actions the tranmsmitter must already have authorization to manage the r
 ### Create A New Registration
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationNew` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegNew` and `<ActionCode>` set to `N`
+
 `<TechnologyModel>` element will be ignored, but it is required for validation.
 #### Create A New Registration Example - (minimal input)
 ````xml
@@ -137,7 +138,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 			<TechnologyModel>
 				<ModelOne CSPCode="CSP000099" />
 			</TechnologyModel>
-			<EffectiveDate>2015-10-22</EffectiveDate>
+			<EffectiveDate>2015-10-01</EffectiveDate>
 		</BulkRegistrationCOU>    
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
@@ -167,7 +168,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 			<TechnologyModel>
 				<None />
 			</TechnologyModel>
-			<EffectiveDate>2015-10-22</EffectiveDate>
+			<EffectiveDate>2015-10-31</EffectiveDate>
 		</BulkRegistrationCOU>    
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
