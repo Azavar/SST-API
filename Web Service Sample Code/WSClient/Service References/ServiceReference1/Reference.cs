@@ -37,7 +37,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -96,7 +96,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -211,7 +211,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -242,7 +242,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -287,7 +287,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -318,7 +318,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -377,7 +377,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -495,7 +495,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
     public enum ItemChoiceType1 {
@@ -508,7 +508,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum DocumentAcknowledgementTypeDocumentType {
         
@@ -529,7 +529,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum StatusType {
         
@@ -541,7 +541,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum PaymentIndicatorType {
         
@@ -556,19 +556,19 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class Errors : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private ErrorsError[] errorField;
+        private Error[] errorField;
         
         private string errorCountField;
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayAttribute(Order=0)]
-        public ErrorsError[] Error {
+        [System.Xml.Serialization.XmlElementAttribute("Error", Order=0)]
+        public Error[] Error {
             get {
                 return this.errorField;
             }
@@ -601,11 +601,11 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class ErrorsError : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Error : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string itemField;
         
@@ -719,7 +719,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
     public enum ItemChoiceType {
@@ -732,7 +732,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -805,7 +805,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -850,7 +850,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -937,7 +937,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1235,7 +1235,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationNewTypeActionCode {
@@ -1245,7 +1245,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum EntityType {
         
@@ -1272,7 +1272,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1359,7 +1359,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum GenerationalNameSuffixType {
         
@@ -1401,7 +1401,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1433,7 +1433,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -1548,7 +1548,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum CountryType {
         
@@ -2401,7 +2401,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2502,7 +2502,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum StateType {
         
@@ -2694,7 +2694,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2767,7 +2767,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2817,7 +2817,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2848,7 +2848,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -2879,7 +2879,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(IncludeInSchema=false)]
     public enum ItemChoiceType2 {
@@ -2898,7 +2898,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationNewTypeRegistrationIndicator {
@@ -2917,7 +2917,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationNewTypeRemoteSellerID {
@@ -2930,7 +2930,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationNewTypeSSTPAllowanceIndicator {
@@ -2946,7 +2946,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3454,7 +3454,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationCOUTypeActionCode {
@@ -3473,7 +3473,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationCOUTypeRegistrationIndicator {
@@ -3495,7 +3495,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationCOUTypeStateAcctInd {
@@ -3508,7 +3508,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationCOUTypeRemoteSellerID {
@@ -3521,7 +3521,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationCOUTypeSSTPAllowanceIndicator {
@@ -3537,7 +3537,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3569,7 +3569,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3628,7 +3628,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum SSTRegistrationHeaderTypeElectronicPostmarkDateSupplier {
@@ -3641,7 +3641,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3756,7 +3756,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     public enum SSTRegistrationHeaderTypeFilingType {
         
@@ -3768,7 +3768,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3813,7 +3813,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum TINTypeTypeTIN {
@@ -3829,7 +3829,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3902,7 +3902,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum RegistrationDocumentTypeDocumentType {
@@ -3915,7 +3915,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -3974,7 +3974,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4089,7 +4089,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegAcknowledgementTypeDocumentType {
@@ -4102,7 +4102,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4175,183 +4175,11 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BulkRegistrationNewTypeStateRegistrationIndicator : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string stateField;
-        
-        private BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator registrationIndicatorField;
-        
-        private System.DateTime firstSalesDateField;
-        
-        private BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID remoteSellerIDField;
-        
-        private System.DateTime remoteEffDateField;
-        
-        private bool remoteEffDateFieldSpecified;
-        
-        private BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator sSTPAllowanceIndicatorField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string State {
-            get {
-                return this.stateField;
-            }
-            set {
-                this.stateField = value;
-                this.RaisePropertyChanged("State");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator RegistrationIndicator {
-            get {
-                return this.registrationIndicatorField;
-            }
-            set {
-                this.registrationIndicatorField = value;
-                this.RaisePropertyChanged("RegistrationIndicator");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
-        public System.DateTime FirstSalesDate {
-            get {
-                return this.firstSalesDateField;
-            }
-            set {
-                this.firstSalesDateField = value;
-                this.RaisePropertyChanged("FirstSalesDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID RemoteSellerID {
-            get {
-                return this.remoteSellerIDField;
-            }
-            set {
-                this.remoteSellerIDField = value;
-                this.RaisePropertyChanged("RemoteSellerID");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
-        public System.DateTime RemoteEffDate {
-            get {
-                return this.remoteEffDateField;
-            }
-            set {
-                this.remoteEffDateField = value;
-                this.RaisePropertyChanged("RemoteEffDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool RemoteEffDateSpecified {
-            get {
-                return this.remoteEffDateFieldSpecified;
-            }
-            set {
-                this.remoteEffDateFieldSpecified = value;
-                this.RaisePropertyChanged("RemoteEffDateSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator SSTPAllowanceIndicator {
-            get {
-                return this.sSTPAllowanceIndicatorField;
-            }
-            set {
-                this.sSTPAllowanceIndicatorField = value;
-                this.RaisePropertyChanged("SSTPAllowanceIndicator");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator {
-        
-        /// <remarks/>
-        N,
-        
-        /// <remarks/>
-        R,
-        
-        /// <remarks/>
-        X,
-        
-        /// <remarks/>
-        A,
-        
-        /// <remarks/>
-        Z,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID {
-        
-        /// <remarks/>
-        Y,
-        
-        /// <remarks/>
-        N,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator {
-        
-        /// <remarks/>
-        N,
-        
-        /// <remarks/>
-        Y,
-        
-        /// <remarks/>
-        U,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BulkRegistrationNewType : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private BulkRegistrationNewTypeActionCode actionCodeField;
-        
-        private EntityType registrationEntityField;
-        
-        private object itemField;
+    public partial class BulkRegistrationCOUTypeBusinessInfo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string dBANameField;
         
@@ -4369,55 +4197,8 @@ namespace WSClient.ServiceReference1 {
         
         private string stateIncorporatedField;
         
-        private TechModelType technologyModelField;
-        
-        private BulkRegistrationNewTypeStateRegistrationIndicator[] stateRegistrationIndicatorField;
-        
-        private System.DateTime effectiveDateField;
-        
-        private string firstFilingPeriodField;
-        
-        private string newPassField;
-        
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public BulkRegistrationNewTypeActionCode ActionCode {
-            get {
-                return this.actionCodeField;
-            }
-            set {
-                this.actionCodeField = value;
-                this.RaisePropertyChanged("ActionCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public EntityType RegistrationEntity {
-            get {
-                return this.registrationEntityField;
-            }
-            set {
-                this.registrationEntityField = value;
-                this.RaisePropertyChanged("RegistrationEntity");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("BusinessName", typeof(string), Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute("IndividualName", typeof(IndividualNameType), Order=2)]
-        public object Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-                this.RaisePropertyChanged("Item");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public string DBAName {
             get {
                 return this.dBANameField;
@@ -4429,7 +4210,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string NAICSCode {
             get {
                 return this.nAICSCodeField;
@@ -4441,7 +4222,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public AddressType PhysicalAddress {
             get {
                 return this.physicalAddressField;
@@ -4453,7 +4234,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
         public AddressType MailingAddress {
             get {
                 return this.mailingAddressField;
@@ -4465,7 +4246,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
         public string SellerPhone {
             get {
                 return this.sellerPhoneField;
@@ -4477,7 +4258,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
         public string SellerPhoneExt {
             get {
                 return this.sellerPhoneExtField;
@@ -4489,7 +4270,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
         public ContactType SSTPContact {
             get {
                 return this.sSTPContactField;
@@ -4501,7 +4282,7 @@ namespace WSClient.ServiceReference1 {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
         public string StateIncorporated {
             get {
                 return this.stateIncorporatedField;
@@ -4509,66 +4290,6 @@ namespace WSClient.ServiceReference1 {
             set {
                 this.stateIncorporatedField = value;
                 this.RaisePropertyChanged("StateIncorporated");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
-        public TechModelType TechnologyModel {
-            get {
-                return this.technologyModelField;
-            }
-            set {
-                this.technologyModelField = value;
-                this.RaisePropertyChanged("TechnologyModel");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("StateRegistrationIndicator", Order=12)]
-        public BulkRegistrationNewTypeStateRegistrationIndicator[] StateRegistrationIndicator {
-            get {
-                return this.stateRegistrationIndicatorField;
-            }
-            set {
-                this.stateRegistrationIndicatorField = value;
-                this.RaisePropertyChanged("StateRegistrationIndicator");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=13)]
-        public System.DateTime EffectiveDate {
-            get {
-                return this.effectiveDateField;
-            }
-            set {
-                this.effectiveDateField = value;
-                this.RaisePropertyChanged("EffectiveDate");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="gYearMonth", Order=14)]
-        public string FirstFilingPeriod {
-            get {
-                return this.firstFilingPeriodField;
-            }
-            set {
-                this.firstFilingPeriodField = value;
-                this.RaisePropertyChanged("FirstFilingPeriod");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
-        public string NewPass {
-            get {
-                return this.newPassField;
-            }
-            set {
-                this.newPassField = value;
-                this.RaisePropertyChanged("NewPass");
             }
         }
         
@@ -4583,17 +4304,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
-    public enum BulkRegistrationNewTypeActionCode {
-        
-        /// <remarks/>
-        N,
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -4946,7 +4657,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationCOUTypeStateIndicatorsRegistrationIndicator {
@@ -4962,7 +4673,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationCOUTypeStateIndicatorsStateAcctInd {
@@ -4975,7 +4686,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationCOUTypeStateIndicatorsRemoteSellerID {
@@ -4988,7 +4699,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationCOUTypeStateIndicatorsSSTPAllowanceIndicator {
@@ -5004,136 +4715,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BulkRegistrationCOUTypeBusinessInfo : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string dBANameField;
-        
-        private string nAICSCodeField;
-        
-        private AddressType physicalAddressField;
-        
-        private AddressType mailingAddressField;
-        
-        private string sellerPhoneField;
-        
-        private string sellerPhoneExtField;
-        
-        private ContactType sSTPContactField;
-        
-        private string stateIncorporatedField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string DBAName {
-            get {
-                return this.dBANameField;
-            }
-            set {
-                this.dBANameField = value;
-                this.RaisePropertyChanged("DBAName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string NAICSCode {
-            get {
-                return this.nAICSCodeField;
-            }
-            set {
-                this.nAICSCodeField = value;
-                this.RaisePropertyChanged("NAICSCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public AddressType PhysicalAddress {
-            get {
-                return this.physicalAddressField;
-            }
-            set {
-                this.physicalAddressField = value;
-                this.RaisePropertyChanged("PhysicalAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public AddressType MailingAddress {
-            get {
-                return this.mailingAddressField;
-            }
-            set {
-                this.mailingAddressField = value;
-                this.RaisePropertyChanged("MailingAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string SellerPhone {
-            get {
-                return this.sellerPhoneField;
-            }
-            set {
-                this.sellerPhoneField = value;
-                this.RaisePropertyChanged("SellerPhone");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string SellerPhoneExt {
-            get {
-                return this.sellerPhoneExtField;
-            }
-            set {
-                this.sellerPhoneExtField = value;
-                this.RaisePropertyChanged("SellerPhoneExt");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public ContactType SSTPContact {
-            get {
-                return this.sSTPContactField;
-            }
-            set {
-                this.sSTPContactField = value;
-                this.RaisePropertyChanged("SSTPContact");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string StateIncorporated {
-            get {
-                return this.stateIncorporatedField;
-            }
-            set {
-                this.stateIncorporatedField = value;
-                this.RaisePropertyChanged("StateIncorporated");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5208,7 +4790,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationCOUTypeActionCode {
@@ -5224,7 +4806,425 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationNewTypeStateRegistrationIndicator : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string stateField;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator registrationIndicatorField;
+        
+        private System.DateTime firstSalesDateField;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID remoteSellerIDField;
+        
+        private System.DateTime remoteEffDateField;
+        
+        private bool remoteEffDateFieldSpecified;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator sSTPAllowanceIndicatorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string State {
+            get {
+                return this.stateField;
+            }
+            set {
+                this.stateField = value;
+                this.RaisePropertyChanged("State");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator RegistrationIndicator {
+            get {
+                return this.registrationIndicatorField;
+            }
+            set {
+                this.registrationIndicatorField = value;
+                this.RaisePropertyChanged("RegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=2)]
+        public System.DateTime FirstSalesDate {
+            get {
+                return this.firstSalesDateField;
+            }
+            set {
+                this.firstSalesDateField = value;
+                this.RaisePropertyChanged("FirstSalesDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID RemoteSellerID {
+            get {
+                return this.remoteSellerIDField;
+            }
+            set {
+                this.remoteSellerIDField = value;
+                this.RaisePropertyChanged("RemoteSellerID");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=4)]
+        public System.DateTime RemoteEffDate {
+            get {
+                return this.remoteEffDateField;
+            }
+            set {
+                this.remoteEffDateField = value;
+                this.RaisePropertyChanged("RemoteEffDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool RemoteEffDateSpecified {
+            get {
+                return this.remoteEffDateFieldSpecified;
+            }
+            set {
+                this.remoteEffDateFieldSpecified = value;
+                this.RaisePropertyChanged("RemoteEffDateSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator SSTPAllowanceIndicator {
+            get {
+                return this.sSTPAllowanceIndicatorField;
+            }
+            set {
+                this.sSTPAllowanceIndicatorField = value;
+                this.RaisePropertyChanged("SSTPAllowanceIndicator");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRegistrationIndicator {
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        R,
+        
+        /// <remarks/>
+        X,
+        
+        /// <remarks/>
+        A,
+        
+        /// <remarks/>
+        Z,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeStateRegistrationIndicatorRemoteSellerID {
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeStateRegistrationIndicatorSSTPAllowanceIndicator {
+        
+        /// <remarks/>
+        N,
+        
+        /// <remarks/>
+        Y,
+        
+        /// <remarks/>
+        U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationNewType : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private BulkRegistrationNewTypeActionCode actionCodeField;
+        
+        private EntityType registrationEntityField;
+        
+        private object itemField;
+        
+        private string dBANameField;
+        
+        private string nAICSCodeField;
+        
+        private AddressType physicalAddressField;
+        
+        private AddressType mailingAddressField;
+        
+        private string sellerPhoneField;
+        
+        private string sellerPhoneExtField;
+        
+        private ContactType sSTPContactField;
+        
+        private string stateIncorporatedField;
+        
+        private TechModelType technologyModelField;
+        
+        private BulkRegistrationNewTypeStateRegistrationIndicator[] stateRegistrationIndicatorField;
+        
+        private System.DateTime effectiveDateField;
+        
+        private string firstFilingPeriodField;
+        
+        private string newPassField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public BulkRegistrationNewTypeActionCode ActionCode {
+            get {
+                return this.actionCodeField;
+            }
+            set {
+                this.actionCodeField = value;
+                this.RaisePropertyChanged("ActionCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public EntityType RegistrationEntity {
+            get {
+                return this.registrationEntityField;
+            }
+            set {
+                this.registrationEntityField = value;
+                this.RaisePropertyChanged("RegistrationEntity");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("BusinessName", typeof(string), Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("IndividualName", typeof(IndividualNameType), Order=2)]
+        public object Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+                this.RaisePropertyChanged("Item");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string DBAName {
+            get {
+                return this.dBANameField;
+            }
+            set {
+                this.dBANameField = value;
+                this.RaisePropertyChanged("DBAName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string NAICSCode {
+            get {
+                return this.nAICSCodeField;
+            }
+            set {
+                this.nAICSCodeField = value;
+                this.RaisePropertyChanged("NAICSCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public AddressType PhysicalAddress {
+            get {
+                return this.physicalAddressField;
+            }
+            set {
+                this.physicalAddressField = value;
+                this.RaisePropertyChanged("PhysicalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public AddressType MailingAddress {
+            get {
+                return this.mailingAddressField;
+            }
+            set {
+                this.mailingAddressField = value;
+                this.RaisePropertyChanged("MailingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string SellerPhone {
+            get {
+                return this.sellerPhoneField;
+            }
+            set {
+                this.sellerPhoneField = value;
+                this.RaisePropertyChanged("SellerPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=8)]
+        public string SellerPhoneExt {
+            get {
+                return this.sellerPhoneExtField;
+            }
+            set {
+                this.sellerPhoneExtField = value;
+                this.RaisePropertyChanged("SellerPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=9)]
+        public ContactType SSTPContact {
+            get {
+                return this.sSTPContactField;
+            }
+            set {
+                this.sSTPContactField = value;
+                this.RaisePropertyChanged("SSTPContact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=10)]
+        public string StateIncorporated {
+            get {
+                return this.stateIncorporatedField;
+            }
+            set {
+                this.stateIncorporatedField = value;
+                this.RaisePropertyChanged("StateIncorporated");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=11)]
+        public TechModelType TechnologyModel {
+            get {
+                return this.technologyModelField;
+            }
+            set {
+                this.technologyModelField = value;
+                this.RaisePropertyChanged("TechnologyModel");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("StateRegistrationIndicator", Order=12)]
+        public BulkRegistrationNewTypeStateRegistrationIndicator[] StateRegistrationIndicator {
+            get {
+                return this.stateRegistrationIndicatorField;
+            }
+            set {
+                this.stateRegistrationIndicatorField = value;
+                this.RaisePropertyChanged("StateRegistrationIndicator");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="date", Order=13)]
+        public System.DateTime EffectiveDate {
+            get {
+                return this.effectiveDateField;
+            }
+            set {
+                this.effectiveDateField = value;
+                this.RaisePropertyChanged("EffectiveDate");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(DataType="gYearMonth", Order=14)]
+        public string FirstFilingPeriod {
+            get {
+                return this.firstFilingPeriodField;
+            }
+            set {
+                this.firstFilingPeriodField = value;
+                this.RaisePropertyChanged("FirstFilingPeriod");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=15)]
+        public string NewPass {
+            get {
+                return this.newPassField;
+            }
+            set {
+                this.newPassField = value;
+                this.RaisePropertyChanged("NewPass");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
+    public enum BulkRegistrationNewTypeActionCode {
+        
+        /// <remarks/>
+        N,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5269,7 +5269,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5356,7 +5356,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationHeaderTypeFilingType {
@@ -5369,7 +5369,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5443,7 +5443,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum BulkRegistrationDocumentTypeDocumentType {
@@ -5456,7 +5456,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -5487,7 +5487,7 @@ namespace WSClient.ServiceReference1 {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true)]
     public enum TransmissionHeaderTypeProcessType {
