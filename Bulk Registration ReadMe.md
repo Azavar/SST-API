@@ -116,7 +116,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ### Start Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
 `<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the start date
-#### Confirm Starting To Manage A Registration - Example (minimal input)
+#### Start Managing A Registration - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
