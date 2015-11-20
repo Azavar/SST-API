@@ -4,6 +4,8 @@ BulkRegistration() is called by the CSP to register and/or update registration i
 ````csharp
 BulkRegistrationAcknowledgementType BulkRegistration(BulkRegistrationTransmissionType bulkRegistrationTransmission)
 ````
+## Testing tool
+A tool is provided [here](https://github.com/azavar/SST-API/tree/master/Web%20Service%20Tool%20(For%20Service%20Providers)) to test BulkRegistration
 
 ## General Rules
 - BulkRegistration is only avaiable for service providers (CSPs and CASs)
