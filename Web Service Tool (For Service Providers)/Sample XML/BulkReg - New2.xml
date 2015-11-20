@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
+  <TransmissionHeader>
+    <TransmissionId>CSP00009915123123456</TransmissionId>
+    <DocumentCount>1</DocumentCount>
+  </TransmissionHeader>
+  <BulkRegistrationDocument>
+    <DocumentId>CSP00009915123123457</DocumentId>
+    <DocumentType>BulkRegistrationNew</DocumentType>
+    <BulkRegistrationHeader>
+      <ElectronicPostmark CSPID="CSP000099">2015-10-22</ElectronicPostmark>
+      <FilingType>BulkRegNew</FilingType>
+      <TIN TypeTIN="SSN">
+        <FedTIN>001122334</FedTIN>
+      </TIN>
+    </BulkRegistrationHeader>
+    <BulkRegistrationNew>
+      <ActionCode>N</ActionCode>
+      <RegistrationEntity>SP</RegistrationEntity>
+      <IndividualName>
+        <FirstName>First</FirstName>
+        <LastName>Last</LastName>
+      </IndividualName>
+      <NAICSCode>154693</NAICSCode>
+      <PhysicalAddress>
+        <USAddress>
+          <AddressLine1Txt>Address 1</AddressLine1Txt>
+          <AddressLine2Txt>Address 2</AddressLine2Txt>
+          <CityNm>Chicago</CityNm>
+          <StateAbbreviationCd>IL</StateAbbreviationCd>
+          <ZIPCd>60604</ZIPCd>
+        </USAddress>
+      </PhysicalAddress>
+	  <MailingAddress>
+        <USAddress>
+          <AddressLine1Txt>Address 1</AddressLine1Txt>
+          <AddressLine2Txt>Address 2</AddressLine2Txt>
+          <CityNm>Chicago</CityNm>
+          <StateAbbreviationCd>IL</StateAbbreviationCd>
+          <ZIPCd>60604</ZIPCd>
+        </USAddress>
+      </MailingAddress>
+      <SellerPhone>1234567890</SellerPhone>
+      <SSTPContact>
+        <ContactName>
+          <FirstName>Contact</FirstName>
+          <LastName>Last Name</LastName>
+        </ContactName>
+        <ContactPhone>9876543210</ContactPhone>
+        <ContactEmail>email@website.com</ContactEmail>
+      </SSTPContact>
+      <StateIncorporated >IL</StateIncorporated>
+      <TechnologyModel>
+        <None/>
+      </TechnologyModel>
+	  <StateRegistrationIndicator>
+		<State>WY</State>
+        <RegistrationIndicator>R</RegistrationIndicator>
+        <FirstSaleDate>2015-10-01</FirstSaleDate>
+        <SSTPAllowanceIndicator>Y</SSTPAllowanceIndicator>
+        <FirstFilingPeriod>2015-10-01</FirstFilingPeriod>
+	  </StateRegistrationIndicator>
+      <EffectiveDate>2015-07-31</EffectiveDate>
+      <FirstFilingPeriod>2015-08</FirstFilingPeriod>
+      <NewPass>qweras1234</NewPass>
+    </BulkRegistrationNew>
+  </BulkRegistrationDocument>
+</BulkRegistrationTransmission>

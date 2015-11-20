@@ -1,0 +1,25 @@
+<BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
+    <TransmissionHeader>
+        <TransmissionId>CSP00009915123123456</TransmissionId>
+        <DocumentCount>1</DocumentCount>
+    </TransmissionHeader>
+    <BulkRegistrationDocument>
+        <DocumentId>CSP00009915123123457</DocumentId>
+        <DocumentType>BulkRegistrationCOU</DocumentType>
+        <BulkRegistrationHeader>
+            <ElectronicPostmark CSPID="CSP000099">2015-10-22</ElectronicPostmark>
+            <FilingType>BulkRegCOU</FilingType>
+            <TIN TypeTIN="Foreign">
+                <FedTIN>001122334</FedTIN>
+            </TIN>
+        </BulkRegistrationHeader>
+        <BulkRegistrationCOU>
+            <ActionCode>C</ActionCode>
+            <SSTPID>S00046251</SSTPID>
+            <BusinessInfo>
+                <DBAName>dba name</DBAName>
+            </BusinessInfo>
+            <EffectiveDate>2015-10-22</EffectiveDate>
+        </BulkRegistrationCOU>    
+    </BulkRegistrationDocument>
+</BulkRegistrationTransmission>
