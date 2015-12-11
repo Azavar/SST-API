@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WSClient.ServiceReference1
+﻿namespace WSClient.ServiceReference1
 {
     [System.Xml.Serialization.XmlRootAttribute("BulkRegistrationTransmission", Namespace = "", IsNullable = false)]
     public partial class BulkRegistrationTransmissionType { }
@@ -32,6 +26,12 @@ namespace WSClient.ServiceReference1
 
     [System.Xml.Serialization.XmlRootAttribute("TransmissionAcknowledgement", Namespace = "", IsNullable = false)]
     public partial class TransmissionAcknowledgementType{}
+
+    [System.Xml.Serialization.XmlRootAttribute("SSTPAcknowledgement", Namespace = "", IsNullable = false)]
+    public partial class SSTPAcknowledgementType { }
+
+    [System.Xml.Serialization.XmlRootAttribute("SSTReceipt", Namespace = "", IsNullable = false)]
+    public partial class SSTReceiptType { }
 
     [System.Xml.Serialization.XmlRootAttribute("DocumentAcknowledgement", Namespace = "", IsNullable = false)]
     public partial class DocumentAcknowledgementType{}

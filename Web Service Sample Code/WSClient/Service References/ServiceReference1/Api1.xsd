@@ -99,8 +99,8 @@
       </xs:element>
       <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
         <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
       </xs:choice>
       <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
@@ -486,7 +486,6 @@
       <xs:enumeration value="SC" />
       <xs:enumeration value="ST" />
       <xs:enumeration value="SB" />
-      <xs:enumeration value="VC" />
       <xs:enumeration value="SU" />
       <xs:enumeration value="NS" />
       <xs:enumeration value="SV" />
@@ -544,18 +543,18 @@
   <xs:complexType name="TechModelType">
     <xs:sequence>
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="ModelTwo" type="ModelTwoType" />
         <xs:element minOccurs="0" maxOccurs="1" name="None" />
         <xs:element minOccurs="0" maxOccurs="1" name="ModelOne" type="ModelOneType" />
         <xs:element minOccurs="0" maxOccurs="1" name="ModelThree" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ModelTwo" type="ModelTwoType" />
       </xs:choice>
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="ModelTwoType">
-    <xs:attribute name="CASCode" type="xs:string" />
-  </xs:complexType>
   <xs:complexType name="ModelOneType">
     <xs:attribute name="CSPCode" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ModelTwoType">
+    <xs:attribute name="CASCode" type="xs:string" />
   </xs:complexType>
   <xs:complexType name="BulkRegistrationNewTypeStateRegistrationIndicator">
     <xs:sequence>
@@ -605,11 +604,23 @@
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="SSTPID" type="xs:string" />
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element minOccurs="0" maxOccurs="1" name="StateIndicators" type="BulkRegistrationCOUTypeStateIndicators" />
-        <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
         <xs:element minOccurs="0" maxOccurs="1" name="BusinessInfo" type="BulkRegistrationCOUTypeBusinessInfo" />
+        <xs:element minOccurs="0" maxOccurs="1" name="TechnologyModel" type="TechModelType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="StateIndicators" type="BulkRegistrationCOUTypeStateIndicators" />
       </xs:choice>
       <xs:element minOccurs="1" maxOccurs="1" name="EffectiveDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BulkRegistrationCOUTypeBusinessInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MailingAddress" type="AddressType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhone" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BulkRegistrationCOUTypeStateIndicators">
@@ -657,18 +668,6 @@
         </xs:simpleType>
       </xs:element>
       <xs:element minOccurs="0" maxOccurs="1" name="FirstFilingPeriod" type="xs:date" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="BulkRegistrationCOUTypeBusinessInfo">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="PhysicalAddress" type="AddressType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="MailingAddress" type="AddressType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhone" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SellerPhoneExt" type="xs:string" />
-      <xs:element minOccurs="0" maxOccurs="1" name="SSTPContact" type="ContactType" />
-      <xs:element minOccurs="0" maxOccurs="1" name="StateIncorporated" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="BulkRegistrationAcknowledgementType">
@@ -810,8 +809,8 @@
       </xs:element>
       <xs:element minOccurs="1" maxOccurs="1" name="RegistrationEntity" type="EntityType" />
       <xs:choice minOccurs="1" maxOccurs="1">
-        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="xs:string" />
         <xs:element minOccurs="0" maxOccurs="1" name="IndividualName" type="IndividualNameType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="BusinessName" type="xs:string" />
       </xs:choice>
       <xs:element minOccurs="0" maxOccurs="1" name="DBAName" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="1" name="NAICSCode" type="xs:string" />

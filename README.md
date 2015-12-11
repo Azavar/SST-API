@@ -19,36 +19,22 @@ Documentation of BulkRegistration can be found [here](https://github.com/azavar/
 
 ## GetDocuments
 
-GetDocuments() will supply the requestor with a collection of registrations which match the filters that they supply.  Only States have permissions to call this function, and by default only the registrations made in that state will be included in the response.  Once calling GetDocuments, it creates a record of this request and may be re-requested via TransmissionId, see GetTransmission.
+GetDocuments() will supply the requestor with a collection of registrations which match the filters that they supply.  Only States have permissions to call this function, and by default only the documents related to registrations in that state will be included in the response. Once calling GetDocuments, it creates a record of this request and may be re-requested via TransmissionId, see GetTransmission. For more information please check [this document](https://github.com/azavar/SST-API/blob/master/State%20web%20services%20description.docx)
 
-````
-SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus, string RegistrationType, string ActiveStatus);
+````csharp
+SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus);
 ````
 AcknowledgementStatus | Description
 ----------------------| -----------
+U | Unacknowledged or Rejected
 A | Acknowledged
 R | Rejected
-U | Unacknowledged
-(Null) | All
-
-RegistrationType | Description
------------------| -----------
-N | New
-C | Changed
-(Null) | All
-
-ActiveStatus | Description
--------------| -----------
-A | Active
-D | Disabled
-(Null) | All
-
 
 ## GetTransmission
 
-GetTransmission() is used to retransmit a transmission which had previously been requested in the call GetDocuments().  A transmission is a wrapper of registrations which were requested matching a filter in the call to GetDocuments().  Use of GetTransmission() is optional.
+GetTransmission() is used to retransmit a transmission which had previously been requested in the call GetDocuments().  A transmission is a wrapper of registrations which were requested matching a filter in the call to GetDocuments().  Use of GetTransmission() is optional. For more information please check [this document](https://github.com/azavar/SST-API/blob/master/State%20web%20services%20description.docx)
 
-````
+````csharp
 SSTRegistrationTransmissionType GetTransmission(string TransmissionId);
 ````
 
@@ -56,7 +42,7 @@ SSTRegistrationTransmissionType GetTransmission(string TransmissionId);
 
 AcknowledgeTransmission() allows a State to convey to SST the result of processing which has occurred at the States internal system.  After processing the registration at the States system, any errors which were identified may be submitted back to the system in the acknowledgement parameter.  Please see Schema SST2015V01 for details in constructing this object.
 
-````
-SSTReceiptType AcknowledgeTransmission(SSTPAcknowledgementType acknowledgement)
+````csharp
+SSTReceiptType AcknowledgeTransmission(SSTPAcknowledgementType acknowledgement);
 ````
 

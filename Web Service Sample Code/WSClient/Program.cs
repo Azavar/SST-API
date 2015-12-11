@@ -12,10 +12,9 @@ namespace WSClient
         static void Main(string[] args)
         {
             //Run a test as a State
-            State.Test();
-
-            //Run a test Registration as a CSP
-            //Registration.Test();
+            State.TestGetDocuments();
+            //State.TestGetTransmission();
+            //State.TestAcknowledgeTransmission();
             
 
             Console.WriteLine("Press any key to continue");

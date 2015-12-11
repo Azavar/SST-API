@@ -19,13 +19,9 @@ namespace WSClient.ServiceReference1 {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         WSClient.ServiceReference1.BulkRegistrationAcknowledgementType BulkRegistration(WSClient.ServiceReference1.BulkRegistrationTransmissionType bulkRegistrationTransmission);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/Registration", ReplyAction="http://SST/IApiService/RegistrationResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        WSClient.ServiceReference1.BulkRegistrationAcknowledgementType Registration(WSClient.ServiceReference1.BulkRegistrationTransmissionType registrationTransmission);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/GetDocuments", ReplyAction="http://SST/IApiService/GetDocumentsResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        WSClient.ServiceReference1.SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus, string RegistrationType, string ActiveStatus);
+        WSClient.ServiceReference1.SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SST/IApiService/GetTransmission", ReplyAction="http://SST/IApiService/GetTransmissionResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2264,10 +2260,6 @@ namespace WSClient.ServiceReference1 {
         SB,
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlEnumAttribute("VC")]
-        VC1,
-        
-        /// <remarks/>
         SU,
         
         /// <remarks/>
@@ -4179,135 +4171,6 @@ namespace WSClient.ServiceReference1 {
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class BulkRegistrationCOUTypeBusinessInfo : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string dBANameField;
-        
-        private string nAICSCodeField;
-        
-        private AddressType physicalAddressField;
-        
-        private AddressType mailingAddressField;
-        
-        private string sellerPhoneField;
-        
-        private string sellerPhoneExtField;
-        
-        private ContactType sSTPContactField;
-        
-        private string stateIncorporatedField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string DBAName {
-            get {
-                return this.dBANameField;
-            }
-            set {
-                this.dBANameField = value;
-                this.RaisePropertyChanged("DBAName");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string NAICSCode {
-            get {
-                return this.nAICSCodeField;
-            }
-            set {
-                this.nAICSCodeField = value;
-                this.RaisePropertyChanged("NAICSCode");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public AddressType PhysicalAddress {
-            get {
-                return this.physicalAddressField;
-            }
-            set {
-                this.physicalAddressField = value;
-                this.RaisePropertyChanged("PhysicalAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public AddressType MailingAddress {
-            get {
-                return this.mailingAddressField;
-            }
-            set {
-                this.mailingAddressField = value;
-                this.RaisePropertyChanged("MailingAddress");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string SellerPhone {
-            get {
-                return this.sellerPhoneField;
-            }
-            set {
-                this.sellerPhoneField = value;
-                this.RaisePropertyChanged("SellerPhone");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
-        public string SellerPhoneExt {
-            get {
-                return this.sellerPhoneExtField;
-            }
-            set {
-                this.sellerPhoneExtField = value;
-                this.RaisePropertyChanged("SellerPhoneExt");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
-        public ContactType SSTPContact {
-            get {
-                return this.sSTPContactField;
-            }
-            set {
-                this.sSTPContactField = value;
-                this.RaisePropertyChanged("SSTPContact");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
-        public string StateIncorporated {
-            get {
-                return this.stateIncorporatedField;
-            }
-            set {
-                this.stateIncorporatedField = value;
-                this.RaisePropertyChanged("StateIncorporated");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class BulkRegistrationCOUTypeStateIndicators : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string stateField;
@@ -4712,6 +4575,135 @@ namespace WSClient.ServiceReference1 {
         
         /// <remarks/>
         U,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34230")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BulkRegistrationCOUTypeBusinessInfo : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string dBANameField;
+        
+        private string nAICSCodeField;
+        
+        private AddressType physicalAddressField;
+        
+        private AddressType mailingAddressField;
+        
+        private string sellerPhoneField;
+        
+        private string sellerPhoneExtField;
+        
+        private ContactType sSTPContactField;
+        
+        private string stateIncorporatedField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string DBAName {
+            get {
+                return this.dBANameField;
+            }
+            set {
+                this.dBANameField = value;
+                this.RaisePropertyChanged("DBAName");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public string NAICSCode {
+            get {
+                return this.nAICSCodeField;
+            }
+            set {
+                this.nAICSCodeField = value;
+                this.RaisePropertyChanged("NAICSCode");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public AddressType PhysicalAddress {
+            get {
+                return this.physicalAddressField;
+            }
+            set {
+                this.physicalAddressField = value;
+                this.RaisePropertyChanged("PhysicalAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public AddressType MailingAddress {
+            get {
+                return this.mailingAddressField;
+            }
+            set {
+                this.mailingAddressField = value;
+                this.RaisePropertyChanged("MailingAddress");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string SellerPhone {
+            get {
+                return this.sellerPhoneField;
+            }
+            set {
+                this.sellerPhoneField = value;
+                this.RaisePropertyChanged("SellerPhone");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public string SellerPhoneExt {
+            get {
+                return this.sellerPhoneExtField;
+            }
+            set {
+                this.sellerPhoneExtField = value;
+                this.RaisePropertyChanged("SellerPhoneExt");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=6)]
+        public ContactType SSTPContact {
+            get {
+                return this.sSTPContactField;
+            }
+            set {
+                this.sSTPContactField = value;
+                this.RaisePropertyChanged("SSTPContact");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=7)]
+        public string StateIncorporated {
+            get {
+                return this.stateIncorporatedField;
+            }
+            set {
+                this.stateIncorporatedField = value;
+                this.RaisePropertyChanged("StateIncorporated");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     /// <remarks/>
@@ -5530,12 +5522,8 @@ namespace WSClient.ServiceReference1 {
             return base.Channel.BulkRegistration(bulkRegistrationTransmission);
         }
         
-        public WSClient.ServiceReference1.BulkRegistrationAcknowledgementType Registration(WSClient.ServiceReference1.BulkRegistrationTransmissionType registrationTransmission) {
-            return base.Channel.Registration(registrationTransmission);
-        }
-        
-        public WSClient.ServiceReference1.SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus, string RegistrationType, string ActiveStatus) {
-            return base.Channel.GetDocuments(AcknowledgementStatus, RegistrationType, ActiveStatus);
+        public WSClient.ServiceReference1.SSTRegistrationTransmissionType GetDocuments(string AcknowledgementStatus) {
+            return base.Channel.GetDocuments(AcknowledgementStatus);
         }
         
         public WSClient.ServiceReference1.SSTRegistrationTransmissionType GetTransmission(string TransmissionId) {

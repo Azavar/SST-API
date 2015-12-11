@@ -12,12 +12,6 @@
   <wsdl:message name="IApiService_BulkRegistration_OutputMessage">
     <wsdl:part name="parameters" element="tns:BulkRegistrationResponse" />
   </wsdl:message>
-  <wsdl:message name="IApiService_Registration_InputMessage">
-    <wsdl:part name="parameters" element="tns:Registration" />
-  </wsdl:message>
-  <wsdl:message name="IApiService_Registration_OutputMessage">
-    <wsdl:part name="parameters" element="tns:RegistrationResponse" />
-  </wsdl:message>
   <wsdl:message name="IApiService_GetDocuments_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDocuments" />
   </wsdl:message>
@@ -40,10 +34,6 @@
     <wsdl:operation name="BulkRegistration">
       <wsdl:input wsaw:Action="http://SST/IApiService/BulkRegistration" message="tns:IApiService_BulkRegistration_InputMessage" />
       <wsdl:output wsaw:Action="http://SST/IApiService/BulkRegistrationResponse" message="tns:IApiService_BulkRegistration_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Registration">
-      <wsdl:input wsaw:Action="http://SST/IApiService/Registration" message="tns:IApiService_Registration_InputMessage" />
-      <wsdl:output wsaw:Action="http://SST/IApiService/RegistrationResponse" message="tns:IApiService_Registration_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetDocuments">
       <wsdl:input wsaw:Action="http://SST/IApiService/GetDocuments" message="tns:IApiService_GetDocuments_InputMessage" />

@@ -15,26 +15,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Registration">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="registrationTransmission" type="BulkRegistrationTransmissionType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="RegistrationResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" maxOccurs="1" name="RegistrationResult" type="BulkRegistrationAcknowledgementType" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetDocuments">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="1" name="AcknowledgementStatus" type="xs:string" />
-        <xs:element minOccurs="0" maxOccurs="1" name="RegistrationType" type="xs:string" />
-        <xs:element minOccurs="0" maxOccurs="1" name="ActiveStatus" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
