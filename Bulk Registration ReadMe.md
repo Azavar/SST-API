@@ -22,7 +22,7 @@ A document can convey one of several actions a service provider can apply for a 
   - [Start managing a registration](#start-managing-a-registration)
   - [End managing a registration](#end-managing-a-registration)
 - [Out of business (O)](#out-of-business)
-- [Unvolunteer from a non member state or more (U)](#unvolunteer-unregister)
+- [Unvolunteer/Unregister (U)](#unvolunteerunregister)
 
 For all actions the tranmsmitter must already have authorization to manage the registration except when confirming to start managing. Newly created registrations will be automatically managable by the service provider who created them.
 
@@ -33,7 +33,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 `<TechnologyModel>` element will be ignored, but it is required for schema validation.
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
-#### Create A New Registration Example - (minimal input)
+#### Create A New Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
@@ -91,7 +91,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<BusinessInfo>` section
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
-#### Update Business Info - Example (minimal input)
+#### Update Business Info - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
@@ -124,7 +124,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<StateIndicators>` section (one for each state)
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
-#### Update registraion info for a state or more - Example (minimal input)
+#### Update registraion info for a state or more - Example
 
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -166,7 +166,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ### Start Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
 `<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the first filing period.
-#### Start Managing A Registration - Example (minimal input)
+#### Start Managing A Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
@@ -197,7 +197,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ### End Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
 `<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<None>`, `<EffectiveDate>` will be used as the last filing period.
-#### End Managing A Registration - Example (minimal input)
+#### End Managing A Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
@@ -227,7 +227,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ````
 ### Out Of Business
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`, `<EffectiveDate>` will be used as the end registration date.
-#### Out Of Business - Example (minimal input)
+#### Out Of Business - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
@@ -256,7 +256,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `U`, `<EffectiveDate>` will be used as the end registration date.
 
 `<StateIndicators>` section can be used to indicate if you want to keep the account open for a state by providing `<StateAcctInd>` as `Y`, the default value is `N` (don't keep the account open)
-#### Unvolunteer/Unregister - Example (minimal input)
+#### Unvolunteer/Unregister - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
