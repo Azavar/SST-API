@@ -15,14 +15,14 @@ A tool is provided [here](https://github.com/azavar/SST-API/tree/master/Web%20Se
 ## Input
 As defined in SST2015V01, BulkRegistration input is a Transmission that contains a number of Documents.
 A document can convey one of several actions a service provider can apply for a registraion:
-- Create new registration (N)
+- [Create new registration (N)](#create-a-new-registration)
 - Change an exsisting registration (C)
-  - Update business info
+  - [Update business info](#update-business-info)
   - Update registraion info for a state or more
-  - Start managing a registration
-  - End managing a registration
-- Out of business (O)
-- Unvolunteer from a non member state or more (U)
+  - [Start managing a registration](#start-managing-a-registration)
+  - [End managing a registration](#end-managing-a-registration)
+- [Out of business (O)](#out-of-business)
+- [Unvolunteer from a non member state or more (U)](#unvolunteer-from-a-non-member-state-or-more)
 
 For all actions the tranmsmitter must already have authorization to manage the registration except when confirming to start managing. Newly created registrations will be automatically managable by the service provider who created them.
 
@@ -30,7 +30,9 @@ For all actions the tranmsmitter must already have authorization to manage the r
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationNew` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegNew` and `<ActionCode>` set to `N`
 
-`<TechnologyModel>` element will be ignored, but it is required for validation.
+`<TechnologyModel>` element will be ignored, but it is required for schema validation.
+
+`<EffectiveDate>` will be ignored, but it is required for schema validation.
 #### Create A New Registration Example - (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -87,6 +89,8 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ````
 ### Update Business Info
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
+
+`<EffectiveDate>` will be ignored, but it is required for schema validation.
 #### Update Business Info - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -117,7 +121,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ````
 ### Start Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
-`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the start date
+`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the first filing period.
 #### Start Managing A Registration - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -148,7 +152,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ````
 ### End Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
-`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<None>`, `<EffectiveDate>` will be used as the end date
+`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<None>`, `<EffectiveDate>` will be used as the last filing period.
 #### End Managing A Registration - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -178,7 +182,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### Out Of Business
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`, `<EffectiveDate>` will be used as the last filing period.
 #### Out Of Business - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
