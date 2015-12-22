@@ -27,10 +27,15 @@ A document can convey one of several actions a service provider can apply for a 
 For all actions the tranmsmitter must already have authorization to manage the registration except when confirming to start managing. Newly created registrations will be automatically managable by the service provider who created them.
 
 ### Create A New Registration
+A service provider can create an account on the taxpayer's behalf, the new account will start as ModelOne (or ModelTwo in case of CAS), FirstFilingPeriod must be provided in `<BulkRegistrationNew>/<FirstFilingPeriod>`
 
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationNew` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegNew` and `<ActionCode>` set to `N`
+State-level data can be provided using `<StateRegistrationIndicator>` element (one for each state), when a state is left out then if it is a member state the `<RegistrationIndicator>` will default to `R`, otherwize the default is `N` 
+
+This action can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationNew` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegNew` and `<ActionCode>` set to `N`
 
 `<TechnologyModel>` element will be ignored, but it is required for schema validation.
+
+`<StateRegistrationIndicator>/<RemoteSellerID>` is required for schema validation and must be `N`
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
 #### Create A New Registration - Example
@@ -80,6 +85,13 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 			<TechnologyModel>
 				<None/>
 			</TechnologyModel>
+            <StateRegistrationIndicator>
+        		<State>IL</State>
+        		<RegistrationIndicator>R</RegistrationIndicator>
+        		<FirstSalesDate>2015-10-01</FirstSalesDate>
+                <RemoteSellerID>N</RemoteSellerID>
+        		<SSTPAllowanceIndicator>Y</SSTPAllowanceIndicator>
+      		</StateRegistrationIndicator>
 			<EffectiveDate>2015-07-31</EffectiveDate>
 			<FirstFilingPeriod>2015-08</FirstFilingPeriod>
 			<NewPass>qweras1234</NewPass>
@@ -88,6 +100,8 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### Update Business Info
+Changes business information for an already registered taxpayer, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account.
+
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<BusinessInfo>` section
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
@@ -121,6 +135,8 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ````
 
 ### Update registraion info for a state or more
+Changes registration info for a state or more for an already registered taxpayer, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account.
+
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<StateIndicators>` section (one for each state)
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
@@ -148,9 +164,8 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 			<StateIndicators>
         		<State>IL</State>
         		<RegistrationIndicator>R</RegistrationIndicator>
-        		<FirstSaleDate>2015-10-01</FirstSaleDate>
+        		<FirstSalesDate>2015-10-01</FirstSalesDate>
         		<SSTPAllowanceIndicator>Y</SSTPAllowanceIndicator>
-        		<FirstFilingPeriod>2015-10-01</FirstFilingPeriod>
       		</StateIndicators>
             <StateIndicators>
         		<State>ID</State>
@@ -164,8 +179,10 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 ````
 
 ### Start Managing A Registration
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
-`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the first filing period.
+A service provider can send this request to start managing a taxpayer already registered but is not currently using any service provider, this can happen if the taxpayer registered themselves or is changing service providers (after the last service provider last filing period has passed)
+
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the CSP Id (or `<TechnologyModel>/<ModelTwo>` with `CASCode` attribute set to be the CAS Id), `<EffectiveDate>` will be used as the first filing period.
+
 #### Start Managing A Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -195,8 +212,10 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### End Managing A Registration
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
-`<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<None>`, `<EffectiveDate>` will be used as the last filing period.
+A service provider can release a taxpayer and provide a last filing period, the service provider sending this request must be currently managing this account.
+
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<TechnologyModel>/<None>, `<EffectiveDate>` will be used as the last filing period.
+
 #### End Managing A Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -226,6 +245,8 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### Out Of Business
+This will close the account and flag it as out of business, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account. After going out of business this account will be inaccessible.
+
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`, `<EffectiveDate>` will be used as the end registration date.
 #### Out Of Business - Example
 ````xml
@@ -253,9 +274,11 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### Unvolunteer/Unregister
+This will close the account and flag states where the account should be kept open, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account. After unvoluneering this account will be inaccessible.
+
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `U`, `<EffectiveDate>` will be used as the end registration date.
 
-`<StateIndicators>` section can be used to indicate if you want to keep the account open for a state by providing `<StateAcctInd>` as `Y`, the default value is `N` (don't keep the account open)
+`<StateIndicators>` section can be used to indicate if you want to keep the account open for a state by providing `<StateAcctInd>` as `Y`, the default value is `N` (don't keep the account open), only states where the taxpayer is registered in can be inculded.
 #### Unvolunteer/Unregister - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
