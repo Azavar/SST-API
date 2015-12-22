@@ -18,11 +18,11 @@ A document can convey one of several actions a service provider can apply for a 
 - [Create new registration (N)](#create-a-new-registration)
 - Change an exsisting registration (C)
   - [Update business info](#update-business-info)
-  - Update registraion info for a state or more
+  - [Update registraion info for a state or more](#update-registraion-info-for-a-state-or-more)
   - [Start managing a registration](#start-managing-a-registration)
   - [End managing a registration](#end-managing-a-registration)
 - [Out of business (O)](#out-of-business)
-- [Unvolunteer from a non member state or more (U)](#unvolunteer-from-a-non-member-state-or-more)
+- [Unvolunteer from a non member state or more (U)](#unvolunteer-unregister)
 
 For all actions the tranmsmitter must already have authorization to manage the registration except when confirming to start managing. Newly created registrations will be automatically managable by the service provider who created them.
 
@@ -88,7 +88,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### Update Business Info
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<BusinessInfo>` section
 
 `<EffectiveDate>` will be ignored, but it is required for schema validation.
 #### Update Business Info - Example (minimal input)
@@ -119,6 +119,50 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
 ````
+
+### Update registraion info for a state or more
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<StateIndicators>` section (one for each state)
+
+`<EffectiveDate>` will be ignored, but it is required for schema validation.
+#### Update registraion info for a state or more - Example (minimal input)
+
+````xml
+<BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
+	<TransmissionHeader>
+		<TransmissionId>CSP00009915123123456</TransmissionId>
+        <DocumentCount>1</DocumentCount>
+	</TransmissionHeader>
+    <BulkRegistrationDocument>
+		<DocumentId>CSP00009915123123457</DocumentId>
+		<DocumentType>BulkRegistrationCOU</DocumentType>
+   		<BulkRegistrationHeader>
+			<ElectronicPostmark CSPID="CSP000099">2015-10-22</ElectronicPostmark>
+    		<FilingType>BulkRegCOU</FilingType>
+    		<TIN TypeTIN="SSN">
+      			<FedTIN>001122334</FedTIN>
+    		</TIN>
+    	</BulkRegistrationHeader>
+		<BulkRegistrationCOU>
+			<ActionCode>C</ActionCode>
+			<SSTPID>S00046251</SSTPID>
+			<StateIndicators>
+        		<State>IL</State>
+        		<RegistrationIndicator>R</RegistrationIndicator>
+        		<FirstSaleDate>2015-10-01</FirstSaleDate>
+        		<SSTPAllowanceIndicator>Y</SSTPAllowanceIndicator>
+        		<FirstFilingPeriod>2015-10-01</FirstFilingPeriod>
+      		</StateIndicators>
+            <StateIndicators>
+        		<State>ID</State>
+        		<RegistrationIndicator>A</RegistrationIndicator>
+        		<SSTPAllowanceIndicator>N</SSTPAllowanceIndicator>
+      		</StateIndicators>
+			<EffectiveDate>2015-10-22</EffectiveDate>
+		</BulkRegistrationCOU>    
+	</BulkRegistrationDocument>
+</BulkRegistrationTransmission>
+````
+
 ### Start Managing A Registration
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C`
 `<BulkRegistrationCOU>` element must contain `<TechnologyModel>/<ModelOne>` with `CSPCode` attribute set to be the service provider Id, `<EffectiveDate>` will be used as the first filing period.
@@ -182,7 +226,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 ### Out Of Business
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`, `<EffectiveDate>` will be used as the last filing period.
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`, `<EffectiveDate>` will be used as the end registration date.
 #### Out Of Business - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -208,9 +252,11 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
 ````
-### Unvolunteer From A Non-member State Or More
-This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `U`
-#### Unvolunteer From A Non-member State Or More - Example (minimal input)
+### Unvolunteer/Unregister
+This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `U`, `<EffectiveDate>` will be used as the end registration date.
+
+`<StateIndicators>` section can be used to indicate if you want to keep the account open for a state by providing `<StateAcctInd>` as `Y`, the default value is `N` (don't keep the account open)
+#### Unvolunteer/Unregister - Example (minimal input)
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
