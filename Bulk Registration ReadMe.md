@@ -11,7 +11,7 @@ A tool is provided [here](https://github.com/azavar/SST-API/tree/master/Web%20Se
 - BulkRegistration is only avaiable for service providers (CSPs and CASs)
 - The caller is reponsible for generating a `TransmissionId`, which is a 20 character string defined as: service provider ID (9 characters) + Year(2 digits) + Julian Day(3 digits) + Sequence Number (6 alphanumeric)
 - TransmissionId can't be reused
-
+ 
 ## Input
 As defined in SST2015V01, BulkRegistration input is a Transmission that contains a number of Documents.
 A document can convey one of several actions a service provider can apply for a registraion:
