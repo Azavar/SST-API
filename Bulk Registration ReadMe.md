@@ -36,6 +36,7 @@ This action can be done by sending a `<BulkRegistrationDocument>` with `<Documen
 - `<TechnologyModel>` element will be ignored, but it is required for schema validation. The created account will be ModelOne or ModelTwo (depending on the service provider identity).
 - `<StateRegistrationIndicator>/<RemoteSellerID>` is required for schema validation and it must be `N`.
 - State-level data can be provided using `<StateRegistrationIndicator>` element (one for each state), when a state is left out then if it is a member state the `<RegistrationIndicator>` will default to `R`, otherwise the default is `N`
+
 #### Create A New Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -144,6 +145,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 - `<StateIndicators>/<StateAcctInd>` and `<StateIndicators>/<AcctCloseDate>` must be null (when `<ActionCode>` is `C`), please see [Out Of Business](#out-of-business) and [Unvolunteer/Unregister](#unvolunteerunregister) for their proper use
 - `<StateIndicators>/<RemoteSellerID>`, `<StateIndicators>/<RemoteEffDate>` and `<StateIndicators>/<RemoteEndDate>` will be ignored
 - For this use case (updating registration info for a state or more) `<StateIndicators>/<CSPEndDate>` and `<StateIndicators>/<CSPLastFilingPd>` must be null, please see [End Managing A Registration](#end-managing-a-registration) for their proper use.
+
 #### Update registraion info for a state or more - Example
 
 ````xml
@@ -190,6 +192,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 #### Rules
 - **The service provider will need to send another BulkCOU request to set the `<FirstFilingPeriod>`, see [Update registraion info for a state or more](#update-registraion-info-for-a-state-or-more).**
 - CSPCode (or CASCode) must match the Id or the calling service provider.
+
 #### Start Managing A Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -222,11 +225,13 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 A service provider can release a taxpayer by providing a `CSPLastFilingPd` for all states where the taxpayer is registered, the service provider sending this request must be currently managing this account.
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<StateIndicators>` section (one for each state).
+
 #### Rules
 -  All states where the taxpayer is registered (all member states + possibly other states) must have a `<StateIndicators>`element all with the same `<StateIndicators>/<CSPLastFilingPd>` and `<StateIndicators>/<CSPEndDate>`.
 - If `<StateIndicators>/<CSPEndDate>` is not provided it will default to the last day of month for `<StateIndicators>/<CSPLastFilingPd>`.
 - By `<StateIndicators>/<CSPEndDate>` the taxpayer TecnologyModel will be changed to None (Model 4) and the privious service provider will not be able to manage the account.
 - **Don't use `<TechnologyModel>/<None>` to end managing a registration, this is not supported.**
+
 #### End Managing A Registration - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -267,10 +272,12 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 This will close the account and flag it as out of business, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account. After going out of business this account will be inaccessible.
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `O`, `<StateIndicators>/<AcctCloseDate>` will be used as the end registration date.
+
 #### Rules
 - All states where the taxpayer is registered (all member states + possibly other states) must have a `<StateIndicators>`element all with the same `<StateIndicators>/<AcctCloseDate>`.
 - `<StateIndicators>/<StateAcctInd>` will be ignored if provided, please see [Unvolunteer/Unregister](#unvolunteerunregister) for their proper use.
 - All other fields (besides `<StateIndicators>/<AcctCloseDate>` and `<StateIndicators>/<State>`) will be ignored if provided.
+
 #### Out Of Business - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
@@ -309,6 +316,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 This will close the account and flag states where the account should be kept open, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account. After unvoluneering this account will be inaccessible.
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `U`, `<StateIndicators>/<AcctCloseDate>` will be used as the end registration date.
+
 #### Rules
 - All states where the taxpayer is registered (all member states + possibly other states) must have a `<StateIndicators>`element all with the same `<StateIndicators>/<AcctCloseDate>`.
 - `<StateIndicators>/<StateAcctInd>` can be set to `Y` to indicate the account should be kept open a state, the default value is `N` (don't keep the account open).
