@@ -1,5 +1,5 @@
 # BulkRegistration
-BulkRegistration() is called by the CSP to register and/or update registration info for one registration or more in a single transmission to the SST system.  Please see Schema [SST2015V01](https://github.com/azavar/SST-API/tree/master/SST2015V01%20Schema) ([Source](http://www.statemef.com/projects/sst/SST2015V01.zip)) for further details about constructing this object.
+BulkRegistration() is called by the certified service provider (CSP or CAS) to register and/or update registration info for one registration (or multiple registrations) in a single transmission to the SST central registration system.  Please see Schema [SST2015V01](https://github.com/azavar/SST-API/tree/master/SST2015V01%20Schema) ([Source](http://www.statemef.com/projects/sst/SST2015V01.zip)) for further details about constructing this object.
 
 ````csharp
 BulkRegistrationAcknowledgementType BulkRegistration(BulkRegistrationTransmissionType bulkRegistrationTransmission)
@@ -8,27 +8,27 @@ BulkRegistrationAcknowledgementType BulkRegistration(BulkRegistrationTransmissio
 A tool is provided [here](https://github.com/azavar/SST-API/tree/master/Web%20Service%20Tool%20(For%20Service%20Providers)) to test BulkRegistration
 
 ## General Rules
-- BulkRegistration is only avaiable for service providers (CSPs and CASs)
-- The caller (service provider) is reponsible for generating a `TransmissionId` and a `DocumentId` (for each document), which is a 20 character string defined as: service provider ID (9 characters) + Year(2 digits) + Julian Day(3 digits) + Sequence Number (6 alphanumeric)
+- BulkRegistration is only available for certified service providers (CSPs and CASs)
+- The caller (CSP or CAS) is responsible for generating a `TransmissionId` and a `DocumentId` (for each document), which is a 20 character string defined as: service provider ID (9 characters) + Year(2 digits) + Julian Day(3 digits) + Sequence Number (6 alphanumeric)
 - TransmissionId/DocumentId can't be reused
 - `<EffectiveDate>` is required and must always be today's date.
  
 ## Input
 As defined in SST2015V01, BulkRegistration input is a Transmission that contains a number of Documents.
-A document can convey one of several actions a service provider can apply for a registraion:
+A document can convey one of several actions a service provider can apply for a registration:
 - [Create new registration (N)](#create-a-new-registration)
-- Change an exsisting registration (C)
-  - [Update business info](#update-business-info)
-  - [Update registraion info for a state or more](#update-registraion-info-for-a-state-or-more)
+- Change an existing registration (C)
   - [Start managing a registration](#start-managing-a-registration)
-  - [End managing a registration](#end-managing-a-registration)
-- [Out of business (O)](#out-of-business)
+  - [Update BusinessInfo for all states](#update-businessinfo-for-all-states)
+  - [Update StateIndicators for one or more states](#update-stateindicators-for=one-or-more-states)
+  - [End managing a registration](#end-managing-a-registration) (i.e., stop being the seller's CSP or CAS)
 - [Unvolunteer/Unregister (U)](#unvolunteerunregister)
+- [Out of business (O)](#out-of-business)
 
-For all actions the tranmsmitter must already have authorization to manage the registration except when requesting to start managing. Newly created registrations will be automatically managable by the service provider who created them.
+For all actions the transmitter (CSP/CAS) must already have authorization to manage the registration through the SST central registration system except when requesting to start managing an existing registration. New registrations created through a BulkNew will be automatically manageable by the certified service provider who created them.
 
 ### Create A New Registration
-A service provider can create an account on the taxpayer's behalf, the new account will start as ModelOne (or ModelTwo in case of CAS), FirstFilingPeriod must be provided in `<BulkRegistrationNew>/<FirstFilingPeriod>` 
+A certified service provider can create an account on the taxpayer's behalf. In this case, the new account will start as a ModelOne (or ModelTwo in case of CAS). The CSP/CAS must provide the FirstFilingPeriod in `<BulkRegistrationNew>/<FirstFilingPeriod>` 
 
 This action can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationNew` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegNew` and `<ActionCode>` set to `N`
 
@@ -98,12 +98,12 @@ This action can be done by sending a `<BulkRegistrationDocument>` with `<Documen
 	</BulkRegistrationDocument>
 </BulkRegistrationTransmission>
 ````
-### Update Business Info
+### Update BusinessInfo for all states
 Changes business information for an already registered taxpayer, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account.
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<BusinessInfo>` section
 
-#### Update Business Info - Example
+#### Update BusinessInfo for all states - Example
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
 	<TransmissionHeader>
@@ -132,7 +132,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 </BulkRegistrationTransmission>
 ````
 
-### Update registraion info for a state or more
+### Update StateIndicators for one or more states
 Changes registration info for a state or more for an already registered taxpayer, the service provider sending this request must be the one who created the account or have successfully submitted a request to manage this account.
 
 This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>` set to `BulkRegistrationCOU` and `<BulkRegistrationHeader>/<FilingType>` set to `BulkRegCOU` and `<ActionCode>` set to `C` and using `<StateIndicators>` section (one for each state)
@@ -146,7 +146,7 @@ This can be done by sending a `<BulkRegistrationDocument>` with `<DocumentType>`
 - `<StateIndicators>/<RemoteSellerID>`, `<StateIndicators>/<RemoteEffDate>` and `<StateIndicators>/<RemoteEndDate>` will be ignored
 - For this use case (updating registration info for a state or more) `<StateIndicators>/<CSPEndDate>` and `<StateIndicators>/<CSPLastFilingPd>` must be null, please see [End Managing A Registration](#end-managing-a-registration) for their proper use.
 
-#### Update registraion info for a state or more - Example
+#### Update StateIndicators for one or more states - Example
 
 ````xml
 <BulkRegistrationTransmission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" transmissionVersion="SST2015V01">
