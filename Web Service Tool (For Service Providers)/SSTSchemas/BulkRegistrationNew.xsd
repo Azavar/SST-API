@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<xs:element name="BulkRegistrationNew" type="BulkRegistrationNewType">
+		<xs:annotation>
+			<xs:documentation>This schema provides new SSTP Registration information for a company from a CSP to the Central Registration System</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BulkRegistrationNewType">
+		<xs:sequence>
+			<xs:element name="ActionCode">
+				<xs:annotation>
+					<xs:documentation>In this schema, action code must always ="N" for New</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="N"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="RegistrationEntity" type="EntityType"/>
+			<xs:choice>
+				<xs:element name="BusinessName" type="BusinessNameLine1Type"/>
+				<xs:element name="IndividualName" type="IndividualNameType"/>
+			</xs:choice>
+			<xs:element name="DBAName" type="BusinessNameLine1Type" minOccurs="0"/>
+			<xs:element name="NAICSCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[0-9]{6}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="PhysicalAddress" type="AddressType"/>
+			<xs:element name="MailingAddress" type="AddressType" minOccurs="0"/>
+			<xs:element name="SellerPhone" type="PhoneNumberType"/>
+			<xs:element name="SellerPhoneExt" type="String5Type" minOccurs="0"/>
+			<xs:element name="SSTPContact" type="ContactType"/>
+			<xs:element name="StateIncorporated">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="TechnologyModel" type="TechModelType"/>
+			<xs:element name="StateRegistrationIndicator" maxOccurs="51">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="State">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:maxLength value="2"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RegistrationIndicator">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="N">
+										<xs:annotation>
+											<xs:documentation>For an Associate State - NOT volunteering</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+									<xs:enumeration value="R">
+										<xs:annotation>
+											<xs:documentation>Registering to file and pay in this state</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+									<xs:enumeration value="X">
+										<xs:annotation>
+											<xs:documentation>Registering in this state, but will not file or pay at this time</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+									<xs:enumeration value="A">
+										<xs:annotation>
+											<xs:documentation>Already registered to file and pay in this state</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+									<xs:enumeration value="Z">
+										<xs:annotation>
+											<xs:documentation>Already registered in this state, but will not file or pay at this time</xs:documentation>
+										</xs:annotation>
+									</xs:enumeration>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="FirstSalesDate" type="DateType"/>
+						<xs:element name="RemoteSellerID">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="Y"/>
+									<xs:enumeration value="N"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="RemoteEffDate" type="DateType" minOccurs="0"/>
+						<xs:element name="SSTPAllowanceIndicator" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Y">
+											<xs:annotation>
+												<xs:documentation>Yes, seller is a volunteer for purposes of CSP/CAS compensation</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="N">
+											<xs:annotation>
+												<xs:documentation>No, seller is not a volunteer for compensation purposes</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+										<xs:enumeration value="U">
+											<xs:annotation>
+												<xs:documentation>Undetermined whether seller is a volunteer for compensation purposes</xs:documentation>
+											</xs:annotation>
+										</xs:enumeration>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="EffectiveDate" type="DateType">
+				<xs:annotation>
+					<xs:documentation>Future start date for business</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FirstFilingPeriod" type="YearMonthType"/>
+			<xs:element name="NewPass">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="8"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

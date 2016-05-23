@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+	<xs:annotation>
+		<xs:documentation>
+			<Description>Streamlined Sales Tax Project - Content models for the transmission header, origin headers, transmission body, and acknowledgement</Description>
+		</xs:documentation>
+	</xs:annotation>
+	<xs:include schemaLocation="SSTefileTypes.xsd"/>
+	<!--T R A N S M I S S I O N   H E A D E R -->
+	<xs:element name="TransmissionHeader" type="TransmissionHeaderType"/>
+	<xs:complexType name="TransmissionHeaderType">
+		<xs:sequence>
+			<!-- Transmission ID -->
+			<xs:element name="TransmissionId" type="DocumentIdType">
+				<xs:annotation>
+					<xs:documentation>Must be Transmitter id/Julian date/six character unique identifier, generally sequential</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<!-- Transmission Time Stamp -->
+			<xs:element name="Timestamp" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The time stamp at the time of transmission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<!-- Transmitter -->
+			<xs:element name="Transmitter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ETIN">
+							<xs:annotation>
+								<xs:documentation>The identifier of the transmitter, which equals SSTPID for a seller, CSPID for a CSP, or TIN for a concentrator</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="9"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<!-- Process Type -->
+			<xs:element name="ProcessType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="T">
+							<xs:annotation>
+								<xs:documentation>Test</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+						<xs:enumeration value="P">
+							<xs:annotation>
+								<xs:documentation>Production</xs:documentation>
+							</xs:annotation>
+						</xs:enumeration>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DocumentCount" type="xs:positiveInteger"/>
+			<xs:element name="TransmissionPaymentHash" type="AmountType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- A C K N O W L E D G E M E N T   H E A D E R -->
+	<xs:element name="AcknowledgementHeader" type="AcknowledgementHeaderType"/>
+	<xs:complexType name="AcknowledgementHeaderType">
+		<xs:sequence>
+			<xs:element name="AcknowledgementTimestamp" type="xs:dateTime"/>
+			<xs:element name="AcknowledgementCount" type="xs:positiveInteger"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- A C K N O W L E D G E M E N T   BODY -->
+	<!-- Transmission Acknowledgement -->
+	<xs:element name="TransmissionAcknowledgement" type="TransmissionAcknowledgementType"/>
+	<xs:complexType name="TransmissionAcknowledgementType">
+		<xs:sequence>
+			<xs:element name="TransmissionId" type="IdType" minOccurs="0"/>
+			<xs:element name="TransmissionTimestamp" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="TransmissionStatus" type="StatusType"/>
+			<xs:element ref="Errors" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Document Acknowledgement -->
+	<xs:element name="DocumentAcknowledgement" type="DocumentAcknowledgementType"/>
+	<xs:complexType name="DocumentAcknowledgementType">
+		<xs:sequence>
+			<xs:element name="DocumentId" type="DocumentIdType"/>
+			<xs:choice>
+				<xs:element name="SSTPID">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="9"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="StateID">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="DocumentType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="SSTPRegistration"/>
+						<xs:enumeration value="SERWithPayment"/>
+						<xs:enumeration value="SEROnly"/>
+						<xs:enumeration value="PaymentOnly"/>
+						<xs:enumeration value="PrePayment"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DocumentStatus" type="StatusType"/>
+			<xs:element name="PaymentIndicator" type="PaymentIndicatorType"/>
+			<xs:element ref="Errors" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Bulk Registration Acknowledgement -->
+	<xs:element name="BulkRegAcknowledgement" type="BulkRegAcknowledgementType"/>
+	<xs:complexType name="BulkRegAcknowledgementType">
+		<xs:sequence>
+			<xs:element name="DocumentId" type="DocumentIdType"/>
+			<xs:element name="SSTPID">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="9"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="NewPass">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="8"/>
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DocumentType">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="BulkRegNew"/>
+						<xs:enumeration value="BulkRegCOU"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="DocumentStatus" type="StatusType"/>
+			<xs:element ref="Errors" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="documentVersion" type="xs:string" use="optional" fixed="SST2015V01">
+			<xs:annotation>
+				<xs:documentation>Document Version</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<!-- Document Version -->
+	</xs:complexType>
+	<!-- Status Type -->
+	<xs:simpleType name="StatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A">
+				<xs:annotation>
+					<xs:documentation>Accepted</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="R">
+				<xs:annotation>
+					<xs:documentation>Rejected</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Payment Indicator Type -->
+	<xs:simpleType name="PaymentIndicatorType">
+		<xs:annotation>
+			<xs:documentation>Payment can be Accepted, Rejected, or Not Present</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="N"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Errors -->
+	<xs:element name="Errors">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Error" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:choice>
+								<xs:element name="XPath" type="xs:string" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>The XPath expression indicating the full path from the root to the error element or attribute</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="FieldIdentifier" type="xs:string" minOccurs="0">
+									<xs:annotation>
+										<xs:documentation>Identification of field in error other than XPath</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+							<xs:element name="ErrorMessage" type="xs:string"/>
+							<xs:element name="AdditionalErrorMessage" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="200"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="Severity" type="xs:string" minOccurs="0"/>
+							<xs:element name="DataValue" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+						<xs:attribute name="errorId" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:positiveInteger">
+									<xs:totalDigits value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="errorCount" type="xs:nonNegativeInteger" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
